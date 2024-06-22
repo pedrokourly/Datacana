@@ -1,0 +1,89 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap');
+
+:root {
+    --default-font: 'Rethink Sans', sans-serif;
+    --color-font: #0D0D0D;
+
+    --color01: #03A65A;
+    --color02: #0ABF6A;
+    --color03: #86D95F;
+    --color04: #C2F279;
+    --color05: #D8F2A0;
+
+    --color-header: #FFFFFF;
+}
+
+/* CONFIGURAÇÕES GLOBAIS */
+
+* {
+    font-family: var(--default-font);
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* HEADER */
+
+header {
+    background-color: var(--color-header);
+    display: flex;
+    align-items: center;
+    margin: 0px auto;
+    padding: 15px 0px; 
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.2);
+}
+
+header > div.container {
+    position: initial;
+}
+
+header > div.container > div.d-flex > a > img {
+    width: 100px;
+    height: 60px;
+}
+
+header > div.container > div.d-flex > nav > a {
+    color: var(--color-font);
+    text-decoration: none;
+    margin: 0px 10px;
+}
+
+header > div.container > div.d-flex > nav > a:hover {
+    color: var(--color02);
+    text-decoration: underline;
+}
+
+header > div.container > div.d-flex > button {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-header);
+    border: none;
+}
+
+/* MEDIA-QUERY PARA DISPOSITIVOS */
+
+/* DISPOSITIVOS GRANDES */
+
+@media screen and (min-width: 700px) {
+    header > div.container > div.d-flex > nav {
+        display: block;
+    }
+
+    header > div.container > div.d-flex > button {
+        display: none;
+    }
+}
+
+/* DISPOSITIVOS PEQUENOS */
+
+@media screen and (max-width: 700px) { 
+    header > div.container > div.d-flex > nav {
+        display: none;
+    }
+
+    header > div.container > div.d-flex > button {
+        display: flex;
+    }
+}
