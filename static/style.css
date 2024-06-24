@@ -25,6 +25,7 @@
 
 body {
     font-family: var(--default-font);
+    background-color: #e0e0e0;
 }
 
 /* HEADER */
@@ -34,12 +35,7 @@ header {
     display: flex;
     align-items: center;
     margin: 0px auto;
-    padding: 15px 0px; 
-    box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.75);
-}
-
-header > div.container {
-    position: initial;
+    padding: 15px 0px;
 }
 
 header > div.container > div.d-flex > a > img {
@@ -58,10 +54,30 @@ header > div.container > div.d-flex > nav > a:hover {
 }
 
 header > div.container > div.d-flex > button {
+    background-color: var(--color-header);
     display: flex;
     align-items: center;
-    background-color: var(--color-header);
     border: none;
+}
+
+/* MAIN */
+
+main > div#cover {
+    display: flex;
+    background-image: url('../static/images/Capa.jpg');
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+}
+
+main > div#cover > div#title > h2 {
+    color: #FFFFFF;
+    text-align: center;
+    font-weight: bold;
+}
+
+main > div#cover > div#title > div#rule {
+    border-bottom: 3px solid #FFFFFF;
 }
 
 /* MEDIA-QUERY PARA DISPOSITIVOS */
@@ -70,22 +86,52 @@ header > div.container > div.d-flex > button {
 
 @media screen and (min-width: 700px) {
     header > div.container > div.d-flex > nav {
-        display: none;
+        display: block;
     }
 
     header > div.container > div.d-flex > button {
-        display: flex;
+        display: none;
+    }
+
+
+
+    main > div#cover {
+        background-position: center;
+        height: 70vh;
+    }
+
+    main > div#cover > div#title > h2 {
+        font-size: 42px;
+    }
+
+    main > div#cover > div#title > div.container {
+        max-width: 250px;
     }
 }
 
 /* DISPOSITIVOS PEQUENOS */
 
-@media screen and (max-width: 700px) { 
+@media screen and (max-width: 700px) {
     header > div.container > div.d-flex > nav {
         display: none;
     }
 
     header > div.container > div.d-flex > button {
         display: flex;
+    }
+
+
+
+    main > div#cover {
+        background-position: right bottom;
+        height: 40vh;
+    }
+
+    main > div#cover > div#title > h2 {
+        font-size: 35px;
+    }
+
+    main > div#cover > div#title > div.container {
+        max-width: 210px;
     }
 }
