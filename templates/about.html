@@ -37,7 +37,7 @@
                     <div class="card">
                         <div class="row g-0">
                             <div class="col-md-4">
-                                <img  class="img-fluid rounded-start" src="../static/images/membros/pedro_henrique.jpg" alt="Desenvolvedor Web">
+                                <img  class="img-fluid rounded-start" src="../static/images/membros/pedro_henrique.jpg" alt="Pedro Henrique">
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
@@ -108,11 +108,19 @@
         }
 
         main > div.content > div.carousel > div.carousel-inner > div.carousel-item > div.card {
-            margin: 0px auto;
+            margin: auto;
         }
 
         main > div.content > div.carousel > div.carousel-inner > div.carousel-item > div.card > div.row > div.col-md-8 > div.card-body > h5.card-title {
             margin-bottom: 0px;
+        }
+
+        main > div.content > div.carousel > button.carousel-control-prev {
+            width: unset;
+        }
+
+        main > div.content > div.carousel > button.carousel-control-next {
+            width: unset;
         }
 
         /* MEDIA-QUERY PARA DISPOSITIVOS */
@@ -146,15 +154,15 @@
             /* M-Q CARROSEL */
 
             main > div.content > div.carousel > div.carousel-inner > div.carousel-item > div.card {
-                max-width: 780px;
+                max-width: 680px;
             }
 
             main > div.content > div.carousel > button.carousel-control-prev {
-                margin: 0px 1em;
+                margin-left: 0.5em;
             }
 
             main > div.content > div.carousel > button.carousel-control-next {
-                margin: 0px 1em;
+                margin-right: 0.5em;
             }
         }
 
@@ -191,11 +199,11 @@
             }
 
             main > div.content > div.carousel > button.carousel-control-prev {
-                margin-left: -2.25em;
+                margin-left: -1.75em;
             }
 
             main > div.content > div.carousel > button.carousel-control-next {
-                margin-right: -2.25em;
+                margin-right: -1.75em;
             }
         }
     </style>
