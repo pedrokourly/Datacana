@@ -35,12 +35,11 @@ header {
     display: flex;
     align-items: center;
     margin: 0px auto;
-    padding: 15px 0px;
+    padding: 10px 0px;
 }
 
 header > div.container > div.d-flex > a > img {
-    width: 100px;
-    height: 60px;
+    width: 115px;
 }
 
 header > div.container > div.d-flex > nav > a {
