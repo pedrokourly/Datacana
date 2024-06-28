@@ -42,13 +42,20 @@ header > div.container > div.d-flex > a#logo > img {
     width: 115px;
 }
 
-header > div.container > div.d-flex > nav > a {
+header > div.container > div.d-flex > nav > ul {
+    display: flex;
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+header > div.container > div.d-flex > nav > ul > li.nav-item > a {
     color: var(--color-font);
     text-decoration: none;
     margin: 0px 10px;
 }
 
-header > div.container > div.d-flex > nav > a:hover {
+header > div.container > div.d-flex > nav > ul > li.nav-item > a:hover {
     color: var(--color02);
     transition: 0.5s;
 }
