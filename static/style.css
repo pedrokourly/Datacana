@@ -4,7 +4,7 @@
 
 :root {
     --default-font: 'Rethink Sans', sans-serif;
-    --color-font: #0D0D0D;
+    --color-font: #424242;
 
     --color01: #03A65A;
     --color02: #0ABF6A;
@@ -38,7 +38,7 @@ header {
     padding: 10px 0px;
 }
 
-header > div.container > div.d-flex > a > img {
+header > div.container > div.d-flex > a#logo > img {
     width: 115px;
 }
 
@@ -53,6 +53,11 @@ header > div.container > div.d-flex > nav > a:hover {
     transition: 0.5s;
 }
 
+header > div.container > div.d-flex > a#login > svg:hover {
+    fill: var(--color02);
+    transition: 0.75s;
+}
+
 header > div.container > div.d-flex > button {
     background-color: var(--color-header);
     border: none;
@@ -62,4 +67,49 @@ header > div.container > div.d-flex > button {
 
 header > div.container > div.d-flex > div.offcanvas {
     width: 80%;
+}
+
+header > div.container > div.d-flex > div.offcanvas > div.offcanvas-body {
+    position: relative;
+}
+
+header > div.container > div.d-flex > div.offcanvas > div.offcanvas-body > a#login {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* MEDIA-QUERY PARA DISPOSITIVOS */
+
+/* DISPOSITIVOS GRANDES */
+
+@media screen and (min-width: 700px) {
+    header > div.container > div.d-flex > nav {
+        display: block;
+    }
+
+    header > div.container > div.d-flex > button {
+        display: none;
+    }
+
+    header > div.container > div.d-flex > a#login {
+        display: inline;
+    }
+}
+
+/* DISPOSITIVOS PEQUENOS */
+
+@media screen and (max-width: 700px) {
+    header > div.container > div.d-flex > nav {
+        display: none;
+    }
+
+    header > div.container > div.d-flex > button {
+        display: flex;
+    }
+
+    header > div.container > div.d-flex > a#login {
+        display: none;
+    }
 }
