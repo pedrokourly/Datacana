@@ -38,21 +38,25 @@ header {
     padding: 10px 0px;
 }
 
+/* LOGO */
+
 header > div.container > div.d-flex > a#logo > img {
     width: 115px;
 }
+
+/* NAVEGADOR */
 
 header > div.container > div.d-flex > nav > ul {
     display: flex;
     list-style: none;
     padding: 0px;
     margin: 0px;
+    gap: 24px;
 }
 
 header > div.container > div.d-flex > nav > ul > li.nav-item > a {
     color: var(--color-font);
     text-decoration: none;
-    margin: 0px 10px;
 }
 
 header > div.container > div.d-flex > nav > ul > li.nav-item > a:hover {
@@ -60,38 +64,115 @@ header > div.container > div.d-flex > nav > ul > li.nav-item > a:hover {
     transition: 0.5s;
 }
 
+/* SUB-NAVEGADOR */
+
+header > div.container > div.d-flex > nav > ul > li.nav-item > ul {
+    background-color: var(--color02);
+    display: none;
+    list-style: none;
+    position: absolute;
+    z-index: 100;
+
+    padding: 8px;
+    margin-top: 16px;
+    border-radius: 8px;
+}
+
+header > div.container > div.d-flex > nav > ul > li.nav-item > ul::before {
+    position: absolute;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 17px solid var(--color02);
+    content: "";
+    width: 0;
+    height: 0;
+    top: -15px;
+    left: 20px;
+}
+
+header > div.container > div.d-flex > nav > ul > li.nav-item > ul > li.nav-item {
+    margin: 8px 0px;
+}
+
+header > div.container > div.d-flex > nav > ul > li.nav-item > ul > li.nav-item > a {
+    color: var(--color-header);
+    text-decoration: none;
+    margin: 0px 10px;
+}
+
+header > div.container > div.d-flex > nav > ul > li.nav-item > ul > li.nav-item > a:hover {
+    text-decoration: underline;
+}
+
+
+/* LOGIN */
+
 header > div.container > div.d-flex > a#login > svg:hover {
     fill: var(--color02);
     transition: 0.75s;
 }
+
+/* MENU OFFCANVAS */
 
 header > div.container > div.d-flex > button {
     background-color: var(--color-header);
     border: none;
     display: flex;
     align-items: center;
+    margin: 0px 10px;
 }
 
 header > div.container > div.d-flex > div.offcanvas {
-    width: 80%;
+    max-width: 75%;
 }
 
 header > div.container > div.d-flex > div.offcanvas > div.offcanvas-body {
     position: relative;
 }
 
+header > div.container > div.d-flex > div.offcanvas > div.offcanvas-body > ul.navbar-nav > li > ul {
+    background-color: var(--color02);
+    list-style: none;
+
+    padding: 8px;
+    border-radius: 8px;
+}
+
+header > div.container > div.d-flex > div.offcanvas > div.offcanvas-body > ul.navbar-nav > li > ul > li.nav-item {
+    margin: 8px 0px;
+}
+
+header > div.container > div.d-flex > div.offcanvas > div.offcanvas-body > ul.navbar-nav > li > ul > li.nav-item > a {
+    color: var(--color-header);
+    text-decoration: none;
+    margin: 0px 10px;
+}
+
+header > div.container > div.d-flex > div.offcanvas > div.offcanvas-body > ul.navbar-nav > li > ul > li.nav-item > a:hover {
+    text-decoration: underline;
+}
+
+header > div.container > div.d-flex > div.offcanvas > div.offcanvas-body > ul.navbar-nav > li > a:hover {
+    color: var(--color02);
+    transition: 0.5s;
+}
+
 header > div.container > div.d-flex > div.offcanvas > div.offcanvas-body > a#login {
-    position: absolute;
-    bottom: 5%;
-    left: 50%;
-    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+header > div.container > div.d-flex > div.offcanvas > div.offcanvas-body > a#login > svg:hover {
+    fill: var(--color02);
+    transition: 0.5s;
 }
 
 /* MEDIA-QUERY PARA DISPOSITIVOS */
 
 /* DISPOSITIVOS GRANDES */
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 992px) {
     header > div.container > div.d-flex > nav {
         display: block;
     }
@@ -107,7 +188,7 @@ header > div.container > div.d-flex > div.offcanvas > div.offcanvas-body > a#log
 
 /* DISPOSITIVOS PEQUENOS */
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 992px) {
     header > div.container > div.d-flex > nav {
         display: none;
     }

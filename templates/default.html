@@ -24,15 +24,36 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="/">Home</a>
                         </li>
+
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/">Sobre o DataCana</a>
+                            <a class="nav-link active" aria-current="page" href="#">Sobre o DataCana</a>
+                            <ul>
+                                <li class="nav-item"><a href="/">Projeto</a></li>
+                                <li class="nav-item"><a href="/">Produtos</a></li>
+                                <li class="nav-item"><a href="/">Fontes de Financiamento</a></li>
+                                <li class="nav-item"><a href="/sobre">Equipe</a></li>
+                                <li class="nav-item"><a href="/">Termos de Uso</a></li>
+                            </ul>
                         </li>
+
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/">Mapas e Dados</a>
+                            <a class="nav-link active" aria-current="page" href="#">Mapas e Dados</a>
+                            <ul>
+                                <li class="nav-item"><a href="/">Acesso aos Dados</a></li>
+                                <li class="nav-item"><a href="/">Downloads</a></li>
+                                <li class="nav-item"><a href="/">Termos de Uso</a></li>
+                            </ul>
                         </li>
+
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/">Metodologia</a>
+                            <a class="nav-link active" aria-current="page" href="#">Metodologia</a>
+                            <ul>
+                                <li class="nav-item"><a href="/">Materiais</a></li>
+                                <li class="nav-item"><a href="/">Procedimentos</a></li>
+                                <li class="nav-item"><a href="/">Termos de Uso</a></li>
+                            </ul>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="/">Contato</a>
                         </li>
@@ -58,20 +79,37 @@
                     </div>
         
                     <div class="offcanvas-body">
-                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                            <li class="nav-item">
+                        <ul class="navbar-nav justify-content-end flex-grow-1">
+                            <li>
                                 <a class="nav-link active" aria-current="page" href="/">Home</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="/">Sobre o DataCana</a>
+                            <li>
+                                <a class="nav-link active" aria-current="page" href="#">Sobre o DataCana</a>
+                                <ul>
+                                    <li class="nav-item"><a href="/">Projeto</a></li>
+                                    <li class="nav-item"><a href="/">Produtos</a></li>
+                                    <li class="nav-item"><a href="/">Fontes de Financiamento</a></li>
+                                    <li class="nav-item"><a href="/sobre">Equipe</a></li>
+                                    <li class="nav-item"><a href="/">Termos de Uso</a></li>
+                                </ul>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="/">Mapas e Dados</a>
+                            <li>
+                                <a class="nav-link active" aria-current="page" href="#">Mapas e Dados</a>
+                                <ul>
+                                    <li class="nav-item"><a href="/">Acesso aos Dados</a></li>
+                                    <li class="nav-item"><a href="/">Downloads</a></li>
+                                    <li class="nav-item"><a href="/">Termos de Uso</a></li>
+                                </ul>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="/">Metodologia</a>
+                            <li>
+                                <a class="nav-link active" aria-current="page" href="#">Metodologia</a>
+                                <ul>
+                                    <li class="nav-item"><a href="/">Materiais</a></li>
+                                    <li class="nav-item"><a href="/">Procedimentos</a></li>
+                                    <li class="nav-item"><a href="/">Termos de Uso</a></li>
+                                </ul>
                             </li>
-                            <li class="nav-item">
+                            <li>
                                 <a class="nav-link active" aria-current="page" href="/">Contato</a>
                             </li>
                         </ul>
@@ -96,5 +134,21 @@
 
         {% endblock %}
     </main>
+
+    <script>
+        const navLinks = document.querySelectorAll('li.nav-item');
+
+        navLinks.forEach(
+            function(link) {
+                link.addEventListener('mouseover', function() {
+                    this.querySelector('ul').style.display = 'block';
+                });
+
+                link.addEventListener('mouseout', function() {
+                    this.querySelector('ul').style.display = 'none';
+                });
+            }
+        );
+    </script>
 </body>
 </html>
