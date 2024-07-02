@@ -133,7 +133,6 @@ header > div.container > div.d-flex > div.offcanvas > div.offcanvas-body {
 header > div.container > div.d-flex > div.offcanvas > div.offcanvas-body > ul.navbar-nav > li > ul {
     background-color: var(--color02);
     list-style: none;
-
     padding: 8px;
     border-radius: 8px;
 }

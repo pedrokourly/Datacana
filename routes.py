@@ -9,5 +9,5 @@ def home():
 
 @app.route('/sobre')
 def about():
-    return render_template('about.html',
+    return render_template('team.html',
                            DocTitle = 'DataCana')
