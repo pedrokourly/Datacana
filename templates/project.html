@@ -1,0 +1,44 @@
+{% extends 'default.html' %}
+
+{% block conteudo %}
+    <div id="cover">
+        <div id="title">
+            <h2>Projeto DataCana</h2>
+            <div class="container" id="rule"></div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div id="map" class="map map-home leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom"></div>
+    </div>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+{% endblock %}
+
+{% block estilo %}
+    
+    <style>
+        #map { 
+            height: 360px;
+            width: 670px;
+        }
+    </style>
+{% endblock %}
+
+{% block scripts %}
+    
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+
+    <script>
+        var map = L.map('map').setView([-18.523333, -43.934444], 6);
+
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+    </script>
+{% endblock %}
