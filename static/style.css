@@ -28,6 +28,16 @@ body {
     background-color: #e0e0e0;
 }
 
+::-webkit-scrollbar {
+    background: transparent;
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color01);
+    border-radius: 10px;
+}
+
 /* HEADER */
 
 header {
