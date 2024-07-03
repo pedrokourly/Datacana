@@ -6,6 +6,7 @@ app.config.from_pyfile('config.py')
 
 # Importa as rotas para o APP
 from routes import *
+from mapRoutes import *
 
 if __name__ == '__main__':
     app.run(debug = True)

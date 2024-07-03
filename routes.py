@@ -12,7 +12,3 @@ def about():
     return render_template('team.html',
                            DocTitle = 'DataCana')
 
-@app.route('/mapa')
-def map():
-    return render_template('project.html',
-                           DocTitle = 'Mapa')
