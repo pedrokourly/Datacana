@@ -18,5 +18,6 @@ def dataMap():
     colums = ['AREA_HA', 'MUNICIPIO', 'LONG', 'LAT']
     df = df[colums]
     point = df.to_dict()
-
-    return jsonify(data = point)
+    qnt = len(df)
+    return jsonify(data = point,
+                   qnt = qnt)
