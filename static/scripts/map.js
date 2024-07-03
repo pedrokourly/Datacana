@@ -30,8 +30,8 @@ $(document).ready(function() {
             L.circleMarker([response.data['LAT'][i], response.data['LONG'][i]], {
                 color: 'red',
                 radius: 5,
-                stroke: false,
-            }).bindPopup('<b>' + response.data['MUNICIPIO'][i] + '</b>').addTo(map);
+                stroke: false
+            }).bindPopup('<b>' + response.data['MUNICIPIO'][i] + '</b><br>' + 'Área: ' + response.data['AREA_HA'][i] + "Km").addTo(map);
           }
         })
         .catch(function(error) {
