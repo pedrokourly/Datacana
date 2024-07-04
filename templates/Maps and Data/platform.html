@@ -1,0 +1,25 @@
+{% extends 'default.html' %}
+
+{% block conteudo %}
+
+{% endblock %}
+
+{% block estilo %}
+    <style>
+        header > div.container > div.d-flex {
+            justify-content: center !important; 
+        }
+
+        header > div.container > div.d-flex > nav {
+            display: none;
+        }
+
+        header > div.container > div.d-flex > a#login {
+            display: none;
+        }
+
+        header > div.container > div.d-flex > button {
+            display: none;
+        }
+    </style>
+{% endblock %}
