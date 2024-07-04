@@ -6,8 +6,3 @@ from flask import render_template
 def home():
     return render_template('home.html',
                            DocTitle = 'DataCana')
-
-@app.route('/sobre')
-def about():
-    return render_template('team.html',
-                           DocTitle = 'DataCana')
