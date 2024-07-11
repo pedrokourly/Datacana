@@ -21,13 +21,18 @@ $(document).ready(function () {
                 gestureHandling: true
             });
 
-            map.setView([-18.918999, -48.277950], 7)
-
-            var positron = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+            var base = new L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
                 attribution: '<a href="https://github.com/KyKirma/" target="_blank">Pedro Kourly</a>, <a href="https://github.com/gustavomcss" target="_blank">Gustavo Corrêa</a>, &copy; <a target = "_blank" href="https://www.openstreetmap.org/">OpenStreetMap</a>, <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. <a href="https://carto.com/attributions" target="_blank">CARTO</a>',
                 subdomains: 'abcd',
-                maxZoom: 19
+                maxZoom: 15
             }).addTo(map);
+
+            var controlSearch = new L.Control.Search({
+                position: 'topright',
+            });
+
+            map.setView([-18.918999, -48.277950], 7);
+            map.addControl(controlSearch);
 
             for (i = 0; i < response.qnt; i++) {
                 L.circleMarker([response.data['LAT'][i], response.data['LONG'][i]], {
