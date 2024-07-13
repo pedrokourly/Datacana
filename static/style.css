@@ -57,6 +57,7 @@ header > div.container > div.d-flex > nav > ul {
 header > div.container > div.d-flex > nav > ul > li.nav-item > a {
     color: var(--color-font);
     text-decoration: none;
+    padding-block: 20px;
 }
 
 header > div.container > div.d-flex > nav > ul > li.nav-item > a:hover {
@@ -74,7 +75,6 @@ header > div.container > div.d-flex > nav > ul > li.nav-item > ul {
     z-index: 100;
 
     padding: 8px;
-    margin-top: 16px;
     border-radius: 8px;
 }
 
