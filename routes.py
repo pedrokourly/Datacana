@@ -7,8 +7,7 @@ def home():
     return render_template('home.html',
                            DocTitle = 'DataCana')
 
-@app.route('/sobre')
-def about():
-    return render_template('team.html',
-                           DocTitle = 'DataCana')
-
+@app.route('/plataforma')
+def platform():
+    return render_template('Maps and Data/platform.html',
+                           DocTitle = 'Datacana - Plataforma')
