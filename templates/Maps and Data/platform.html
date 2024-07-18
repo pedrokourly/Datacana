@@ -34,23 +34,26 @@
 
     <script src="https://cdn.maptiler.com/maptiler-geocoding-control/v1.2.0/leaflet.umd.js"></script>
     <link href="https://cdn.maptiler.com/maptiler-geocoding-control/v1.2.0/style.css" rel="stylesheet">
-
-    <!--
-    <main>
-        <div id="map" class="leaflet-container leaflet-fade-anim" tabindex="0" data-gesture-handling-touch-content="Use dois dedos para mover o mapa" data-gesture-handling-scroll-content="Pressione Ctrl e role a tela simultaneamente para aplicar zoom no mapa" style="position: relative; outline: none;">        </div>
-        <div id="loader" style="display: none !important;"></div>
-    </main>
-
-    
-    <link rel="stylesheet" href="https://unpkg.com/leaflet-geosearch@4.0.0/assets/css/leaflet.css">
-    <script src="https://unpkg.com/leaflet-geosearch@latest/dist/bundle.min.js"></script>
-    -->
     
     <script src="/static/scripts/map.js"></script>
 
     <style>
-        main > div#map { 
-            height: 86vh;
+        /* MEDIA-QUERY PARA DISPOSITIVOS */
+
+        /* DISPOSITIVOS GRANDES */
+        
+        @media screen and (min-width: 992px) {
+            main > div#map { 
+                height: 86.4vh;
+            }
+        }
+
+        /* DISPOSITIVOS PEQUENOS */
+
+        @media screen and (max-width: 992px) {
+            main > div#map { 
+                height: 84.7vh;
+            }
         }
     </style>
 </body>
