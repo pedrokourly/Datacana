@@ -21,7 +21,7 @@ $(document).ready(function () {
 
             const key = 'jlq6npehL8CYWBPs1v4S';
             
-            L.tileLayer(`https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=${key}`,{ //style URL
+            L.tileLayer(`https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}@2x.png?key=${key}`,{ //style URL
                 attribution: attb,
                 tileSize: 512,
                 zoomOffset: -1,
