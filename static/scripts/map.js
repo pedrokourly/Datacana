@@ -15,32 +15,32 @@ $(document).ready(function () {
 
         .then(function (response) {
             console.log(response);
+            
+            var map = L.map('map').setView([-18.918999, -48.277950], 7);
+            var attb = '&copy; <a target="_blank" href="https://www.maptiler.com/copyright/">MapTiler</a>, &copy; <a target = "_blank" href="https://www.openstreetmap.org/">OpenStreetMap</a>, <a href="https://github.com/KyKirma/" target="_blank">Kourly</a>, <a href="https://github.com/gustavomcss" target="_blank">Corrêa</a>';
 
-            var map = L.map('map', {
-                zoomSnap: 0.2,
-                gestureHandling: true
-            });
-
-            var base = new L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-                attribution: '<a href="https://github.com/KyKirma/" target="_blank">Pedro Kourly</a>, <a href="https://github.com/gustavomcss" target="_blank">Gustavo Corrêa</a>, &copy; <a target = "_blank" href="https://www.openstreetmap.org/">OpenStreetMap</a>, <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. <a href="https://carto.com/attributions" target="_blank">CARTO</a>',
-                subdomains: 'abcd',
-                maxZoom: 15
+            const key = 'jlq6npehL8CYWBPs1v4S';
+            
+            L.tileLayer(`https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=${key}`,{ //style URL
+                attribution: attb,
+                tileSize: 512,
+                zoomOffset: -1,
+                crossOrigin: true
             }).addTo(map);
 
-            var controlSearch = new L.Control.Search({
-                position: 'topright',
-            });
-
-            map.setView([-18.918999, -48.277950], 7);
-            map.addControl(controlSearch);
+            L.control.maptilerGeocoding({ apiKey: key }).addTo(map);
 
             for (i = 0; i < response.qnt; i++) {
-                L.circleMarker([response.data['LAT'][i], response.data['LONG'][i]], {
-                    color: 'red',
+                marker = L.circleMarker([response.data['LAT'][i], response.data['LONG'][i]], {
+                    color: 'green',
                     radius: 5,
-                    stroke: false
-                }).bindPopup('<b>' + response.data['MUNICIPIO'][i] + '</b><br>' + 'Área: ' + response.data['AREA_HA'][i] + "Km").addTo(map);
+                });
+
+                marker.bindPopup(
+                    '<b>' + response.data['MUNICIPIO'][i] + '</b><br>' + 'Área: ' + response.data['AREA_HA'][i] + "Km"
+                ).addTo(map);
             }
+            
         })
 
         .catch(function (error) {
