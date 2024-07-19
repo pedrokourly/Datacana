@@ -76,6 +76,7 @@ header > div.container > div.d-flex > nav > ul > li.nav-item > ul {
 
     padding: 8px;
     border-radius: 8px;
+    box-shadow: 1rem 0.5rem 1rem rgba(0, 0, 0, 0.10);
 }
 
 header > div.container > div.d-flex > nav > ul > li.nav-item > ul::before {
@@ -135,6 +136,7 @@ header > div.container > div.d-flex > div.offcanvas > div.offcanvas-body > ul.na
     list-style: none;
     padding: 8px;
     border-radius: 8px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
 header > div.container > div.d-flex > div.offcanvas > div.offcanvas-body > ul.navbar-nav > li > ul > li.nav-item {
