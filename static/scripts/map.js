@@ -1,4 +1,3 @@
-
 // Função GET Dados
 async function getDados() {
     try {
@@ -12,10 +11,9 @@ async function getDados() {
 
 $(document).ready(function () {
     getDados()
-
         .then(function (response) {
             console.log(response);
-            
+
             var map = L.map('map', {
                 fullscreenControl: true,
                 fullscreenControlOptions: {
@@ -25,8 +23,8 @@ $(document).ready(function () {
             var attb = '&copy; <a target="_blank" href="https://www.maptiler.com/copyright/">MapTiler</a>, &copy; <a target = "_blank" href="https://www.openstreetmap.org/">OpenStreetMap</a>, <a href="https://github.com/KyKirma/" target="_blank">Kourly</a>, <a href="https://github.com/gustavomcss" target="_blank">Corrêa</a>';
 
             const key = 'jlq6npehL8CYWBPs1v4S';
-            
-            L.tileLayer(`https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=${key}`,{ //style URL
+
+            L.tileLayer(`https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=${key}`, { //style URL
                 attribution: attb,
                 tileSize: 512,
                 zoomOffset: -1,
@@ -38,15 +36,16 @@ $(document).ready(function () {
             function getRadius(areaHa) {
                 // Define a escala de raio (ex: 1 hectare = 2 pixels de raio)
                 const scale = 0.15;
-              
+
                 // Calcula o raio com base na área em hectares
                 const radius = (Math.sqrt(areaHa) * scale) / 2;
-              
+
                 // Retorna o raio com um valor mínimo de 2 pixels (opcional)
                 return Math.max(radius, 2);
-              }
+            }
 
-            for (i = 0; i < response.qnt; i++) {
+            let marker;
+            for (let i = 0; i < response.qnt; i++) {
                 const areaHa = response.data['AREA_HA'][i];
                 const radius = getRadius(areaHa);
 
@@ -55,16 +54,15 @@ $(document).ready(function () {
                     radius: radius,
                     stroke: true,
                     weight: 0.5,
-                    opacity: 1,
+                    opacity: 1
                 });
 
                 var popup = L.responsivePopup().setContent(
-                    '<b>' + response.data['MUNICIPIO'][i] + '</b><br>' + 'Área: ' + response.data['AREA_HA'][i] + "Km");
+                    '<b>' + response.data['MUNICIPIO'][i] + '</b><br>' + 'Área: ' + response.data['AREA_HA'][i] + "Km"
+                );
                 marker.addTo(map).bindPopup(popup);
             }
-            
         })
-
         .catch(function (error) {
             console.error("Error fetching data:", error);
         });
