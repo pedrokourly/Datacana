@@ -9,8 +9,16 @@ def dataMap():
     df = pd.read_csv(csvFolder)
     colums = ['AREA_HA', 'MUNICIPIO', 'LONG', 'LAT']
     df = df[colums]
-    point = df.to_dict()
-    qnt = len(df)
+
+    dfcities = df.groupby('MUNICIPIO')['AREA_HA'].sum().reset_index()
+    dfcities['AREA_HA'] = dfcities['AREA_HA'].round(2)
+
+    dfcoor = df.drop_duplicates(['MUNICIPIO', 'LONG', 'LAT'])[['MUNICIPIO', 'LONG', 'LAT']]
+
+    dfcities = pd.merge(dfcities, dfcoor, on = ['MUNICIPIO'], how = 'inner')
+    dfcities
+    point = dfcities.to_dict()
+    qnt = len(dfcities)
 
     return jsonify(data = point,
                    qnt = qnt)
