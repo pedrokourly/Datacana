@@ -39,15 +39,21 @@ $(document).ready(function () {
                 this.update();
                 return this._div;
             };
+
+            let totalAreaHa = 0;
+            for (let i = 0; i < response.qnt; i++) {
+                totalAreaHa += response.data['AREA_HA'][i];
+            }
+            
             info.update = function (props) {
                 if (props) {
-                    municipio = props.municipio;
-                    areaHa = props.areaHa;
+                    let municipio = props.municipio;
+                    let areaHa = props.areaHa;
 
-                    this._div.innerHTML = '<h4>Município de '+municipio+':</h4>' + '<b>' + 'Área de cana: ' + areaHa +'</b>';
+                    this._div.innerHTML = '<h4>Município de '+municipio+':</h4>' + '<b>' + 'Área de cana: ' + areaHa + ' Km' +'</b>';
                 } 
                 else {
-                    this._div.innerHTML = '<h4>Testes</h4>' +  '<b>' + 'oiiii' + '</b>';
+                    this._div.innerHTML = '<h4>Minas Gerais</h4>' +  '<b>' + 'Área de cana total: ' + totalAreaHa.toFixed(2) + ' Km' + '</b>';
                 }
             };
 
