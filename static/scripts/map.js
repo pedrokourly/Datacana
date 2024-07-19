@@ -29,6 +29,34 @@ $(document).ready(function () {
             }).addTo(map);
 
             L.control.maptilerGeocoding({ apiKey: key }).addTo(map);
+            
+            var info = L.control({position: 'bottomleft'});
+            info.onAdd = function (map) {
+                this._div = L.DomUtil.create('div', 'info');
+                this.update();
+                return this._div;
+            };
+            info.update = function (props) {
+                if (props) {
+                    municipio = props.municipio;
+                    areaHa = props.areaHa;
+
+                    this._div.innerHTML = '<h4>Município de '+municipio+':</h4>' + '<b>' + 'Área de cana: ' + areaHa +'</b>';
+                } 
+                else {
+                    this._div.innerHTML = '<h4>Testes</h4>' +  '<b>' + 'oiiii' + '</b>';
+                }
+            };
+
+            function highlightFeature(e) {
+                info.update(e.sourceTarget.options);
+            }
+            
+            function resetHighlight(e) {
+                info.update();
+            }
+
+            info.addTo(map);
 
             function getRadius(areaHa) {
                 // Define a escala de raio
@@ -42,6 +70,7 @@ $(document).ready(function () {
             }
 
             for (let i = 0; i < response.qnt; i++) {
+                const municipio = response.data['MUNICIPIO'][i];
                 const areaHa = response.data['AREA_HA'][i];
                 const radius = getRadius(areaHa);
 
@@ -49,13 +78,16 @@ $(document).ready(function () {
                     color: 'darkgreen',
                     radius: radius,
                     stroke: true,
-                    weight: 0.8,
-                    opacity: 1
+                    weight: 0.5,
+                    opacity: 1,
+                    municipio: municipio,
+                    areaHa: areaHa,
                 });
 
                 var popup = L.responsivePopup().setContent(
                     '<b>' + response.data['MUNICIPIO'][i] + '</b><br>' + 'Área: ' + response.data['AREA_HA'][i] + "Km"
                 );
+                marker.on({mouseover: highlightFeature, mouseout: resetHighlight});
                 marker.addTo(map).bindPopup(popup);
             }
         })
