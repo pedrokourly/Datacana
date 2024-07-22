@@ -52,6 +52,24 @@
             font-weight: bolder;
         }
 
+        .info {
+            background: rgba(255, 255, 255, 0.5);
+            font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+            color: rgb(100, 100, 100);
+            font-size: 16px;
+            border-radius: 5px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            min-width: 250px;
+            max-width: 270px;
+            padding: 16px;
+        }
+
+        .info h4 {
+            color: rgb(33, 37, 41);
+            font-size: 24px;
+            margin: 0 0 5px;
+        }
+
         /* MEDIA-QUERY PARA DISPOSITIVOS */
 
         /* DISPOSITIVOS GRANDES */
@@ -70,11 +88,15 @@
 
         @media screen and (max-width: 992px) {
             header {
-                height: 15.3vh;
+                height: 12.3vh;
             }
 
             main > div#map { 
-                height: 84.7vh;
+                height: 87.7vh;
+            }
+
+            .info {
+                margin-bottom: 18px !important;
             }
         }
     </style>
