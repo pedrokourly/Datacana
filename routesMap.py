@@ -14,9 +14,10 @@ def dataMap():
     dfcities['AREA_HA'] = dfcities['AREA_HA'].round(2)
 
     dfcoor = df.drop_duplicates(['MUNICIPIO', 'LONG', 'LAT'])[['MUNICIPIO', 'LONG', 'LAT']]
-
+    
     dfcities = pd.merge(dfcities, dfcoor, on = ['MUNICIPIO'], how = 'inner')
-    dfcities
+    dfcities['MUNICIPIO'] = dfcities['MUNICIPIO'].str.title()
+
     point = dfcities.to_dict()
     qnt = len(dfcities)
 
