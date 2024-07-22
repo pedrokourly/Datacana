@@ -30,6 +30,13 @@ $(document).ready(function () {
 
             L.control.maptilerGeocoding({ apiKey: key }).addTo(map);
             
+            L.control.resetView({
+                position: "topleft",
+                title: "Reset view",
+                latlng: L.latLng([-18.918999, -48.277950]),
+                zoom: 7,
+            }).addTo(map);
+
             var info = L.control({position: 'bottomleft'});
             info.onAdd = function (map) {
                 this._div = L.DomUtil.create('div', 'info');
