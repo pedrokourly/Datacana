@@ -4,8 +4,13 @@ from flask import render_template
 # Rota principal | Pag principal
 @app.route('/')
 def home():
+    from routesMap import dataMap
+    response = dataMap()
+    data = response.get_json()
+
     return render_template('home.html',
-                           DocTitle = 'DataCana')
+                           DocTitle = 'DataCana',
+                           AreaMG = data.get('UF'))
 
 @app.route('/plataforma')
 def platform():
