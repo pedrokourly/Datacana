@@ -1,7 +1,7 @@
 // Função GET Dados
 async function getDados() {
     try {
-        const response = await fetch('/mapData');
+        const response = await fetch('/map/Data');
         const data = await response.json();
         return data;
     } catch (error) {
