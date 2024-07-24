@@ -76,7 +76,7 @@ header > div.container > div.d-flex > nav > ul > li.nav-item > ul {
 
     padding: 8px;
     border-radius: 8px;
-    box-shadow: 1rem 0.5rem 1rem rgba(0, 0, 0, 0.10);
+    box-shadow: 0rem 0rem 0.5rem rgba(0, 0, 0, 0.10);
 }
 
 header > div.container > div.d-flex > nav > ul > li.nav-item > ul::before {
