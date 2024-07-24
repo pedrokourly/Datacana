@@ -27,6 +27,11 @@ $(document).ready(function () {
                 }
             }
 
+            let totalAreaHa = 0;
+            for (let i = 0; i < response.qnt; i++) {
+                totalAreaHa += response.data['AREA_HA'][i];
+            }
+
             function getRadius(areaHa) {
                 const scale = 0.1;
                 const radius = (Math.sqrt(areaHa) * scale) / 2;
@@ -65,8 +70,23 @@ $(document).ready(function () {
             map.scrollWheelZoom.disable();
             map.boxZoom.disable();
             map.keyboard.disable();
+
+            var el = document.getElementById('odometer');
+            od = new Odometer({
+                el: el
+            });
+
+            const observer = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting && entries[0].intersectionRatio === 1) {
+                  od.update(totalAreaHa);
+                }
+              }, {
+                threshold: 1.0,
+              });
+
+            observer.observe(document.getElementById('odometer'))
         })
-        .catch(function (error) {
+    .catch(function (error) {
             console.error("Error fetching data:", error);
-        });
+    });
 });
