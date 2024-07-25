@@ -11,10 +11,13 @@
     <div class="content">
         <div class="container text-center">
             <div class="row" id="row-01">
-                <div class="col-md" style="text-align: start;">
-                    <strong><h1 style="font-size: 55px">O MAPA DE MINAS GERAIS NAS SUAS MÃOS</h1></strong>
-                    <p style="font-size: 20px;">O Datacana é mais do que uma plataforma, é uma nova forma de ver o mundo</p>
-                    <p style="font-size: 20px;">Nossos dados vão te ajudar a alcançar os seus objetivos</p>
+                <div class="col-md" id="col-01">
+                    <h1>O MAPA DE MINAS GERAIS NAS SUAS MÃOS</h1>
+                    <p>O DataCana é mais do que uma plataforma: é uma nova forma de ver o mundo.</p>
+                    <p>Nossos dados vão te ajudar a alcançar os seus objetivos.</p>
+                    <button class="btn" id="pc">
+                        <a href="/plataforma" target="_blank" rel="external">Acesse a Plataforma</a>
+                    </button>
                 </div>
 
                 <div class="col-md" id="col-02">
@@ -25,7 +28,7 @@
             </div>
             
             <div class="row" id="row-02">
-                <div class="col-md"  id="col-01">
+                <div class="col-md">
                     <div class="d-flex">
                         <div id="square">
                             <h2>Minas Gerais</h2>
@@ -34,7 +37,7 @@
                                 <p id="odometer" class="odometer"></p>
                             </div>
                         </div>
-                        <button>
+                        <button class="btn" id="tel">
                             <a href="/plataforma" target="_blank" rel="external">Acesse a Plataforma</a>
                         </button>
                     </div>
@@ -103,76 +106,82 @@
             background-color: #FFFFFF;
             color: #424242;
             margin: 25px 0px;
-            padding: 40px;
+            padding: 24px;
         }
 
         main > div.content > div.container {
             margin-top: 2.25rem;
+            margin-bottom: 2.25rem;
         }
 
-        main > div.content > div.container > div.row > div#col-01 {
-            position: relative;
+        main > div.content > div.container > div#row-01 > div#col-01 {
+            text-align: start;
         }
 
-        main > div.content > div.container > div.row > div#col-01 > div.d-flex {
-            height: 100%;
+        main > div.content > div.container > div#row-01 > div#col-01 > h1 {
+            font-weight: bolder;
+            margin-bottom: 32px;
+        }
+
+        main > div.content > div.container > div#row-01 > div#col-01 > p {
+            font-size: 20px;
+        }
+
+        main > div.content > div.container > div#row-01 > div#col-02 > a > div#map {
+            background-color: transparent;
+            width: 100%;
+        }
+
+        main > div.content > div.container > div#row-02 {
+            margin-top: 32px;
+        }
+
+        main > div.content > div.container > div#row-02 > div.col-md > div.d-flex {
             flex-direction: column;
             align-items: center;
             gap: 24px;
         }
 
-        main > div.content > div.container > div.row > div#col-01 > div.d-flex > div#square {
+        main > div.content > div.container > div#row-02 > div.col-md > div.d-flex > div#square {
             border-radius: 8px;
             box-shadow: 0rem 0rem 0.5rem rgba(0, 0, 0, 0.2);
         }
 
-        main > div.content > div.container > div.row > div#col-01 > div.d-flex > div#square > h2 {
+        main > div.content > div.container > div#row-02 > div.col-md > div.d-flex > div#square > h2 {
             margin: 0px;
             padding: 16px;
         }
 
-        main > div.content > div.container > div.row > div#col-01 > div.d-flex > div#square > div#text {
+        main > div.content > div.container > div#row-02 > div.col-md > div.d-flex > div#square > div#text {
             background-color: #9FD97C;
             padding: 16px;
             border-radius: 0px 0px 8px 8px;
         }
 
-        main > div.content > div.container > div.row > div#col-01 > div.d-flex > div#square > div#text > p {
+        main > div.content > div.container > div#row-02 > div.col-md > div.d-flex > div#square > div#text > p {
             margin: 0px;
             font-size: 18px;
         }
 
-        main > div.content > div.container > div.row > div#col-01 > div.d-flex > div#square > div#text > p#odometer {
+        main > div.content > div.container > div#row-02 > div.col-md > div.d-flex > div#square > div#text > p#odometer {
             margin: 0px;
             font-size: 48px;
         }
 
-        main > div.content > div.container > div.row > div#col-01 > div.d-flex > p {
-            width: 45%;
-            margin: 0px;
-        }
-
-        main > div.content > div.container > div.row > div#col-01 > div.d-flex > button {
+        button.btn {
             background-color: #9FD97C;
             border: none;
             border-radius: 16px;
-            max-width: 35%;
+            width: 250px;
             padding: 16px 24px;
             box-shadow: 0rem 0rem 0.5rem rgba(0, 0, 0, 0.2);
         }
 
-        main > div.content > div.container > div.row > div#col-01 > div.d-flex > button > a {
+        button.btn a {
             color: #424242;
             text-decoration: none;
             font-weight: bold;
             font-size: 18px;
-        }
-
-        main > div.content > div.container > div.row > div#col-02 > a > div#map {
-            background-color: transparent;
-            width: 85%;
-            height: 450px;
-            margin: auto;
         }
 
         /* MEDIA-QUERY PARA DISPOSITIVOS */
@@ -189,8 +198,25 @@
                 font-size: 42px;
             }
 
-            main > div.content > div.container > div#row-02 > div#col-01 > div.d-flex > div#square {
-                width: 40%;
+            main > div.content > div.container > div#row-02 > div.col-md > div.d-flex > div#square {
+                width: 35%;
+            }
+
+            main > div.content > div.container > div#row-01 > div#col-01 > h1 {
+                font-size: 55px;
+            }
+
+            main > div.content > div.container > div#row-02 > div.col-md > div.d-flex > button#tel {
+                display: none;
+            }
+
+            main > div.content > div.container > div#row-01 > div#col-01 > button#pc {
+                display: inline-block;
+                margin-top: 16px;
+            }
+
+            main > div.content > div.container > div#row-01 > div#col-02 > a > div#map {
+                height: 450px;
             }
         }
 
@@ -206,8 +232,24 @@
                 font-size: 35px;
             }
 
-            main > div.content > div.container > div#row-02 > div#col-01 > div.d-flex > div#square {
+            main > div.content > div.container > div#row-02 > div.col-md > div.d-flex > div#square {
                 width: 100%;
+            }
+
+            main > div.content > div.container > div#row-01 > div#col-01 > h1 {
+                font-size: 36px;
+            }
+
+            main > div.content > div.container > div#row-02 > div.col-md > div.d-flex > button#tel {
+                display: inline-block;
+            }
+
+            main > div.content > div.container > div#row-01 > div#col-01 > button#pc {
+                display: none;
+            }
+
+            main > div.content > div.container > div#row-01 > div#col-02 > a > div#map {
+                height: 250px;
             }
         }
     </style>
