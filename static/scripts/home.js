@@ -14,7 +14,7 @@ $(document).ready(function () {
         .then(function (response) {
             // Mapa
             var map = L.map('map', {
-                zoomControl: false
+                zoomControl: false,
             });
 
             // Estilo Mapa
@@ -43,7 +43,6 @@ $(document).ready(function () {
                 var ufExtent = layer.getBounds();
 
                 map.fitBounds(ufExtent, { animate: false });
-                map.setZoom(6)
                 layer.addTo(map);
 
                 for (let i = 0; i < response.qnt; i++) {
@@ -71,20 +70,22 @@ $(document).ready(function () {
             map.boxZoom.disable();
             map.keyboard.disable();
 
+            // Seleção do Odometer
             var el = document.getElementById('odometer');
             od = new Odometer({
                 el: el
             });
 
+            // Observer
             const observer = new IntersectionObserver((entries) => {
                 if (entries[0].isIntersecting && entries[0].intersectionRatio === 1) {
                   od.update(totalAreaHa);
                 }
               }, {
-                threshold: 1.0,
+                threshold: 1,
               });
 
-            observer.observe(document.getElementById('odometer'))
+            observer.observe(el)
         })
     .catch(function (error) {
             console.error("Error fetching data:", error);
