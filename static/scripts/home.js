@@ -14,7 +14,7 @@ $(document).ready(function () {
         .then(function (response) {
             // Mapa
             var map = L.map('map', {
-                zoomControl: false
+                zoomControl: false,
             });
 
             // Estilo Mapa
@@ -25,6 +25,11 @@ $(document).ready(function () {
                     fillOpacity: 1,
                     weight: 1,
                 }
+            }
+
+            let totalAreaHa = 0;
+            for (let i = 0; i < response.qnt; i++) {
+                totalAreaHa += response.data['AREA_HA'][i];
             }
 
             function getRadius(areaHa) {
@@ -38,7 +43,6 @@ $(document).ready(function () {
                 var ufExtent = layer.getBounds();
 
                 map.fitBounds(ufExtent, { animate: false });
-                map.setZoom(6)
                 layer.addTo(map);
 
                 for (let i = 0; i < response.qnt; i++) {
@@ -65,8 +69,25 @@ $(document).ready(function () {
             map.scrollWheelZoom.disable();
             map.boxZoom.disable();
             map.keyboard.disable();
+
+            // Seleção do Odometer
+            var el = document.getElementById('odometer');
+            od = new Odometer({
+                el: el
+            });
+
+            // Observer
+            const observer = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting && entries[0].intersectionRatio === 1) {
+                  od.update(totalAreaHa);
+                }
+              }, {
+                threshold: 1,
+              });
+
+            observer.observe(el)
         })
-        .catch(function (error) {
+    .catch(function (error) {
             console.error("Error fetching data:", error);
-        });
+    });
 });
