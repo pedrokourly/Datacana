@@ -2,7 +2,7 @@ from datacana import app
 from flask import jsonify
 import pandas as pd
 
-@app.route('/mapData')
+@app.route('/map/Data')
 def dataMap():
     csvFolder = app.config['DATAFILES'] + '/tabela.csv'
 
@@ -20,6 +20,8 @@ def dataMap():
 
     point = dfcities.to_dict()
     qnt = len(dfcities)
+    MGTotal = dfcities['AREA_HA'].sum()
 
     return jsonify(data = point,
-                   qnt = qnt)
+                   qnt = qnt,
+                   UF = MGTotal)
