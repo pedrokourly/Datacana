@@ -46,6 +46,17 @@ header > div.container > div.d-flex > a#logo > img {
 
 /* NAVEGADOR */
 
+header > div.container > div.d-flex {
+    position: relative;
+}
+
+header > div.container > div.d-flex > nav {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 header > div.container > div.d-flex > nav > ul {
     display: flex;
     list-style: none;
@@ -105,14 +116,6 @@ header > div.container > div.d-flex > nav > ul > li.nav-item > ul > li.nav-item 
     text-decoration: underline;
 }
 
-
-/* LOGIN */
-
-header > div.container > div.d-flex > a#login > svg:hover {
-    fill: var(--color02);
-    transition: 0.75s;
-}
-
 /* MENU OFFCANVAS */
 
 header > div.container > div.d-flex > button {
@@ -158,32 +161,17 @@ header > div.container > div.d-flex > div.offcanvas > div.offcanvas-body > ul.na
     transition: 0.5s;
 }
 
-header > div.container > div.d-flex > div.offcanvas > div.offcanvas-body > a#login {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-}
-
-header > div.container > div.d-flex > div.offcanvas > div.offcanvas-body > a#login > svg:hover {
-    fill: var(--color02);
-    transition: 0.5s;
-}
-
 /* MEDIA-QUERY PARA DISPOSITIVOS */
 
 /* DISPOSITIVOS GRANDES */
 
 @media screen and (min-width: 992px) {
     header > div.container > div.d-flex > nav {
-        display: block;
+        display: flex;
     }
 
     header > div.container > div.d-flex > button {
         display: none;
-    }
-
-    header > div.container > div.d-flex > a#login {
-        display: inline;
     }
 }
 
@@ -196,9 +184,5 @@ header > div.container > div.d-flex > div.offcanvas > div.offcanvas-body > a#log
 
     header > div.container > div.d-flex > button {
         display: flex;
-    }
-
-    header > div.container > div.d-flex > a#login {
-        display: none;
     }
 }
