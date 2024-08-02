@@ -2,8 +2,15 @@
 async function getDados() {
     try {
         const response = await fetch('/map/Data');
-        const data = await response.json();
-        return data;
+        const info = await response.json();
+    
+        const geoJsonResponse = await fetch('https://api.github.com/repos/tbrugz/geodata-br/contents/geojson/geojs-31-mun.json');
+        const geoJsonData = await geoJsonResponse.json();
+        const downloadUrl = geoJsonData.download_url;
+        const geoJsonContentResponse = await fetch(downloadUrl);
+        const geoJsonContent = await geoJsonContentResponse.json();
+
+        return {info, geoJsonContent};
     } catch (error) {
         console.error('Erro ao buscar dados:', error);
     }
@@ -35,6 +42,9 @@ $(document).ready(function () {
                 crossOrigin: true
             }).addTo(map);
 
+            // GeoJSON Minas
+            L.geoJson(response.geoJsonContent).addTo(map);
+
             // Barra de Pesquisa
             L.control.maptilerGeocoding({ 
                 apiKey: key 
@@ -60,10 +70,11 @@ $(document).ready(function () {
             };
 
             let totalAreaHa = 0;
-            for (let i = 0; i < response.qnt; i++) {
-                totalAreaHa += response.data['AREA_HA'][i];
+            for (let i = 0; i < response.info.qnt; i++) {
+                totalAreaHa += response.info.data['AREA_HA'][i];
             }
             
+            // Update Quadro de Informações
             info.update = function (props) {
                 if (props) {
                     let municipio = props.municipio;
@@ -92,12 +103,12 @@ $(document).ready(function () {
             }
 
             // Pop-up's Municípios
-            for (let i = 0; i < response.qnt; i++) {
-                const municipio = response.data['MUNICIPIO'][i];
-                const areaHa = response.data['AREA_HA'][i];
+            for (let i = 0; i < response.info.qnt; i++) {
+                const municipio = response.info.data['MUNICIPIO'][i];
+                const areaHa = response.info.data['AREA_HA'][i];
                 const radius = getRadius(areaHa);
 
-                let marker = L.circleMarker([response.data['LAT'][i], response.data['LONG'][i]], {
+                let marker = L.circleMarker([response.info.data['LAT'][i], response.info.data['LONG'][i]], {
                     color: 'darkgreen',
                     radius: radius,
                     stroke: true,
@@ -108,7 +119,7 @@ $(document).ready(function () {
                 });
 
                 var popup = L.responsivePopup().setContent(
-                    '<div style="text-align: center;"> <b>' + response.data['MUNICIPIO'][i] + '</b><br>' + 'Área de Cana: ' + response.data['AREA_HA'][i] + " Km² </div>"
+                    '<div style="text-align: center;"> <b>' + response.info.data['MUNICIPIO'][i] + '</b><br>' + 'Área de Cana: ' + response.info.data['AREA_HA'][i] + " Km² </div>"
                 );
 
                 marker.on({ mouseover: highlightFeature, mouseout: resetHighlight});
