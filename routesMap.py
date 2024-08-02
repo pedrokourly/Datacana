@@ -22,6 +22,10 @@ def dataMap():
     qnt = len(dfcities)
     MGTotal = dfcities['AREA_HA'].sum()
 
+    escala = dfcities['AREA_HA'].describe()
+    escala = escala.to_dict()
+
     return jsonify(data = point,
                    qnt = qnt,
+                   escala = escala,
                    UF = MGTotal)

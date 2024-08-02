@@ -9,7 +9,7 @@ async function getDados() {
         const downloadUrl = geoJsonData.download_url;
         const geoJsonContentResponse = await fetch(downloadUrl);
         const geoJsonContent = await geoJsonContentResponse.json();
-
+        console.log(geoJsonContent)
         return {info, geoJsonContent};
     } catch (error) {
         console.error('Erro ao buscar dados:', error);
@@ -41,9 +41,6 @@ $(document).ready(function () {
                 zoomOffset: -1,
                 crossOrigin: true
             }).addTo(map);
-
-            // GeoJSON Minas
-            L.geoJson(response.geoJsonContent).addTo(map);
 
             // Barra de Pesquisa
             L.control.maptilerGeocoding({ 
@@ -93,10 +90,45 @@ $(document).ready(function () {
             function resetHighlight(e) {
                 info.update();
             }
-
+            
             info.addTo(map);
 
-            function getRadius(areaHa) {
+            // Crie um novo objeto GeoJSON que combine as informações
+            const geoJson = response.geoJsonContent
+            geoJson.features.forEach((feature) => {
+                const municipioValues = Object.values(response.info.data['MUNICIPIO']).map(value => value.toUpperCase());
+                const index = municipioValues.indexOf(feature.properties.name.toUpperCase());
+                if (index!== -1) {
+                    feature.properties.AreaHa = response.info.data['AREA_HA'][index];
+                } else {
+                    feature.properties.AreaHa = 0;
+                }
+            });
+
+            console.log(geoJson);
+            function getColor(d) {
+                return  d >= response.info.escala['max']  ? '#006d2c' :
+                        d >= response.info.escala['75%']  ? '#31a354' :
+                        d >= response.info.escala['50%']  ? '#74c476' :
+                        d >= response.info.escala['25%']  ? '#bae4b3' :
+                        d > response.info.escala['min']  ? '#edf8e9' :
+                                                            '#edf8fb';
+            }
+            
+            function style(feature) {
+                return {
+                    fillColor: getColor(feature.properties.AreaHa),
+                    weight: 2,
+                    opacity: 1,
+                    color: 'white',
+                    dashArray: '1',
+                    fillOpacity: 0.7
+                };
+            }
+            
+            L.geoJson(geoJson, {style: style}).addTo(map);
+
+          /*   function getRadius(areaHa) {
                 const scale = 0.15;
                 const radius = (Math.sqrt(areaHa) * scale) / 2;
                 return Math.max(radius, 2);
@@ -124,7 +156,7 @@ $(document).ready(function () {
 
                 marker.on({ mouseover: highlightFeature, mouseout: resetHighlight});
                 marker.addTo(map).bindPopup(popup);
-            }
+            } */
         })
         .catch(function (error) {
             console.error("Error fetching data:", error);
