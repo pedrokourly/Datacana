@@ -42,6 +42,75 @@ $(document).ready(function () {
                 crossOrigin: true
             }).addTo(map);
 
+            // Crie um novo objeto GeoJSON que combine as informações
+            var geoJson = response.geoJsonContent
+            geoJson.features.forEach((feature) => {
+                const municipioValues = Object.values(response.info.data['MUNICIPIO']).map(value => value.toUpperCase());
+                const index = municipioValues.indexOf(feature.properties.name.toUpperCase());
+                if (index!== -1) {
+                    feature.properties.AreaHa = response.info.data['AREA_HA'][index];
+                } else {
+                    feature.properties.AreaHa = 0;
+                }
+            });
+
+            console.log(geoJson);
+            function getColor(d) {
+                return  d >= response.info.escala['max']  ? '#006d2c' :
+                        d >= response.info.escala['75%']  ? '#31a354' :
+                        d >= response.info.escala['50%']  ? '#74c476' :
+                        d >= response.info.escala['25%']  ? '#bae4b3' :
+                        d >= response.info.escala['min']  ? '#edf8e9' :
+                                                            '#bdbdbd';
+            }
+            
+            function style(feature) {
+                return {
+                    fillColor: getColor(feature.properties.AreaHa),
+                    weight: 2,
+                    opacity: 0.2,
+                    color: 'white',
+                    dashArray: '1',
+                    fillOpacity: 0.7
+                };
+            }
+            
+            function highlightFeature(e) {
+                var layer = e.target;
+
+                layer.setStyle({
+                    weight: 5,
+                    color: '#666',
+                    dashArray: '',
+                    fillOpacity: 0.7
+                });
+
+                layer.bringToFront();
+                info.update(layer.feature.properties);
+            }
+
+            function resetHighlight(e) {
+                geoJson.resetStyle(e.target);
+                info.update();
+            }
+            
+            function zoomToFeature(e) {
+                map.fitBounds(e.target.getBounds());
+            }
+
+            function onEachFeature(feature, layer) {
+                layer.on({
+                    mouseover: highlightFeature,
+                    mouseout: resetHighlight,
+                    click: zoomToFeature
+                });
+            }
+
+            geoJson = L.geoJson(geoJson, {
+                style: style,
+                onEachFeature: onEachFeature
+            }).addTo(map);
+
             // Barra de Pesquisa
             L.control.maptilerGeocoding({ 
                 apiKey: key 
@@ -74,59 +143,21 @@ $(document).ready(function () {
             // Update Quadro de Informações
             info.update = function (props) {
                 if (props) {
-                    let municipio = props.municipio;
-                    let areaHa = props.areaHa;
+                    let municipio = props.name;
+                    let areaHa = props.AreaHa;
 
-                    this._div.innerHTML = '<h4>Município de ' + municipio + ':</h4>' + 'Área de Cana: <br>' + '<b>' + areaHa + 'Km²' + '</b>';
+                    if(areaHa == 0){
+                        this._div.innerHTML = '<h4>Município de ' + municipio + ':</h4>' + 'Área de Cana: <br>' + '<b>' + "Não Consta Dados" + '</b>';
+                    } else {
+                        this._div.innerHTML = '<h4>Município de ' + municipio + ':</h4>' + 'Área de Cana: <br>' + '<b>' + areaHa + 'Km²' + '</b>';
+                    }
+                    
                 }
                 else {
                     this._div.innerHTML = '<h4>Minas Gerais</h4>' + 'Área de Cana Total: <br>' + '<b>' + totalAreaHa.toFixed(2) + ' Km²' + '</b>';
                 }
             };
-
-            function highlightFeature(e) {
-                info.update(e.sourceTarget.options);
-            }
-            function resetHighlight(e) {
-                info.update();
-            }
-            
             info.addTo(map);
-
-            // Crie um novo objeto GeoJSON que combine as informações
-            const geoJson = response.geoJsonContent
-            geoJson.features.forEach((feature) => {
-                const municipioValues = Object.values(response.info.data['MUNICIPIO']).map(value => value.toUpperCase());
-                const index = municipioValues.indexOf(feature.properties.name.toUpperCase());
-                if (index!== -1) {
-                    feature.properties.AreaHa = response.info.data['AREA_HA'][index];
-                } else {
-                    feature.properties.AreaHa = 0;
-                }
-            });
-
-            console.log(geoJson);
-            function getColor(d) {
-                return  d >= response.info.escala['max']  ? '#006d2c' :
-                        d >= response.info.escala['75%']  ? '#31a354' :
-                        d >= response.info.escala['50%']  ? '#74c476' :
-                        d >= response.info.escala['25%']  ? '#bae4b3' :
-                        d > response.info.escala['min']  ? '#edf8e9' :
-                                                            '#edf8fb';
-            }
-            
-            function style(feature) {
-                return {
-                    fillColor: getColor(feature.properties.AreaHa),
-                    weight: 2,
-                    opacity: 1,
-                    color: 'white',
-                    dashArray: '1',
-                    fillOpacity: 0.7
-                };
-            }
-            
-            L.geoJson(geoJson, {style: style}).addTo(map);
 
           /*   function getRadius(areaHa) {
                 const scale = 0.15;
