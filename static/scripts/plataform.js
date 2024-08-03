@@ -157,8 +157,36 @@ $(document).ready(function () {
                     this._div.innerHTML = '<h4>Minas Gerais</h4>' + 'Área de Cana Total: <br>' + '<b>' + totalAreaHa.toFixed(2) + ' Km²' + '</b>';
                 }
             };
-            info.addTo(map);
+            
 
+            // Quadro de escala
+            var legend = L.control({ 
+                position: 'bottomleft' 
+            });
+
+            legend.onAdd = function (map) {
+
+                var div = L.DomUtil.create('div', 'info legend'),
+                    grades = [  response.info.escala['min'].toFixed(2),  
+                                response.info.escala['25%'].toFixed(2),    
+                                response.info.escala['50%'].toFixed(2),    
+                                response.info.escala['75%'].toFixed(2),    
+                                response.info.escala['max'].toFixed(2)],
+                    labels = [];
+            
+                // loop through our density intervals and generate a label with a colored square for each interval
+                for (var i = 0; i < grades.length; i++) {
+                    div.innerHTML +=
+                        '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
+                        grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
+                }
+            
+                return div;
+            };
+            
+            legend.addTo(map);
+            info.addTo(map);
+            // Código para o modelo de círculos
           /*   function getRadius(areaHa) {
                 const scale = 0.15;
                 const radius = (Math.sqrt(areaHa) * scale) / 2;
