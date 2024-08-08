@@ -22,7 +22,9 @@ $(document).ready(function () {
             // Mapa
             var map = L.map('map', {
                 fullscreenControl: true,
-                fullscreenControlOptions: { position: 'topleft' }
+                fullscreenControlOptions: { position: 'topleft' },
+                zoomSnap: 0.5,
+                zoomDelta: 0.5
             });
 
             // Visualização
@@ -42,7 +44,7 @@ $(document).ready(function () {
                 crossOrigin: true
             }).addTo(map);
 
-            // Crie um novo objeto GeoJSON que combine as informações
+            // Tabela GeoJSON Combinada
             var geoJson = response.geoJsonContent
             geoJson.features.forEach((feature) => {
                 const municipioValues = Object.values(response.info.data['MUNICIPIO']).map(value => value.toUpperCase());
@@ -52,9 +54,15 @@ $(document).ready(function () {
                 } else {
                     feature.properties.AreaHa = 0;
                 }
-            });
+            });          
+            
+            // Cálculo Área Total
+            let totalAreaHa = 0;
+            for (let i = 0; i < response.info.qnt; i++) {
+                totalAreaHa += response.info.data['AREA_HA'][i];
+            }
 
-            console.log(geoJson);
+            // Colorir os Municípios
             function getColor(d) {
                 return  d >= response.info.escala['max']  ? '#006d2c' :
                         d >= response.info.escala['75%']  ? '#31a354' :
@@ -64,6 +72,7 @@ $(document).ready(function () {
                                                             '#bdbdbd';
             }
             
+            // Estilo dos Municípios
             function style(feature) {
                 return {
                     fillColor: getColor(feature.properties.AreaHa),
@@ -73,37 +82,6 @@ $(document).ready(function () {
                     dashArray: '1',
                     fillOpacity: 0.7
                 };
-            }
-            
-            function highlightFeature(e) {
-                var layer = e.target;
-
-                layer.setStyle({
-                    weight: 5,
-                    color: '#666',
-                    dashArray: '',
-                    fillOpacity: 0.7
-                });
-
-                layer.bringToFront();
-                info.update(layer.feature.properties);
-            }
-
-            function resetHighlight(e) {
-                geoJson.resetStyle(e.target);
-                info.update();
-            }
-            
-            function zoomToFeature(e) {
-                map.fitBounds(e.target.getBounds());
-            }
-
-            function onEachFeature(feature, layer) {
-                layer.on({
-                    mouseover: highlightFeature,
-                    mouseout: resetHighlight,
-                    click: zoomToFeature
-                });
             }
 
             geoJson = L.geoJson(geoJson, {
@@ -129,17 +107,45 @@ $(document).ready(function () {
                 position: 'bottomleft' 
             });
 
+            // Hover Quadro de Informações
+            function highlightFeature(e) {
+                var layer = e.target;
+
+                layer.setStyle({
+                    weight: 5,
+                    color: '#666',
+                    dashArray: '',
+                    fillOpacity: 0.7
+                });
+
+                layer.bringToFront();
+                info.update(layer.feature.properties);
+            }
+
+            function resetHighlight(e) {
+                geoJson.resetStyle(e.target);
+                info.update();
+            }
+            
+            function zoomToFeature(e) {
+                map.fitBounds(e.target.getBounds(), { maxZoom: 9.7 });
+            }
+
+            function onEachFeature(feature, layer) {
+                layer.on({
+                    mouseover: highlightFeature,
+                    mouseout: resetHighlight,
+                    click: zoomToFeature
+                });
+            }
+
+            // Criação HTML Quadro de Informações
             info.onAdd = function (map) {
                 this._div = L.DomUtil.create('div', 'info');
                 this.update();
                 return this._div;
             };
 
-            let totalAreaHa = 0;
-            for (let i = 0; i < response.info.qnt; i++) {
-                totalAreaHa += response.info.data['AREA_HA'][i];
-            }
-            
             // Update Quadro de Informações
             info.update = function (props) {
                 if (props) {
@@ -157,15 +163,32 @@ $(document).ready(function () {
                     this._div.innerHTML = '<h4>Minas Gerais</h4>' + 'Área de Cana Total: <br>' + '<b>' + totalAreaHa.toFixed(2) + ' Km²' + '</b>';
                 }
             };
-            
 
-            // Quadro de escala
+            var Legend = L.control({
+                position: 'bottomleft'
+            });
+
+            Legend.onAdd = function (map) {
+                var div = L.DomUtil.create('div', 'info legend');
+
+                div.innerHTML = '<div class="legend-color"></div>' +
+                                '<div style="display: flex; justify-content: space-between; margin-top: 8px;">' + 
+                                '<div style="font-weight: bold;">' + response.info.escala["min"].toFixed(1) + '</div>' +
+                                '<div style="font-weight: bold;">Km²</div>' +
+                                '<div style="font-weight: bold;">' + (response.info.escala["max"]/1000).toFixed(1) + 'k</div> </div>';
+
+                return div;
+            };
+
+            Legend.addTo(map);
+            
+            /*
+            // Quadro de Escala
             var legend = L.control({ 
                 position: 'bottomleft' 
             });
 
             legend.onAdd = function (map) {
-
                 var div = L.DomUtil.create('div', 'info legend'),
                     grades = [  response.info.escala['min'].toFixed(2),  
                                 response.info.escala['25%'].toFixed(2),    
@@ -174,20 +197,24 @@ $(document).ready(function () {
                                 response.info.escala['max'].toFixed(2)],
                     labels = [];
             
-                // loop through our density intervals and generate a label with a colored square for each interval
+                // Criação HTML Quadro de Escala
                 for (var i = 0; i < grades.length; i++) {
                     div.innerHTML +=
                         '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
-                        grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
+                        grades[i] + (grades[i + 1] ? ' &ndash; ' + grades[i + 1] + '<br>' : '+');
                 }
             
                 return div;
             };
             
             legend.addTo(map);
+            */
+
             info.addTo(map);
+            
+            /*
             // Código para o modelo de círculos
-          /*   function getRadius(areaHa) {
+            function getRadius(areaHa) {
                 const scale = 0.15;
                 const radius = (Math.sqrt(areaHa) * scale) / 2;
                 return Math.max(radius, 2);
@@ -215,7 +242,8 @@ $(document).ready(function () {
 
                 marker.on({ mouseover: highlightFeature, mouseout: resetHighlight});
                 marker.addTo(map).bindPopup(popup);
-            } */
+            } 
+            */
         })
         .catch(function (error) {
             console.error("Error fetching data:", error);
