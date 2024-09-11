@@ -5,7 +5,7 @@ def getData():
     csvFolder = app.config['DATAFILES'] + '/tabela.csv'
 
     df = pd.read_csv(csvFolder)
-    colums = ['AREA_HA', 'MUNICIPIO', 'LONG', 'LAT']
+    colums = ['ID', 'AREA_HA', 'MUNICIPIO', 'LONG', 'LAT']
     df = df[colums]
 
     dfcities = df.groupby('MUNICIPIO')['AREA_HA'].sum().reset_index()
@@ -20,4 +20,4 @@ def getData():
 
 def createData():
     df = getData()
-    df.to_csv('cache/data.csv', index=True)
+    df.to_csv('cache/data.csv', index=True, index_label='ID')
