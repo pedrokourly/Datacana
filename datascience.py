@@ -1,5 +1,5 @@
-from datacana import app
 import pandas as pd
+from datacana import app
 
 def getData():
     csvFolder = app.config['DATAFILES'] + '/tabela.csv'
