@@ -96,11 +96,14 @@ $(document).ready(function () {
             
             // Resetar Visualização
             L.control.resetView({
-                position: "topleft",
-                title: "Reset view",
+                position: 'topleft',
+                title: 'Reset view',
                 latlng: L.latLng([-18.918999, -48.277950]),
                 zoom: 7
             }).addTo(map);
+
+            // Controle de Camadas
+            L.control.layers(null, null, {position: 'topleft'}).addTo(map);
 
             // Quadro de Informações 
             var info = L.control({ 
