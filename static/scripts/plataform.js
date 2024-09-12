@@ -3,13 +3,13 @@ async function getDados() {
     try {
         const response = await fetch('/map/Data');
         const info = await response.json();
-    
+        
         const geoJsonResponse = await fetch('https://api.github.com/repos/tbrugz/geodata-br/contents/geojson/geojs-31-mun.json');
         const geoJsonData = await geoJsonResponse.json();
         const downloadUrl = geoJsonData.download_url;
         const geoJsonContentResponse = await fetch(downloadUrl);
         const geoJsonContent = await geoJsonContentResponse.json();
-        console.log(geoJsonContent)
+        console.log(info)
         return {info, geoJsonContent};
     } catch (error) {
         console.error('Erro ao buscar dados:', error);
@@ -83,6 +83,9 @@ $(document).ready(function () {
                     fillOpacity: 0.7
                 };
             }
+
+            geoJsonTeste = L.geoJson(response.info.cana2018, {
+            }).addTo(map);
 
             geoJson = L.geoJson(geoJson, {
                 style: style,

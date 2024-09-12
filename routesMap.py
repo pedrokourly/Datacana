@@ -1,5 +1,6 @@
 from datacana import app
 from flask import jsonify
+import json
 
 @app.route('/map/Data')
 def dataMap():
@@ -16,4 +17,5 @@ def dataMap():
     return jsonify(data = point,
                    qnt = qnt,
                    escala = escala,
-                   UF = MGTotal)
+                   UF = MGTotal,
+                   cana2018 = json.loads(open("cache\Cana_2018.geojson", 'r').read()))
