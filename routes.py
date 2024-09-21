@@ -1,18 +1,20 @@
 from datacana import app
 from flask import render_template
 
-# Rota principal | Pag principal
 @app.route('/')
 def home():
-    from routesMap import dataMap
-    response = dataMap()
-    data = response.get_json()
+    """
+        Rota responsável por renderizar a página principal do site.
+    """
 
     return render_template('home.html',
-                           DocTitle = 'DataCana',
-                           AreaMG = data.get('UF'))
+                           DocTitle = 'DataCana')
 
 @app.route('/plataforma')
 def platform():
+    """
+        Rota responsável por renderizar a página da plataforma.
+    """
+
     return render_template('Maps and Data/platform.html',
                            DocTitle = 'Datacana - Plataforma')

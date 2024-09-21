@@ -1,7 +1,7 @@
 // Função GET Dados
 async function getDados() {
     try {
-        const response = await fetch('/map/Data');
+        response = await fetch('/map/Data');
         const info = await response.json();
         
         const geoJsonResponse = await fetch('https://api.github.com/repos/tbrugz/geodata-br/contents/geojson/geojs-31-mun.json');
@@ -34,7 +34,7 @@ $(document).ready(function () {
             var attb = '&copy; <a target="_blank" href="https://www.maptiler.com/copyright/">MapTiler</a>, &copy; <a target = "_blank" href="https://www.openstreetmap.org/">OpenStreetMap</a> | <a href="https://github.com/KyKirma/" target="_blank">Kourly</a>, <a href="https://github.com/gustavomcss" target="_blank">Corrêa</a>';
 
             // Chave API MapTiler
-            const key = 'jlq6npehL8CYWBPs1v4S';
+            key = 'jlq6npehL8CYWBPs1v4S'
             
             // Camada Base
             L.tileLayer(`https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=${key}`,{ //style URL
@@ -45,6 +45,7 @@ $(document).ready(function () {
             }).addTo(map);
 
             // Tabela GeoJSON Combinada
+            // TODO: Adaptar para geojson
             var geoJson = response.geoJsonContent
             geoJson.features.forEach((feature) => {
                 const municipioValues = Object.values(response.info.data['MUNICIPIO']).map(value => value.toUpperCase());
@@ -57,6 +58,7 @@ $(document).ready(function () {
             });          
             
             // Cálculo Área Total
+            // TODO: Adaptar para qualquer ano
             let totalAreaHa = 0;
             for (let i = 0; i < response.info.qnt; i++) {
                 totalAreaHa += response.info.data['AREA_HA'][i];
@@ -84,6 +86,7 @@ $(document).ready(function () {
                 };
             }
 
+            //TODO: adaptar para qualquer ano
             geoJsonTeste = L.geoJson(response.info.cana2018, {
             }).addTo(map);
 

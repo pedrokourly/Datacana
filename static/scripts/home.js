@@ -26,7 +26,8 @@ $(document).ready(function () {
                     weight: 1,
                 }
             }
-
+            
+            //TODO: Adaptar para o !! ULTIMO !! ano
             let totalAreaHa = 0;
             for (let i = 0; i < response.qnt; i++) {
                 totalAreaHa += response.data['AREA_HA'][i];
@@ -88,6 +89,6 @@ $(document).ready(function () {
             observer.observe(el)
         })
     .catch(function (error) {
-            console.error("Error fetching data:", error);
+        console.error("Error fetching data:", error);
     });
 });
