@@ -9,8 +9,20 @@ def getData(year):
         Rota que busca dados de um ano específico
         Método: GET
     """
-
-    return jsonify(cana = json.loads(open(f"cache/Cana_{year}.geojson", 'r').read()))
+    import pandas as pd
+    # Tratando o geoJson
+    df = pd.read_csv(f'cache/CSVs/data_{year}.csv')
+    escala = df['AREA'].describe().to_dict()
+    qnt = len(df)
+    totalArea = df['AREA'].sum()
+    
+    # Tratando os dados processados
+    dfResumido = pd.read_csv(f'cache/CSVs/data_{year}_resumido.csv').to_dict()
+    return jsonify(geoJsonCana = json.loads(open(f"cache/Cana_{year}.geojson", 'r').read()),
+                   dadosCana = dfResumido,
+                   escala = escala,
+                   qnt = qnt,
+                   totalArea = totalArea)
 
 @app.route('/data/download/<int:year>', methods = ['GET'])
 def downloadData(year):
