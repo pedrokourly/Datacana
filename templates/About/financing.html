@@ -9,17 +9,18 @@
     </div>
 
     <div class="content">
-        <div class="container text-center">
-            <div class="card mb-3 ">
+        <div class="container">
+            <h2>Sobre as Fontes de Financiamento do DataCana</h2>
+
+            <div class="card mb-3 text-center">
                 <img src="https://fapemig.br/media/LOGO_FAPEMIG_ESCW0RF.jpg" class="card-img-top mx-auto" style="max-width: 440px;" alt="Logo FAPEMIG">
+
                 <div class="card-body">
-                  <h5 class="card-title">Fundação de Amparo à Pesquisa do
-                    Estado de Minas Gerais</h5>
-                  <p class="card-text">O projeto DATACANA conta com o apoio da Fundação de Amparo à Pesquisa do
-                    Estado de Minas Gerais (FAPEMIG) Demanda Universal (Edital 01/2022) </p>
+                    <h5 class="card-title">Fundação de Amparo à Pesquisa do Estado de Minas Gerais</h5>
+                    <p class="card-text">O projeto DataCana conta com o apoio da Fundação de Amparo à Pesquisa do Estado de Minas Gerais (FAPEMIG), Demanda Universal (Edital 01/2022).</p>
                 </div>
             </div>
-        </div class="">
+        </div>
     </div>
 {% endblock %}
 
@@ -69,74 +70,21 @@
         margin-bottom: 2.25rem;
     }
 
-    main > div.content > div.container > div#row-01 > div#col-01 {
-        text-align: start;
+    main > div.content > div.container > h2 {
+        font-size: 1.60rem;
+        font-weight: bold;
+        margin-bottom: 1.75rem;
     }
 
-    main > div.content > div.container > div#row-01 > div#col-01 > h1 {
-        font-weight: bolder;
-        margin-bottom: 32px;
+    main > div.content > div.container > p {
+        text-align: justify;
+        text-indent: 2.5rem;
+        font-size: 1.10rem;
     }
 
-    main > div.content > div.container > div#row-01 > div#col-01 > p {
-        font-size: 20px;
-    }
-
-    main > div.content > div.container > div#row-01 > div#col-02 > a > div#map {
-        background-color: transparent;
-        width: 100%;
-    }
-
-    main > div.content > div.container > div#row-02 {
-        margin-top: 32px;
-    }
-
-    main > div.content > div.container > div#row-02 > div.col-md > div.d-flex {
-        flex-direction: column;
-        align-items: center;
-        gap: 24px;
-    }
-
-    main > div.content > div.container > div#row-02 > div.col-md > div.d-flex > div#square {
-        border-radius: 8px;
-        box-shadow: 0rem 0rem 0.5rem rgba(0, 0, 0, 0.2);
-    }
-
-    main > div.content > div.container > div#row-02 > div.col-md > div.d-flex > div#square > h2 {
-        margin: 0px;
-        padding: 16px;
-    }
-
-    main > div.content > div.container > div#row-02 > div.col-md > div.d-flex > div#square > div#text {
-        background-color: #9FD97C;
-        padding: 16px;
-        border-radius: 0px 0px 8px 8px;
-    }
-
-    main > div.content > div.container > div#row-02 > div.col-md > div.d-flex > div#square > div#text > p {
-        margin: 0px;
-        font-size: 18px;
-    }
-
-    main > div.content > div.container > div#row-02 > div.col-md > div.d-flex > div#square > div#text > p#odometer {
-        margin: 0px;
-        font-size: 48px;
-    }
-
-    button.btn {
-        background-color: #9FD97C;
-        border: none;
-        border-radius: 16px;
-        width: 250px;
-        padding: 16px 24px;
-        box-shadow: 0rem 0rem 0.5rem rgba(0, 0, 0, 0.2);
-    }
-
-    button.btn a {
+    main > div.content > div.container > p > a {
         color: #424242;
         text-decoration: none;
-        font-weight: bold;
-        font-size: 18px;
     }
 
     /* MEDIA-QUERY PARA DISPOSITIVOS */
@@ -152,27 +100,6 @@
         main > div#cover > div#title > h2 {
             font-size: 42px;
         }
-
-        main > div.content > div.container > div#row-02 > div.col-md > div.d-flex > div#square {
-            width: 35%;
-        }
-
-        main > div.content > div.container > div#row-01 > div#col-01 > h1 {
-            font-size: 55px;
-        }
-
-        main > div.content > div.container > div#row-02 > div.col-md > div.d-flex > button#tel {
-            display: none;
-        }
-
-        main > div.content > div.container > div#row-01 > div#col-01 > button#pc {
-            display: inline-block;
-            margin-top: 16px;
-        }
-
-        main > div.content > div.container > div#row-01 > div#col-02 > a > div#map {
-            height: 450px;
-        }
     }
 
     /* DISPOSITIVOS PEQUENOS */
@@ -185,26 +112,6 @@
 
         main > div#cover > div#title > h2 {
             font-size: 35px;
-        }
-
-        main > div.content > div.container > div#row-02 > div.col-md > div.d-flex > div#square {
-            width: 100%;
-        }
-
-        main > div.content > div.container > div#row-01 > div#col-01 > h1 {
-            font-size: 36px;
-        }
-
-        main > div.content > div.container > div#row-02 > div.col-md > div.d-flex > button#tel {
-            display: inline-block;
-        }
-
-        main > div.content > div.container > div#row-01 > div#col-01 > button#pc {
-            display: none;
-        }
-
-        main > div.content > div.container > div#row-01 > div#col-02 > a > div#map {
-            height: 250px;
         }
     }
 </style>
