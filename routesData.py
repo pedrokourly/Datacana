@@ -18,7 +18,7 @@ def getData(year):
     
     # Tratando os dados processados
     dfResumido = pd.read_csv(f'cache/CSVs/data_{year}_resumido.csv').to_dict()
-    return jsonify(geoJsonCana = json.loads(open(f"cache/Cana_{year}.geojson", 'r').read()),
+    return jsonify(geoJsonCana = json.loads(open(f"cache/Cana_{year}.geojson", 'r', encoding = "utf8").read()),
                    dadosCana = dfResumido,
                    escala = escala,
                    qnt = qnt,
