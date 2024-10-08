@@ -3,17 +3,30 @@
 {% block conteudo %}
     <div id="cover">
         <div id="title">
-            <h2>Contato</h2>
+            <h2>Downloads</h2>
             <div class="container" id="rule"></div>
         </div>
     </div>
 
     <div class="content">
         <div class="container">
-            <p class="text-center">Quaisquer dúvidas na utilização dos dados fornecidos pelo DataCana devem ser enviadas para o e-mail:</p>
-            <p class="text-center" style="margin-top: 32px;">
-                <a href="mailto:datacana.ufu@gmail.com"><em><strong>datacana.ufu@gmail.com</strong></em></a>
-            </p>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Nome do Arquivo</th>
+                        <th scope="col">Ano do Arquivo</th>
+                        <th scope="col">Link Download</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>data.csv</td>
+                        <td>2018</td>
+                        <td><a href="/downloadData">Download</a><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#0d6efd"><path d="M480-336 288-528l51-51 105 105v-342h72v342l105-105 51 51-192 192ZM263.72-192Q234-192 213-213.15T192-264v-72h72v72h432v-72h72v72q0 29.7-21.16 50.85Q725.68-192 695.96-192H263.72Z"/></svg></a></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 {% endblock %}
@@ -70,12 +83,18 @@
         }
 
         main > div.content > div.container > p {
+            text-align: justify;
+            text-indent: 2.5rem;
             font-size: 1.10rem;
         }
 
         main > div.content > div.container > p > a {
             color: #424242;
             text-decoration: none;
+        }
+
+        main > div.content > div.container > p > a:hover {
+            text-decoration: underline;
         }
 
         /* MEDIA-QUERY PARA DISPOSITIVOS */

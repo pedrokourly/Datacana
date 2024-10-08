@@ -32,22 +32,26 @@ def aboutFinances():
     return render_template('About/financing.html',
                            DocTitle = 'Datacana - Fundos')
 
-@app.route('/plataforma')
-def platform():
-    return render_template('Maps and Data/platform.html',
-                           DocTitle = 'Datacana - Plataforma')
-
 @app.route('/metodologia/procedimentos')
 def methodologyProc():
     return render_template('Methodology/procedures.html',
                            DocTitle = 'Datacana - Metodologia')
 
-@app.route('/contato')
-def contact():
-    return render_template('contact.html',
-                           DocTitle = 'Datacana - Contato')
+@app.route('/plataforma')
+def platform():
+    return render_template('Maps and Data/platform.html',
+                           DocTitle = 'Datacana - Plataforma')
 
+@app.route('/downloads')
+def downloads():
+    return render_template('Maps and Data/downloads.html',
+                           DocTitle = 'Datacana - Downloads')
 @app.route('/termos')
 def termsOfUse():
     return render_template('terms.html',
                            DocTitle = 'Datacana - Termos de Uso')
+
+@app.route('/contato')
+def contact():
+    return render_template('contact.html',
+                           DocTitle = 'Datacana - Contato')
