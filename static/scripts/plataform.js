@@ -12,7 +12,7 @@ async function getDados() {
 
         response = await fetch('https://raw.githubusercontent.com/giuliano-macedo/geodata-br-states/main/geojson/br_states/br_mg.json');
         const geoJsonMG = await response.json();
-
+        
         return {info, geoJsonMGMunicipios, geoJsonMG};
     } catch (error) {
         console.error('Erro ao buscar dados:', error);
@@ -41,12 +41,19 @@ $(document).ready(function () {
             key = 'jlq6npehL8CYWBPs1v4S'
             
             // Camada Base
-            L.tileLayer(`https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=${key}`,{ //style URL
+            tileBase = L.tileLayer(`https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=${key}`,{ //style URL
                 attribution: attb,
                 tileSize: 512,
                 zoomOffset: -1,
                 crossOrigin: true
             }).addTo(map);
+
+            tileOffColor = L.tileLayer(`https://api.maptiler.com/maps/dataviz/{z}/{x}/{y}.png?key=${key}`,{ //style URL
+                attribution: attb,
+                tileSize: 512,
+                zoomOffset: -1,
+                crossOrigin: true
+            });
 
             // Cálculo Área Total
             let totalArea_ha = response.info.totalArea;
@@ -90,14 +97,30 @@ $(document).ready(function () {
                 style: style,
                 onEachFeature: onEachFeature
             });
+            
+            geoJsonMG = L.geoJson(response.geoJsonMG, {
+                style: function(feature) {
+                    return {
+                        fillColor: '#000000',
+                        weight: 2,
+                        opacity: 0.2,
+                        color: 'white',
+                        dashArray: '1',
+                        fillOpacity: 0.5
+                    };
+                },
+                invert: true,
+                renderer: L.svg({ padding: 1 })
+            });
 
-            geoJsonMG = L.geoJson(response.geoJsonMG, {});
             geoJsonCana = L.geoJson(response.info.geoJsonCana, {
                 style: style,
                 onEachFeature: onEachFeature
             });
 
-            console.log(geoJsonCana);
+            console.log(response.info.geoJsonCana);
+            console.log(response.geoJsonMG);
+            console.log(response.geoJsonMGMunicipios);
             // Barra de Pesquisa
             L.control.maptilerGeocoding({ 
                 apiKey: key 
@@ -159,6 +182,10 @@ $(document).ready(function () {
             info.update = function (props) {
                 if (props) {
                     let municipio = props.name;
+                    if (!municipio){
+                        municipio = props.NM_MUNICI;
+                    }
+
                     let Area_ha = props.Area_ha;
 
                     if(Area_ha == 0){
@@ -218,16 +245,15 @@ $(document).ready(function () {
             legend.addTo(map);
 
             info.addTo(map);
-
+    
             // Para as layers
             var baseLayers = {
-                "Visualização por Municípios": geoJsonMGMunicipiosProps,
-                "Visualização Detalhada": geoJsonMG,
-                "canafoda": geoJsonCana
+                "Visualização por Municípios": L.layerGroup([geoJsonMGMunicipiosProps]),
+                "Visualização Detalhada": L.layerGroup([tileOffColor, geoJsonCana, geoJsonMG]),
             };
 
             // Controle de Camadas
-            var layerControl = L.control.layers(null, baseLayers, {position: 'topleft'}).addTo(map);
+            var layerControl = L.control.layers(baseLayers, null, {position: 'topleft'}).addTo(map);
         })
         .catch(function (error) {
             console.error("Error fetching data:", error);
