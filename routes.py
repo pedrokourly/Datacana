@@ -12,11 +12,6 @@ def home():
                            DocTitle = 'DataCana',
                            AreaMG = data.get('UF'))
 
-@app.route('/plataforma')
-def platform():
-    return render_template('Maps and Data/platform.html',
-                           DocTitle = 'Datacana - Plataforma')
-
 @app.route('/sobre/projeto')
 def aboutProject():
     return render_template('About/project.html',
@@ -36,3 +31,23 @@ def aboutTeam():
 def aboutFinances():
     return render_template('About/financing.html',
                            DocTitle = 'Datacana - Fundos')
+
+@app.route('/plataforma')
+def platform():
+    return render_template('Maps and Data/platform.html',
+                           DocTitle = 'Datacana - Plataforma')
+
+@app.route('/metodologia/procedimentos')
+def methodologyProc():
+    return render_template('Methodology/procedures.html',
+                           DocTitle = 'Datacana - Metodologia')
+
+@app.route('/contato')
+def contact():
+    return render_template('contact.html',
+                           DocTitle = 'Datacana - Contato')
+
+@app.route('/termos')
+def termsOfUse():
+    return render_template('terms.html',
+                           DocTitle = 'Datacana - Termos de Uso')
