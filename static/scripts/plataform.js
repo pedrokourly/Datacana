@@ -113,14 +113,20 @@ $(document).ready(function () {
                 renderer: L.svg({ padding: 1 })
             });
 
+            geoJsonMGE = response.geoJsonMG;
+            geoJsonMGE.features.forEach((feature) => {
+                feature.properties.Area_ha = totalArea_ha;
+            });
+
+            geoJsonMGE = L.geoJson(response.geoJsonMG, {
+                style: style
+            });
+            
             geoJsonCana = L.geoJson(response.info.geoJsonCana, {
                 style: style,
                 onEachFeature: onEachFeature
             });
 
-            console.log(response.info.geoJsonCana);
-            console.log(response.geoJsonMG);
-            console.log(response.geoJsonMGMunicipios);
             // Barra de Pesquisa
             L.control.maptilerGeocoding({ 
                 apiKey: key 
@@ -178,6 +184,12 @@ $(document).ready(function () {
                 return this._div;
             };
 
+            function titleCase(str) {
+                return str.split(' ')
+                  .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+                  .join(' ');
+            }
+
             // Update Quadro de Informações
             info.update = function (props) {
                 if (props) {
@@ -189,9 +201,9 @@ $(document).ready(function () {
                     let Area_ha = props.Area_ha;
 
                     if(Area_ha == 0){
-                        this._div.innerHTML = '<h4>Município de ' + municipio + ':</h4>' + 'Área de Cana: <br>' + '<b>' + "Não Consta Dados" + '</b>';
+                        this._div.innerHTML = '<h4>Município de ' + titleCase(municipio) + ':</h4>' + 'Área de Cana: <br>' + '<b>' + "Não Consta Dados" + '</b>';
                     } else {
-                        this._div.innerHTML = '<h4>Município de ' + municipio + ':</h4>' + 'Área de Cana: <br>' + '<b>' + Area_ha + 'Km²' + '</b>';
+                        this._div.innerHTML = '<h4>Município de ' + titleCase(municipio) + ':</h4>' + 'Área de Cana: <br>' + '<b>' + Area_ha.toFixed(2) + 'Km²' + '</b>';
                     }
                     
                 }
@@ -248,10 +260,12 @@ $(document).ready(function () {
     
             // Para as layers
             var baseLayers = {
+                "Visualização por Estado": L.layerGroup([geoJsonMGE]),
                 "Visualização por Municípios": L.layerGroup([geoJsonMGMunicipiosProps]),
                 "Visualização Detalhada": L.layerGroup([tileOffColor, geoJsonCana, geoJsonMG]),
             };
 
+            baseLayers["Visualização por Estado"].addTo(map);
             // Controle de Camadas
             var layerControl = L.control.layers(baseLayers, null, {position: 'topleft'}).addTo(map);
         })
