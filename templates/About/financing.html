@@ -12,10 +12,10 @@
         <div class="container">
             <h2><strong>Sobre as Fontes de Financiamento do DataCana</strong></h2>
 
-            <div class="card mb-3 text-center">
+            <div class="card mx-auto mb-3 text-center">
                 <img src="https://fapemig.br/media/LOGO_FAPEMIG_ESCW0RF.jpg" class="card-img-top mx-auto" alt="Logo FAPEMIG">
 
-                <div class="card-body mx-auto">
+                <div class="card-body">
                     <h5 class="card-title">Fundação de Amparo à Pesquisa do Estado de Minas Gerais</h5>
                     <p class="card-text">O projeto DataCana conta com o apoio da Fundação de Amparo à Pesquisa do Estado de Minas Gerais (FAPEMIG), APQ-01102-22, Demanda Universal (Edital 01/2022).</p>
                 </div>
@@ -28,15 +28,24 @@
     <style>
         /* CONTEÚDO */
 
+        main > div.content > div.container > div.card {
+            max-width: 704px;
+            padding: 8px;
+        }
+
         main > div.content > div.container > div.card > img.card-img-top {
             max-width: 440px;
         }
 
-        main > div.content > div.container > div.card > div.card-body {
-            max-width: 704px;
-        }
-
         /* MEDIA-QUERY PARA DISPOSITIVOS */
+
+        /* DISPOSITIVOS GRANDES */
+
+        @media screen and (min-width: 768px) {
+            main > div.content > div.container > h2 {
+                text-align: left;
+            }
+        }
 
         /* DISPOSITIVOS PEQUENOS */
 

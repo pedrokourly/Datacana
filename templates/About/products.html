@@ -17,14 +17,55 @@
             </p>
 
             <h2>Mapas Temáticos</h2>
+
+            <div id="carouselFade" class="carousel carousel-dark slide carousel-fade mx-auto" data-bs-ride="carousel" data-bs-pause="false">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="3000">
+                        <img src="../../static/images/About/Products/estado.jpg" class="d-block w-100" alt="Mapa Estadual MG">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="3000">
+                        <img src="../../static/images/About/Products/municipio.jpg" class="d-block w-100" alt="Mapa Municipal MG">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="3000">
+                        <img src="../../static/images/About/Products/municipioItuiutaba.jpg" class="d-block w-100" alt="Mapa Municipal ITBA">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="3000">
+                        <img src="../../static/images/About/Products/detalhada.jpg" class="d-block w-100" alt="Mapa Cultura MG">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="3000">
+                        <img src="../../static/images/About/Products/detalhada2.jpg" class="d-block w-100" alt="Mapa Cultura TM">
+                    </div>
+                </div>
+
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                </div>
+            </div>
             
+            <br><br>
             <h2>Gráficos</h2>
             
+            <br><br>
             <h2>Tabelas</h2>
         </div>
     </div>
 {% endblock %}
 
 {% block estilo %}
-    
+    <style>
+        /* CONTEÚDO */
+
+        main > div.content > div.container > div.carousel {
+            max-width: 704px;
+            box-shadow: 0rem 0rem 0.5rem rgba(0, 0, 0, 0.2);
+        }
+
+        main > div.content > div.container > div.carousel > div.carousel-indicators {
+            margin-bottom: -28px;
+        }
+    </style>
 {% endblock %}

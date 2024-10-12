@@ -69,7 +69,7 @@ $(document).ready(function () {
             map.scrollWheelZoom.disable();
             map.boxZoom.disable();
             map.keyboard.disable();
-
+            
             // Seleção do Odometer
             var el = document.getElementById('odometer');
             od = new Odometer({
@@ -79,11 +79,11 @@ $(document).ready(function () {
             // Observer
             const observer = new IntersectionObserver((entries) => {
                 if (entries[0].isIntersecting && entries[0].intersectionRatio === 1) {
-                  od.update(totalAreaHa);
+                    od.update(totalAreaHa);
                 }
-              }, {
+            }, {
                 threshold: 1,
-              });
+            });
 
             observer.observe(el)
         })

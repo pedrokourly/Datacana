@@ -73,49 +73,7 @@
 
 {% block estilo %}
     <style>
-        /* CAPA */
-
-        main > div#cover {
-            display: flex;
-            background-image: url('../static/images/Capa.jpg');
-            background-size: cover;
-            align-items: center;
-            justify-content: center;
-        }
-
-        main > div#cover > div#title > h2 {
-            color: #FFFFFF;
-            text-align: center;
-            font-weight: bold;
-
-            animation: fadeInDown;
-            animation-duration: 0.75s;
-        }
-
-        main > div#cover > div#title > div#rule {
-            border-bottom: 3px solid #FFFFFF;
-
-            animation: zoomIn;
-            animation-duration: 0.75s;
-        }
-
-        main > div#cover > div#title > div.container {
-            max-width: 75%;
-        }
-
         /* CONTEÚDO */
-
-        main > div.content {
-            background-color: #FFFFFF;
-            color: #424242;
-            margin: 25px 0px;
-            padding: 24px;
-        }
-
-        main > div.content > div.container {
-            margin-top: 2.25rem;
-            margin-bottom: 2.25rem;
-        }
 
         main > div.content > div.container > div#row-01 > div#col-01 {
             text-align: start;
@@ -192,15 +150,6 @@
         /* DISPOSITIVOS GRANDES */
 
         @media screen and (min-width: 768px) {
-            main > div#cover {
-                background-position: center;
-                height: 65vh;
-            }
-
-            main > div#cover > div#title > h2 {
-                font-size: 42px;
-            }
-
             main > div.content > div.container > div#row-02 > div.col-md > div.d-flex > div#square {
                 width: 35%;
             }
@@ -226,15 +175,6 @@
         /* DISPOSITIVOS PEQUENOS */
 
         @media screen and (max-width: 768px) {
-            main > div#cover {
-                background-position: right bottom;
-                height: 42vh;
-            }
-
-            main > div#cover > div#title > h2 {
-                font-size: 35px;
-            }
-
             main > div.content > div.container > div#row-02 > div.col-md > div.d-flex > div#square {
                 width: 100%;
             }
