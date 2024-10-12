@@ -10,19 +10,19 @@
     
     <div class="content">
         <div class="container">
-            <h2>Metodologia Procedimental</h2>
+            <h2><strong>Metodologia Procedimental</strong></h2>
 
             <p>
                 A estratégia experimental adotada foi dividida nas seguintes etapas:
             </p>
 
-            <h2>1. Fundamentação Teórica</h2>
+            <h2><strong>1. Fundamentação Teórica</strong></h2>
 
             <p>
                 1.1. A busca por referencial teórico englobou a expansão canavieira e os impactos a ela associados; a consulta aos dados de órgãos oficiais, e; as técnicas de geoprocessamento e sensoriamento remoto mais eficientes para se alcançar os objetivos propostos.
             </p>
             
-            <h2>2. Mapeamento da Cana-de-açúcar</h2>
+            <h2><strong>2. Mapeamento da Cana-de-açúcar</strong></h2>
 
             <p>
                 2.1. Acesso ao <i>asset</i> de dados no <em>Google Earth Engine</em> do MapBiomas, download e conversão dos dados no formato <em>shapefile</em>;
@@ -44,7 +44,7 @@
                 2.5. Elaboração dos mapas de cana-de-açúcar a partir do ano 2016, e da expansão das áreas cultivadas nos anos subsequentes.
             </p>
 
-            <h2>3. Organização do Banco de Dados Digital DataCana</h2>
+            <h2><strong>3. Organização do Banco de Dados Digital DataCana</strong></h2>
 
             <p>
                 3.1. A estruturação do DataCana deverá garantir fácil acesso às estimativas elaboradas;
@@ -55,7 +55,7 @@
                 à plataforma ocorre para o recorte espacial de municípios, regiões imediatas e intermediárias de Minas Gerais.
             </p>
 
-            <h2>4. Publicação dos Resultados e Confecção do Relatório Final</h2>
+            <h2><strong>4. Publicação dos Resultados e Confecção do Relatório Final</strong></h2>
 
             <p>
                 4.1. A publicação dos dados no DataCana ocorre à medida em que os resultados de mapeamento vão sendo validados;
@@ -74,94 +74,5 @@
 {% endblock %}
 
 {% block estilo %}
-    <style>
-        /* CAPA */
-
-        main > div#cover {
-            display: flex;
-            background-image: url('../static/images/Capa.jpg');
-            background-size: cover;
-            align-items: center;
-            justify-content: center;
-        }
-
-        main > div#cover > div#title > h2 {
-            color: #FFFFFF;
-            text-align: center;
-            font-weight: bold;
-
-            animation: fadeInDown;
-            animation-duration: 0.75s;
-        }
-
-        main > div#cover > div#title > div#rule {
-            border-bottom: 3px solid #FFFFFF;
-
-            animation: zoomIn;
-            animation-duration: 0.75s;
-        }
-
-        main > div#cover > div#title > div.container {
-            max-width: 75%;
-        }
-
-        /* CONTEÚDO */
-
-        main > div.content {
-            background-color: #FFFFFF;
-            color: #424242;
-            margin: 25px 0px;
-            padding: 24px;
-        }
-
-        main > div.content > div.container {
-            margin-top: 2.25rem;
-            margin-bottom: 2.25rem;
-        }
-
-        main > div.content > div.container > h2 {
-            font-size: 1.60rem;
-            font-weight: bold;
-            margin-bottom: 1.75rem;
-        }
-
-        main > div.content > div.container > p {
-            text-align: justify;
-            text-indent: 2.5rem;
-            font-size: 1.10rem;
-        }
-
-        main > div.content > div.container > p > a {
-            color: #424242;
-            text-decoration: none;
-        }
-
-        /* MEDIA-QUERY PARA DISPOSITIVOS */
-
-        /* DISPOSITIVOS GRANDES */
-
-        @media screen and (min-width: 768px) {
-            main > div#cover {
-                background-position: center;
-                height: 65vh;
-            }
-
-            main > div#cover > div#title > h2 {
-                font-size: 42px;
-            }
-        }
-
-        /* DISPOSITIVOS PEQUENOS */
-
-        @media screen and (max-width: 768px) {
-            main > div#cover {
-                background-position: right bottom;
-                height: 42vh;
-            }
-
-            main > div#cover > div#title > h2 {
-                font-size: 35px;
-            }
-        }
-    </style>
+    
 {% endblock %}

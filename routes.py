@@ -42,6 +42,11 @@ def platform():
     return render_template('Maps and Data/platform.html',
                            DocTitle = 'Datacana - Plataforma')
 
+@app.route('/dados')
+def plataform():
+    return render_template('Maps and Data/data.html',
+                           DocTitle = 'Datacana - Dados')
+
 @app.route('/downloads')
 def downloads():
     return render_template('Maps and Data/downloads.html',

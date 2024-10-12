@@ -17,15 +17,15 @@
             </p>
 
             <p>
-                O projeto surgiu em 2018 fomentado pelo interesse nos impactos socioambientais e econômicos da expansão da cana-de-açúcar no estado mineiro. Em 2022, contou com recursos financeiros da <strong>Fundação de Amparo à Pesquisa do Estado de Minas Gerais (FAPEMIG)</strong>, por meio da aprovação da proposta no Edital Universal, projeto APQ <strong>APQ-01102-22</strong>, o que possibilitou a implementação da plataforma web.
+                O projeto surgiu em 2018 fomentado pelo interesse nos impactos socioambientais e econômicos da expansão da cana-de-açúcar no estado mineiro. Em 2022, contou com recursos financeiros da <strong>Fundação de Amparo à Pesquisa do Estado de Minas Gerais (FAPEMIG)</strong>, por meio da aprovação da proposta no Edital Universal, projeto de Auxílio à Pesquisa (APQ) <strong>APQ-01102-22</strong>, o que possibilitou a implementação da plataforma web.
             </p>
 
             <p>
-                Seu principal objetivo é monitorar a expansão canavieira, por meio de técnicas de geoprocessamento e produtos de sensoriamento remoto, em Minas Gerais. A importância do DataCana está no fato de que o Brasil é o maior produtor mundial de cana-de-açúcar, sendo que o ranking da produção é liderado por São Paulo, seguido de Goiás e Minas Gerais.
+                Seu principal objetivo é monitorar a expansão canavieira, por meio de técnicas de <strong>geoprocessamento</strong> e produtos de <strong>sensoriamento remoto</strong>, em Minas Gerais. A importância do DataCana está no fato de que o Brasil é o maior produtor mundial de cana-de-açúcar, sendo que o ranking da produção é liderado por São Paulo, seguido de Goiás e Minas Gerais.
             </p>
 
             <p>
-                Durante o período de 2003 a 2014, o <a href="http://www.dsr.inpe.br/laf/canasat/index.html" target="_blank" rel="external">CANASAT<svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#424242" style="padding-bottom: 2px;"><path d="M216-144q-29.7 0-50.85-21.15Q144-186.3 144-216v-528q0-29.7 21.15-50.85Q186.3-816 216-816h264v72H216v528h528v-264h72v264q0 29.7-21.15 50.85Q773.7-144 744-144H216Zm171-192-51-51 357-357H576v-72h240v240h-72v-117L387-336Z"/></svg></a> monitorou as safras no Centro-Sul do Brasil, mas o encerramento de sua versão pública deixou uma lacuna no fornecimento dessas estimativas.
+                Durante o período de 2003 a 2014, o <a href="http://www.dsr.inpe.br/canasat/mapa/ajuda/" target="_blank" rel="external">CANASAT<svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#424242" style="padding-bottom: 2px;"><path d="M216-144q-29.7 0-50.85-21.15Q144-186.3 144-216v-528q0-29.7 21.15-50.85Q186.3-816 216-816h264v72H216v528h528v-264h72v264q0 29.7-21.15 50.85Q773.7-144 744-144H216Zm171-192-51-51 357-357H576v-72h240v240h-72v-117L387-336Z"/></svg></a> monitorou as safras no Centro-Sul do Brasil, mas o encerramento de sua versão pública deixou uma lacuna no fornecimento dessas estimativas.
             </p>
 
             <p>
@@ -40,97 +40,5 @@
 {% endblock %}
 
 {% block estilo %}
-    <style>
-        /* CAPA */
-
-        main > div#cover {
-            display: flex;
-            background-image: url('../static/images/Capa.jpg');
-            background-size: cover;
-            align-items: center;
-            justify-content: center;
-        }
-
-        main > div#cover > div#title > h2 {
-            color: #FFFFFF;
-            text-align: center;
-            font-weight: bold;
-
-            animation: fadeInDown;
-            animation-duration: 0.75s;
-        }
-
-        main > div#cover > div#title > div#rule {
-            border-bottom: 3px solid #FFFFFF;
-
-            animation: zoomIn;
-            animation-duration: 0.75s;
-        }
-
-        main > div#cover > div#title > div.container {
-            max-width: 75%;
-        }
-
-        /* CONTEÚDO */
-
-        main > div.content {
-            background-color: #FFFFFF;
-            color: #424242;
-            margin: 25px 0px;
-            padding: 24px;
-        }
-
-        main > div.content > div.container {
-            margin-top: 2.25rem;
-            margin-bottom: 2.25rem;
-        }
-
-        main > div.content > div.container > h2 {
-            font-size: 1.60rem;
-            margin-bottom: 1.75rem;
-        }
-
-        main > div.content > div.container > p {
-            text-align: justify;
-            text-indent: 2.5rem;
-            font-size: 1.10rem;
-        }
-
-        main > div.content > div.container > p > a {
-            color: #424242;
-            text-decoration: none;
-        }
-
-        main > div.content > div.container > p > a:hover {
-            text-decoration: underline;
-        }
-
-        /* MEDIA-QUERY PARA DISPOSITIVOS */
-
-        /* DISPOSITIVOS GRANDES */
-
-        @media screen and (min-width: 768px) {
-            main > div#cover {
-                background-position: center;
-                height: 65vh;
-            }
-
-            main > div#cover > div#title > h2 {
-                font-size: 42px;
-            }
-        }
-
-        /* DISPOSITIVOS PEQUENOS */
-
-        @media screen and (max-width: 768px) {
-            main > div#cover {
-                background-position: right bottom;
-                height: 42vh;
-            }
-
-            main > div#cover > div#title > h2 {
-                font-size: 35px;
-            }
-        }
-    </style>
+    
 {% endblock %}
