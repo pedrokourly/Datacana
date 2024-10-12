@@ -1,0 +1,58 @@
+{% extends 'default.html' %}
+
+{% block conteudo %}
+    <div id="cover">
+        <div id="title">
+            <h2>Fontes de Financiamento</h2>
+            <div class="container" id="rule"></div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="container">
+            <h2><strong>Sobre as Fontes de Financiamento do DataCana</strong></h2>
+
+            <div class="card mx-auto mb-3 text-center">
+                <img src="https://fapemig.br/media/LOGO_FAPEMIG_ESCW0RF.jpg" class="card-img-top mx-auto" alt="Logo FAPEMIG">
+
+                <div class="card-body">
+                    <h5 class="card-title">Fundação de Amparo à Pesquisa do Estado de Minas Gerais</h5>
+                    <p class="card-text">O projeto DataCana conta com o apoio da Fundação de Amparo à Pesquisa do Estado de Minas Gerais (FAPEMIG), APQ-01102-22, Demanda Universal (Edital 01/2022).</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block estilo %}
+    <style>
+        /* CONTEÚDO */
+
+        main > div.content > div.container > div.card {
+            max-width: 704px;
+            padding: 8px;
+        }
+
+        main > div.content > div.container > div.card > img.card-img-top {
+            max-width: 440px;
+        }
+
+        /* MEDIA-QUERY PARA DISPOSITIVOS */
+
+        /* DISPOSITIVOS GRANDES */
+
+        @media screen and (min-width: 768px) {
+            main > div.content > div.container > h2 {
+                text-align: left;
+            }
+        }
+
+        /* DISPOSITIVOS PEQUENOS */
+
+        @media screen and (max-width: 768px) {
+            main > div.content > div.container > h2 {
+                text-align: center;
+            }
+        }
+    </style>
+{% endblock %}

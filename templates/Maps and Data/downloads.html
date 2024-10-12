@@ -1,0 +1,56 @@
+{% extends 'default.html' %}
+
+{% block conteudo %}
+    <div id="cover">
+        <div id="title">
+            <h2>Downloads</h2>
+            <div class="container" id="rule"></div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="container">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead class="align-middle">
+                        <tr>
+                            <th scope="col">Arquivo <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#424242" style="padding-bottom: 2px;"><path d="M480-336 288-528l51-51 105 105v-342h72v342l105-105 51 51-192 192ZM263.72-192Q234-192 213-213.15T192-264v-72h72v72h432v-72h72v72q0 29.7-21.16 50.85Q725.68-192 695.96-192H263.72Z"/></svg></th>
+                            <th scope="col">Tipo</th>
+                            <th scope="col">Ano</th>
+                        </tr>
+                    </thead>
+                    <tbody class="align-middle">
+                        <tr>
+                            <td><a href="/downloadData">Cana_2022.csv</a></td>
+                            <td>Tabela</td>
+                            <td>2022</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">Cana_2022.shp</a></td>
+                            <td>ShapeFile</td>
+                            <td>2022</td>
+                        </tr>
+                        <tr>
+                            <td><a href="#">Cana_2022.geojson</a></td>
+                            <td>GeoJSON</td>
+                            <td>2022</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block estilo %}
+    <style>
+        @media screen and (max-width: 768px) {
+            main > div.content {
+                background-color: #FFFFFF;
+                color: #424242;
+                margin: 25px 0px;
+                padding: 24px 0px;
+            }
+        }
+    </style>
+{% endblock %}

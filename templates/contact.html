@@ -3,197 +3,107 @@
 {% block conteudo %}
     <div id="cover">
         <div id="title">
-            <h2>Entre em contato</h2>
+            <h2>Contato</h2>
             <div class="container" id="rule"></div>
         </div>
     </div>
 
-    
+    <div class="content">
+        <div class="container">
+            <p class="text-center">Quaisquer dúvidas na utilização dos dados fornecidos pelo DataCana devem ser enviadas para o e-mail:</p>
+            <p class="text-center" style="margin-top: 32px;">
+                <a href="mailto:datacana.ufu@gmail.com"><em><strong>datacana.ufu@gmail.com</strong></em></a>
+            </p>
+        </div>
+    </div>
 {% endblock %}
 
 {% block estilo %}
-<style>
-    /* CAPA */
+    <style>
+        /* CAPA */
 
-    main > div#cover {
-        display: flex;
-        background-image: url('../static/images/Capa.jpg');
-        background-size: cover;
-        align-items: center;
-        justify-content: center;
-    }
-
-    main > div#cover > div#title > h2 {
-        color: #FFFFFF;
-        text-align: center;
-        font-weight: bold;
-
-        animation: fadeInDown;
-        animation-duration: 0.75s;
-    }
-
-    main > div#cover > div#title > div#rule {
-        border-bottom: 3px solid #FFFFFF;
-
-        animation: zoomIn;
-        animation-duration: 0.75s;
-    }
-
-    main > div#cover > div#title > div.container {
-        max-width: 75%;
-    }
-
-    /* CONTEÚDO */
-
-    main > div.content {
-        background-color: #FFFFFF;
-        color: #424242;
-        margin: 25px 0px;
-        padding: 24px;
-    }
-
-    main > div.content > div.container {
-        margin-top: 2.25rem;
-        margin-bottom: 2.25rem;
-    }
-
-    main > div.content > div.container > div#row-01 > div#col-01 {
-        text-align: start;
-    }
-
-    main > div.content > div.container > div#row-01 > div#col-01 > h1 {
-        font-weight: bolder;
-        margin-bottom: 32px;
-    }
-
-    main > div.content > div.container > div#row-01 > div#col-01 > p {
-        font-size: 20px;
-    }
-
-    main > div.content > div.container > div#row-01 > div#col-02 > a > div#map {
-        background-color: transparent;
-        width: 100%;
-    }
-
-    main > div.content > div.container > div#row-02 {
-        margin-top: 32px;
-    }
-
-    main > div.content > div.container > div#row-02 > div.col-md > div.d-flex {
-        flex-direction: column;
-        align-items: center;
-        gap: 24px;
-    }
-
-    main > div.content > div.container > div#row-02 > div.col-md > div.d-flex > div#square {
-        border-radius: 8px;
-        box-shadow: 0rem 0rem 0.5rem rgba(0, 0, 0, 0.2);
-    }
-
-    main > div.content > div.container > div#row-02 > div.col-md > div.d-flex > div#square > h2 {
-        margin: 0px;
-        padding: 16px;
-    }
-
-    main > div.content > div.container > div#row-02 > div.col-md > div.d-flex > div#square > div#text {
-        background-color: #9FD97C;
-        padding: 16px;
-        border-radius: 0px 0px 8px 8px;
-    }
-
-    main > div.content > div.container > div#row-02 > div.col-md > div.d-flex > div#square > div#text > p {
-        margin: 0px;
-        font-size: 18px;
-    }
-
-    main > div.content > div.container > div#row-02 > div.col-md > div.d-flex > div#square > div#text > p#odometer {
-        margin: 0px;
-        font-size: 48px;
-    }
-
-    button.btn {
-        background-color: #9FD97C;
-        border: none;
-        border-radius: 16px;
-        width: 250px;
-        padding: 16px 24px;
-        box-shadow: 0rem 0rem 0.5rem rgba(0, 0, 0, 0.2);
-    }
-
-    button.btn a {
-        color: #424242;
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 18px;
-    }
-
-    /* MEDIA-QUERY PARA DISPOSITIVOS */
-
-    /* DISPOSITIVOS GRANDES */
-
-    @media screen and (min-width: 768px) {
         main > div#cover {
-            background-position: center;
-            height: 65vh;
+            display: flex;
+            background-image: url('../static/images/Capa.jpg');
+            background-size: cover;
+            align-items: center;
+            justify-content: center;
         }
 
         main > div#cover > div#title > h2 {
-            font-size: 42px;
+            color: #FFFFFF;
+            text-align: center;
+            font-weight: bold;
+
+            animation: fadeInDown;
+            animation-duration: 0.75s;
         }
 
-        main > div.content > div.container > div#row-02 > div.col-md > div.d-flex > div#square {
-            width: 35%;
+        main > div#cover > div#title > div#rule {
+            border-bottom: 3px solid #FFFFFF;
+
+            animation: zoomIn;
+            animation-duration: 0.75s;
         }
 
-        main > div.content > div.container > div#row-01 > div#col-01 > h1 {
-            font-size: 55px;
+        main > div#cover > div#title > div.container {
+            max-width: 75%;
         }
 
-        main > div.content > div.container > div#row-02 > div.col-md > div.d-flex > button#tel {
-            display: none;
+        /* CONTEÚDO */
+
+        main > div.content {
+            background-color: #FFFFFF;
+            color: #424242;
+            margin: 25px 0px;
+            padding: 24px;
         }
 
-        main > div.content > div.container > div#row-01 > div#col-01 > button#pc {
-            display: inline-block;
-            margin-top: 16px;
+        main > div.content > div.container {
+            margin-top: 2.25rem;
+            margin-bottom: 2.25rem;
         }
 
-        main > div.content > div.container > div#row-01 > div#col-02 > a > div#map {
-            height: 450px;
-        }
-    }
-
-    /* DISPOSITIVOS PEQUENOS */
-
-    @media screen and (max-width: 768px) {
-        main > div#cover {
-            background-position: right bottom;
-            height: 42vh;
+        main > div.content > div.container > h2 {
+            font-size: 1.60rem;
+            margin-bottom: 1.75rem;
         }
 
-        main > div#cover > div#title > h2 {
-            font-size: 35px;
+        main > div.content > div.container > p {
+            font-size: 1.10rem;
         }
 
-        main > div.content > div.container > div#row-02 > div.col-md > div.d-flex > div#square {
-            width: 100%;
+        main > div.content > div.container > p > a {
+            color: #424242;
+            text-decoration: none;
         }
 
-        main > div.content > div.container > div#row-01 > div#col-01 > h1 {
-            font-size: 36px;
+        /* MEDIA-QUERY PARA DISPOSITIVOS */
+
+        /* DISPOSITIVOS GRANDES */
+
+        @media screen and (min-width: 768px) {
+            main > div#cover {
+                background-position: center;
+                height: 65vh;
+            }
+
+            main > div#cover > div#title > h2 {
+                font-size: 42px;
+            }
         }
 
-        main > div.content > div.container > div#row-02 > div.col-md > div.d-flex > button#tel {
-            display: inline-block;
-        }
+        /* DISPOSITIVOS PEQUENOS */
 
-        main > div.content > div.container > div#row-01 > div#col-01 > button#pc {
-            display: none;
-        }
+        @media screen and (max-width: 768px) {
+            main > div#cover {
+                background-position: right bottom;
+                height: 42vh;
+            }
 
-        main > div.content > div.container > div#row-01 > div#col-02 > a > div#map {
-            height: 250px;
+            main > div#cover > div#title > h2 {
+                font-size: 35px;
+            }
         }
-    }
-</style>
+    </style>
 {% endblock %}
