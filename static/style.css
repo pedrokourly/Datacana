@@ -238,7 +238,7 @@ main > div.content > div.container > p > a:hover > svg {
 @media screen and (min-width: 768px) {
     main > div#cover {
         background-position: center;
-        height: 65vh;
+        height: 60vh;
     }
 
     main > div#cover > div#title > h2 {

@@ -48,7 +48,7 @@ $(document).ready(function () {
                 crossOrigin: true
             }).addTo(map);
 
-            tileOffColor = L.tileLayer(`https://api.maptiler.com/maps/dataviz/{z}/{x}/{y}.png?key=${key}`,{ //style URL
+            tileOffColor = L.tileLayer(`https://api.maptiler.com/maps/streets-v2-light/{z}/{x}/{y}.png?key=${key}`,{ //style URL
                 attribution: attb,
                 tileSize: 512,
                 zoomOffset: -1,
@@ -203,12 +203,12 @@ $(document).ready(function () {
                     if(Area_ha == 0){
                         this._div.innerHTML = '<h4>Município de ' + titleCase(municipio) + ':</h4>' + 'Área de Cana: <br>' + '<b>' + "Não Consta Dados" + '</b>';
                     } else {
-                        this._div.innerHTML = '<h4>Município de ' + titleCase(municipio) + ':</h4>' + 'Área de Cana: <br>' + '<b>' + Area_ha.toFixed(2) + 'Km²' + '</b>';
+                        this._div.innerHTML = '<h4>Município de ' + titleCase(municipio) + ':</h4>' + 'Área de Cana: <br>' + '<b>' + Area_ha.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' Km²' + '</b>';
                     }
                     
                 }
                 else {
-                    this._div.innerHTML = '<h4>Minas Gerais</h4>' + 'Área de Cana Total: <br>' + '<b>' + totalArea_ha.toFixed(2) + ' Km²' + '</b>';
+                    this._div.innerHTML = '<h4>Minas Gerais</h4>' + 'Área de Cana Total: <br>' + '<b>' + totalArea_ha.toFixed(2).toString().replace(/\./, ',').replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' Km²' + '</b>';
                 }
             };
 
@@ -222,7 +222,7 @@ $(document).ready(function () {
                 div.innerHTML = '<div class="legend-color"></div>' +
                                 '<div style="display: flex; justify-content: space-between; margin-top: 8px;">' + 
                                 '<div style="font-weight: bold;">' + response.info.escala["min"].toFixed(1) + '</div>' +
-                                '<div style="font-weight: bold;">Km²</div>' +
+                                '<div style="font-weight: bold;"> Km²</div>' +
                                 '<div style="font-weight: bold;">' + (response.info.escala["max"]/1000).toFixed(1) + 'k</div> </div>';
 
                 return div;
@@ -260,12 +260,13 @@ $(document).ready(function () {
     
             // Para as layers
             var baseLayers = {
-                "Visualização por Estado": L.layerGroup([geoJsonMGE]),
-                "Visualização por Municípios": L.layerGroup([geoJsonMGMunicipiosProps]),
+                "Visualização Estadual": L.layerGroup([geoJsonMGE]),
+                "Visualização Municipal": L.layerGroup([geoJsonMGMunicipiosProps]),
                 "Visualização Detalhada": L.layerGroup([tileOffColor, geoJsonCana, geoJsonMG]),
             };
 
-            baseLayers["Visualização por Estado"].addTo(map);
+            baseLayers["Visualização Estadual"].addTo(map);
+
             // Controle de Camadas
             var layerControl = L.control.layers(baseLayers, null, {position: 'topleft'}).addTo(map);
         })

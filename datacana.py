@@ -35,17 +35,17 @@ def createCSVs():
                 row.append(value)
             csv_data.append(row)
 
-        with open(f"cache/CSVs/data_{year}.csv", 'w', newline='') as csv_file:
+        with open(f"cache/CSVs/Data_{year}.csv", 'w', newline='') as csv_file:
             writer = csv.writer(csv_file)
             writer.writerows(csv_data)
 
-        df = pd.read_csv(f'cache/CSVs/data_{year}.csv')
+        df = pd.read_csv(f'cache/CSVs/Data_{year}.csv')
         df = df.loc[:, ['AREA', 'COD_MUNICIPIO', 'MUNICIPIO', 'MESO', 'MICRO']]
         df['TOTAL_AREA'] = df.groupby('MUNICIPIO')['AREA'].transform('sum')
         df.drop_duplicates(subset='MUNICIPIO', keep='first', inplace=True)
         df = df.loc[:, ['MUNICIPIO', 'TOTAL_AREA', 'COD_MUNICIPIO', 'MESO', 'MICRO']]
 
-        df.to_csv(f'cache/CSVs/data_{year}_resumido.csv', index=False)
+        df.to_csv(f'cache/CSVs/Data_{year}_resumido.csv', index=False)
 
 
 if __name__ == '__main__':
