@@ -26,6 +26,7 @@
 body {
     font-family: var(--default-font);
     background-color: #e0e0e0;
+    margin-bottom: 24px;
 }
 
 /* HEADER */
@@ -163,15 +164,14 @@ header > div.container > div.d-flex > div.offcanvas > div.offcanvas-body > ul.na
 
 /* CAPA */
 
-main > div#cover {
+main > div.cover {
     display: flex;
-    background-image: url('../static/images/Capa.jpg');
     background-size: cover;
     align-items: center;
     justify-content: center;
 }
 
-main > div#cover > div#title > h2 {
+main > div.cover > div#title > h2 {
     color: #FFFFFF;
     text-align: center;
     font-weight: bold;
@@ -180,14 +180,14 @@ main > div#cover > div#title > h2 {
     animation-duration: 0.75s;
 }
 
-main > div#cover > div#title > div#rule {
+main > div.cover > div#title > div#rule {
     border-bottom: 3px solid #FFFFFF;
 
     animation: zoomIn;
     animation-duration: 0.75s;
 }
 
-main > div#cover > div#title > div.container {
+main > div.cover > div#title > div.container {
     max-width: 75%;
 }
 
@@ -196,7 +196,6 @@ main > div#cover > div#title > div.container {
 main > div.content {
     background-color: #FFFFFF;
     color: #424242;
-    margin: 25px 0px;
     padding: 24px;
 }
 
@@ -236,12 +235,12 @@ main > div.content > div.container > p > a:hover > svg {
 /* DISPOSITIVOS GRANDES */
 
 @media screen and (min-width: 768px) {
-    main > div#cover {
+    main > div#cover-01 {
         background-position: center;
-        height: 60vh;
+        height: 65vh;
     }
 
-    main > div#cover > div#title > h2 {
+    main > div#cover-01 > div#title > h2 {
         font-size: 42px;
     }
 }
@@ -259,12 +258,12 @@ main > div.content > div.container > p > a:hover > svg {
 /* DISPOSITIVOS PEQUENOS */
 
 @media screen and (max-width: 768px) {
-    main > div#cover {
+    main > div#cover-01 {
         background-position: right bottom;
         height: 42vh;
     }
 
-    main > div#cover > div#title > h2 {
+    main > div#cover-01 > div#title > h2 {
         font-size: 35px;
     }
 }

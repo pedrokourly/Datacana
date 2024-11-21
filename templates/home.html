@@ -1,7 +1,7 @@
 {% extends 'default.html' %}
 
 {% block conteudo %}
-    <div id="cover">
+    <div class="cover" id="cover-01" style="background-image: url('../static/images/Capa.jpg'); margin-bottom: 24px;">
         <div id="title">
             <h2>DataCana</h2>
             <div class="container" id="rule"></div>
@@ -26,26 +26,22 @@
                     </a>
                 </div>
             </div>
-            
-            <div class="row" id="row-02">
-                <div class="col-md">
-                    <div class="d-flex">
-                        <div id="square">
-                            <h2>Minas Gerais</h2>
-                            <div id="text">
-                                <p>Área de Cana Total (Km²)</p>
-                                <p id="odometer" class="odometer"></p>
-                            </div>
-                        </div>
-                        <button class="btn" id="tel">
-                            <a href="/plataforma" target="_blank" rel="external">Acesse a Plataforma</a>
-                        </button>
-                        <button class="btn">
-                            <a href="/downloads">Baixar dados</a>
-                        </button>
-                    </div>
-                </div>
-            </div>
+        </div>
+    </div>
+
+    <div class="cover" id="cover-02" style="background-image: url('../static/images/Capa02.webp');">
+        <div class="text-center">
+            <h2>Área de Cana Total em MG</h2>
+            <p class="odometer" id="odometer"></p>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="container">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius possimus magnam tempore et, amet accusantium quaerat voluptates illo. Non minus voluptate qui aliquam in quibusdam neque voluptatibus eligendi nobis facilis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore animi earum possimus atque voluptatibus illo dicta ratione quas, in ad perferendis, fuga quisquam dolorum officiis dolor porro sunt excepturi? Hic!</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius possimus magnam tempore et, amet accusantium quaerat voluptates illo. Non minus voluptate qui aliquam in quibusdam neque voluptatibus eligendi nobis facilis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore animi earum possimus atque voluptatibus illo dicta ratione quas, in ad perferendis, fuga quisquam dolorum officiis dolor porro sunt excepturi? Hic!</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius possimus magnam tempore et, amet accusantium quaerat voluptates illo. Non minus voluptate qui aliquam in quibusdam neque voluptatibus eligendi nobis facilis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore animi earum possimus atque voluptatibus illo dicta ratione quas, in ad perferendis, fuga quisquam dolorum officiis dolor porro sunt excepturi? Hic!</p>
+
         </div>
     </div>
 
@@ -129,6 +125,40 @@
             font-size: 48px;
         }
 
+        main > div#cover-02 {
+            position: relative;
+            overflow: hidden;
+        }
+
+        main > div#cover-02::before {
+            content: '';
+            position: absolute;
+            background-image: url('../static/images/Capa02.webp');
+            background-size: cover;
+            filter: blur(3px);
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+        }
+
+        main > div#cover-02 > div {
+            z-index: 1;
+        }
+
+        main > div#cover-02 > div > h2 {
+            color: #FFFFFF;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        main > div#cover-02 > div > p#odometer {
+            color: #9FD97C;
+            font-weight: bold;
+            font-size: 104px;
+        }
+
         button.btn {
             background-color: #9FD97C;
             border: none;
@@ -143,6 +173,22 @@
             text-decoration: none;
             font-weight: bold;
             font-size: 18px;
+        }
+
+        /* FORMATO DO ODÔMETRO (.ddd),dd */
+
+        .odometer-formatting-mark {
+            font-size: 0px;
+        }
+
+        .odometer-formatting-mark:after {
+            font-size: 96px;
+            content: '.';
+        }
+
+        .odometer-radix-mark:after {
+            font-size: 96px;
+            content: ',';
         }
 
         /* MEDIA-QUERY PARA DISPOSITIVOS */
@@ -170,6 +216,11 @@
             main > div.content > div.container > div#row-01 > div#col-02 > a > div#map {
                 height: 450px;
             }
+
+            main > div#cover-02 {
+                background-position: 0% 70%;
+                height: 75vh;
+            }
         }
 
         /* DISPOSITIVOS PEQUENOS */
@@ -193,6 +244,10 @@
 
             main > div.content > div.container > div#row-01 > div#col-02 > a > div#map {
                 height: 250px;
+            }
+
+            main > div#cover-02 {
+                height: 42vh;
             }
         }
     </style>

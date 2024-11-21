@@ -12,6 +12,7 @@ async function getDados() {
 $(document).ready(function () {
     getDados()
         .then(function (response) {
+            /*
             // Mapa
             var map = L.map('map', {
                 zoomControl: false,
@@ -70,7 +71,13 @@ $(document).ready(function () {
             map.scrollWheelZoom.disable();
             map.boxZoom.disable();
             map.keyboard.disable();
-            
+            */
+
+            window.odometerOptions = {
+                auto: false,
+                format: '(,ddd).dddddd'
+            };
+
             // Seleção do Odometer
             var el = document.getElementById('odometer');
             od = new Odometer({
@@ -80,7 +87,7 @@ $(document).ready(function () {
             // Observer
             const observer = new IntersectionObserver((entries) => {
                 if (entries[0].isIntersecting && entries[0].intersectionRatio === 1) {
-                    od.update(totalAreaHa);
+                    od.update(821226.90); // totalAreaHa
                 }
             }, {
                 threshold: 1,

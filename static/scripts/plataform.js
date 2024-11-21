@@ -203,7 +203,7 @@ $(document).ready(function () {
                     if(Area_ha == 0){
                         this._div.innerHTML = '<h4>Município de ' + titleCase(municipio) + ':</h4>' + 'Área de Cana: <br>' + '<b>' + "Não Consta Dados" + '</b>';
                     } else {
-                        this._div.innerHTML = '<h4>Município de ' + titleCase(municipio) + ':</h4>' + 'Área de Cana: <br>' + '<b>' + Area_ha.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' Km²' + '</b>';
+                        this._div.innerHTML = '<h4>Município de ' + titleCase(municipio) + ':</h4>' + 'Área de Cana: <br>' + '<b>' + Area_ha.toFixed(2).toString().replace(/\./, ',').replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' Km²' + '</b>';
                     }
                     
                 }
