@@ -16,10 +16,26 @@ def getData(year):
     qnt = len(df)
     totalArea = df['AREA'].sum()
     
-    # Tratando os dados processados
-    dfResumido = pd.read_csv(f'cache/CSVs/Data_{year}_Resume.csv').to_dict()
     return jsonify(geoJsonCana = json.loads(open(f"cache/Cana_{year}.geojson", 'r', encoding = "utf8").read()),
-                   dadosCana = dfResumido,
+                   dadosCana = df,
+                   escala = escala,
+                   qnt = qnt,
+                   totalArea = totalArea)
+
+@app.route('/data/resume/<int:year>', methods = ['GET'])
+def getResumeData(year):
+    """
+        Rota que busca dados resumidos de um ano específico
+        Método: GET
+    """
+    import pandas as pd
+
+    dfResumido = pd.read_csv(f'cache/CSVs/Data_{year}_Resume.csv')
+    escala = dfResumido['TOTAL_AREA'].describe().to_dict()
+    qnt = len(dfResumido)
+    totalArea = dfResumido['TOTAL_AREA'].sum()
+
+    return jsonify(dadosCana = dfResumido.to_dict(),
                    escala = escala,
                    qnt = qnt,
                    totalArea = totalArea)
