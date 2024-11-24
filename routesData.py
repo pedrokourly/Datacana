@@ -16,6 +16,7 @@ def getData(year):
     qnt = len(df)
     totalArea = df['AREA'].sum()
     
+    df = pd.read_csv(f'cache/CSVs/Data_{year}_Resume.csv').to_dict()
     return jsonify(geoJsonCana = json.loads(open(f"cache/Cana_{year}.geojson", 'r', encoding = "utf8").read()),
                    dadosCana = df,
                    escala = escala,
@@ -30,12 +31,12 @@ def getResumeData(year):
     """
     import pandas as pd
 
-    dfResumido = pd.read_csv(f'cache/CSVs/Data_{year}_Resume.csv')
-    escala = dfResumido['TOTAL_AREA'].describe().to_dict()
-    qnt = len(dfResumido)
-    totalArea = dfResumido['TOTAL_AREA'].sum()
+    df = pd.read_csv(f'cache/CSVs/Data_{year}_Resume.csv')
+    escala = df['TOTAL_AREA'].describe().to_dict()
+    qnt = len(df)
+    totalArea = df['TOTAL_AREA'].sum()
 
-    return jsonify(dadosCana = dfResumido.to_dict(),
+    return jsonify(dadosCana = df.to_dict(),
                    escala = escala,
                    qnt = qnt,
                    totalArea = totalArea)

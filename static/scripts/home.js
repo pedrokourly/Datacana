@@ -57,7 +57,7 @@ $(document).ready(async function () {
         }
 
         function getRadius(proporcao) {
-            const scale = 0.002;
+            const scale = 0.07;
             const radius = (Math.sqrt(proporcao) * scale) / 2;
             return Math.max(radius, 2);
         }
