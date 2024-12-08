@@ -33,23 +33,66 @@
         <div class="text-center">
             <h2>Área de Cana Total em MG</h2>
             <p class="odometer" id="odometer"></p>
+            <span>km²</span>
         </div>
     </div>
 
     <div class="content">
         <div class="container">
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius possimus magnam tempore et, amet accusantium quaerat voluptates illo. Non minus voluptate qui aliquam in quibusdam neque voluptatibus eligendi nobis facilis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore animi earum possimus atque voluptatibus illo dicta ratione quas, in ad perferendis, fuga quisquam dolorum officiis dolor porro sunt excepturi? Hic!</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius possimus magnam tempore et, amet accusantium quaerat voluptates illo. Non minus voluptate qui aliquam in quibusdam neque voluptatibus eligendi nobis facilis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore animi earum possimus atque voluptatibus illo dicta ratione quas, in ad perferendis, fuga quisquam dolorum officiis dolor porro sunt excepturi? Hic!</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius possimus magnam tempore et, amet accusantium quaerat voluptates illo. Non minus voluptate qui aliquam in quibusdam neque voluptatibus eligendi nobis facilis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore animi earum possimus atque voluptatibus illo dicta ratione quas, in ad perferendis, fuga quisquam dolorum officiis dolor porro sunt excepturi? Hic!</p>
+            <div class="d-flex">
+                <div class="card mb-3">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img class="img-fluid rounded-start" id="icon-01" src="../static/images/Icone MG 2.png" alt="Ícone Minas Gerais">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Área Territorial</h5>
+                                <p class="card-text"><small class="text-body-secondary">Minas Gerais</small></p>
+                                <p class="card-text">>> DADO <<</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="card mb-3">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img class="img-fluid rounded-start" id="icon-02" src="../static/images/Icone Cana.png" alt="Ícone Cana de Açúcar">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Município de Maior Área</h5>
+                                <p class="card-text"><small class="text-body-secondary">>> DADO <<<</small></p>
+                                <p class="card-text">>> DADO <<<</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-3">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img class="img-fluid rounded-start" id="icon-03" src="../static/images/Icone Municipio.png" alt="Ícone Município">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Polígonos Totais</h5>
+                                <p class="card-text"><small class="text-body-secondary">Arquivo .SHP</small></p>
+                                <p class="card-text">>> DADO <<<</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- Leaflet -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@latest/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@latest/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     
     <!-- Plug-in Odometro -->
     <link rel="stylesheet" href="https://github.hubspot.com/odometer/themes/odometer-theme-minimal.css" />
@@ -156,7 +199,36 @@
         main > div#cover-02 > div > p#odometer {
             color: #9FD97C;
             font-weight: bold;
-            font-size: 104px;
+        }
+
+        main > div#cover-02 > div > span {
+            color: #9FD97C;
+            font-size: 2rem;
+            font-weight: bold;
+            position: relative;
+        }
+
+        main > div.content > div.container > div.d-flex {
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        main > div.content > div.container > div.d-flex > div.card {
+            background-color: #9FD97C;
+            border-radius: 16px;
+            border: 1.5px solid rgba(0, 0, 0, 0.3);
+            width: 400px;
+        }
+
+        main > div.content > div.container > div.d-flex > div.card > div.row > div.col-md-8 > div.card-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+        }
+
+        main > div.content > div.container > div.d-flex > div.card > div.row > div.col-md-8 > div.card-body > h5.card-title {
+            margin-bottom: 0px;
         }
 
         button.btn {
@@ -179,16 +251,6 @@
 
         .odometer-formatting-mark {
             font-size: 0px;
-        }
-
-        .odometer-formatting-mark:after {
-            font-size: 96px;
-            content: '.';
-        }
-
-        .odometer-radix-mark:after {
-            font-size: 96px;
-            content: ',';
         }
 
         /* MEDIA-QUERY PARA DISPOSITIVOS */
@@ -221,6 +283,43 @@
                 background-position: 0% 70%;
                 height: 75vh;
             }
+
+            main > div#cover-02 > div > p#odometer {
+                font-size: 104px;
+            }
+
+            main > div#cover-02 > div > span {
+                top: 24px;
+            }
+
+            main > div.content > div.container > div.d-flex {
+                text-align: left;
+            }
+
+            main > div.content > div.container > div.d-flex > div.card > div.row > div.col-md-4 > img#icon-01 {
+                padding: 8px;
+            }
+
+            main > div.content > div.container > div.d-flex > div.card > div.row > div.col-md-4 > img#icon-02 {
+                padding: 24px;
+            }
+
+            main > div.content > div.container > div.d-flex > div.card > div.row > div.col-md-4 > img#icon-03 {
+                padding: 24px;
+            }
+
+
+            /* FORMATO DO ODÔMETRO (.ddd),dd */
+
+            .odometer-formatting-mark:after {
+                font-size: 6.5vw;
+                content: '.';
+            }
+
+            .odometer-radix-mark:after {
+                font-size: 6.5vw;
+                content: ',';
+            }
         }
 
         /* DISPOSITIVOS PEQUENOS */
@@ -248,6 +347,50 @@
 
             main > div#cover-02 {
                 height: 42vh;
+            }
+
+            main > div#cover-02 > div > p#odometer {
+                font-size: 48px;
+            }
+
+            main > div#cover-02 > div > span {
+                top: 4px;
+            }
+
+            main > div.content > div.container > div.d-flex {
+                text-align: center;
+            }
+
+            main > div.content > div.container > div.d-flex > div.card > div.row > * {
+                width: 50%;
+            }
+
+            main > div.content > div.container > div.d-flex > div.card > div.row > div.col-md-4 > img#icon-01 {
+                padding: 16px;
+            }
+
+            main > div.content > div.container > div.d-flex > div.card > div.row > div.col-md-4 > img#icon-02 {
+                padding: 32px;
+            }
+
+            main > div.content > div.container > div.d-flex > div.card > div.row > div.col-md-4 > img#icon-03 {
+                padding: 32px;
+            }
+
+            main > div.content > div.container > div.d-flex > div.card > div.row > div.col-md-8 > div.card-body {
+                padding: 1rem 0.5rem;
+            }
+
+            /* FORMATO DO ODÔMETRO (.ddd),dd */
+
+            .odometer-formatting-mark:after {
+                font-size: 9vw;
+                content: '.';
+            }
+
+            .odometer-radix-mark:after {
+                font-size: 9vw;
+                content: ',';
             }
         }
     </style>
