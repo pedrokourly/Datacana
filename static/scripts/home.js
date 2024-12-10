@@ -45,7 +45,6 @@ async function startOdometer(totalAreaCana){
 $(document).ready(async function () {
     try {
         const response = await getDados();
-        console.log(response);
 
         // Mapa
         var map = L.map('map', {
