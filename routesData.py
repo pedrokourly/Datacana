@@ -10,7 +10,7 @@ def getData(year):
         Método: GET
     """
     import pandas as pd
-    # Tratando o geoJson
+
     df = pd.read_csv(f'cache/CSVs/Data_{year}.csv')
     escala = df['AREA'].describe().to_dict()
     qnt = len(df)
@@ -41,6 +41,28 @@ def getResumeData(year):
                    qnt = qnt,
                    totalArea = totalArea)
 
+@app.route('/data/<int:year>/home', methods = ['GET'])
+def getDataHome(year):
+    """
+        Rota que busca quantidade de polígonos de um ano específico
+        Método: GET
+    """
+    import pandas as pd
+
+    df = pd.read_csv(f'cache/CSVs/Data_{year}.csv')
+    qnt = len(df)
+
+    df = pd.read_csv(f'cache/CSVs/Data_{year}_Resume.csv')
+    indice_maior_area = df['TOTAL_AREA'].idxmax()
+
+    maiorMuni = df.loc[indice_maior_area, 'MUNICIPIO']
+    maiorArea = df.loc[indice_maior_area, 'TOTAL_AREA']
+    
+    return jsonify(qnt = qnt,
+                   maiorMuni = maiorMuni,
+                   maiorArea = maiorArea)
+
+# Rota de Downloads da DataBase
 @app.route('/downloads/data/<int:year>', methods = ['GET'])
 def downloadData(year):
     return send_file(f"cache/CSVs/Data_{year}.csv", as_attachment = True)

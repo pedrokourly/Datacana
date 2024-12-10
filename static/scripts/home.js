@@ -1,9 +1,14 @@
 // Função GET Dados
 async function getDados() {
     try {
-        const response = await fetch('/data/resume/2022');
+        let response
+
+        response = await fetch('/data/resume/2022');
         const data = await response.json();
-        return data;
+        response = await fetch('/data/2022/home')
+        const dataHome = await response.json();
+
+        return {data, dataHome};
     } catch (error) {
         console.error('Erro ao buscar dados:', error);
     }
@@ -40,6 +45,7 @@ async function startOdometer(totalAreaCana){
 $(document).ready(async function () {
     try {
         const response = await getDados();
+        console.log(response);
 
         // Mapa
         var map = L.map('map', {
@@ -54,13 +60,13 @@ $(document).ready(async function () {
                 fillOpacity: 1,
                 weight: 1,
             }
-        }
+        };
 
         function getRadius(proporcao) {
             const scale = 0.07;
             const radius = (Math.sqrt(proporcao) * scale) / 2;
             return Math.max(radius, 2);
-        }
+        };
 
         jQuery.getJSON("https://servicodados.ibge.gov.br/api/v2/malhas/31?formato=application/vnd.geo+json", function(JSON) {
             var layer = new L.geoJSON(JSON, estilos.uf);   
@@ -69,10 +75,10 @@ $(document).ready(async function () {
             map.fitBounds(ufExtent, { animate: false });
             layer.addTo(map);
 
-            for (let i = 0; i < response.qnt; i++) {
-                const areaHa = response.dadosCana['TOTAL_AREA'][i];
+            for (let i = 0; i < response.data.qnt; i++) {
+                const areaHa = response.data.dadosCana['TOTAL_AREA'][i];
                 const radius = getRadius(areaHa);
-                const coordenadas = L.latLng(response.dadosCana['LAT'][i], response.dadosCana['LONG'][i])
+                const coordenadas = L.latLng(response.data.dadosCana['LAT'][i], response.data.dadosCana['LONG'][i])
 
                 let marker = L.circleMarker(coordenadas, {
                     color: 'darkgreen',
@@ -82,8 +88,7 @@ $(document).ready(async function () {
                     opacity: 1,
                 });
                 marker.addTo(layer);
-
-            }
+            };
         });                   
         
         // Desativação do Mapa
@@ -104,7 +109,7 @@ $(document).ready(async function () {
             } else {
                 map.setZoom(5); // Zoom para telas pequenas
             }
-        }
+        };
         
         // Chama a função ao carregar a página
         ajustarZoom();
@@ -115,7 +120,28 @@ $(document).ready(async function () {
             ajustarZoom();
         });
 
-        startOdometer(response.totalArea);
+        // Funcção titleCase
+        function titleCase(str) {
+            return str.split(' ')
+              .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+              .join(' ');
+        }
+
+        // Carrega o dado de Área de Cana Total de MG ao Odômetro
+        startOdometer(response.data.totalArea);
+
+        // Carrega o dados dos Card's
+        const qntPoligono = document.getElementById('qntPoligono');
+        const maiorMuni = document.getElementById('maiorMuni');
+        const maiorArea = document.getElementById('maiorArea');
+
+        qntPoligono.innerHTML = response.dataHome.qnt;
+        maiorMuni.innerHTML = titleCase(response.dataHome.maiorMuni);
+        maiorArea.innerHTML = parseFloat(response.dataHome.maiorArea).toLocaleString('pt-BR', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
+
     } catch (error) {
         console.error("Error fetching data:", error);
     }

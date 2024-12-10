@@ -49,7 +49,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Área Territorial</h5>
                                 <p class="card-text"><small class="text-body-secondary">Minas Gerais</small></p>
-                                <p class="card-text">>> DADO <<</p>
+                                <p class="card-text" style="font-weight: bold;"><span class="num">586.513.983</span><span> km²</span></p>
                             </div>
                         </div>
                     </div>
@@ -63,8 +63,8 @@
                         <div class="col-md-8">
                             <div class="card-body">
                                 <h5 class="card-title">Município de Maior Área</h5>
-                                <p class="card-text"><small class="text-body-secondary">>> DADO <<<</small></p>
-                                <p class="card-text">>> DADO <<<</p>
+                                <p class="card-text"><small class="text-body-secondary" id="maiorMuni"></small></p>
+                                <p class="card-text" style="font-weight: bold;"><span class="num" id="maiorArea"></span><span> km²</span></p>
                             </div>
                         </div>
                     </div>
@@ -79,7 +79,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Polígonos Totais</h5>
                                 <p class="card-text"><small class="text-body-secondary">Arquivo .SHP</small></p>
-                                <p class="card-text">>> DADO <<<</p>
+                                <p class="card-text" style="font-weight: bold;"><span class="num" id="qntPoligono"></span><span> Polígonos</span></p>
                             </div>
                         </div>
                     </div>
@@ -91,8 +91,8 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- Leaflet -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@latest/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@latest/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     
     <!-- Plug-in Odometro -->
     <link rel="stylesheet" href="https://github.hubspot.com/odometer/themes/odometer-theme-minimal.css" />
@@ -217,6 +217,7 @@
             background-color: #9FD97C;
             border-radius: 16px;
             border: 1.5px solid rgba(0, 0, 0, 0.3);
+            box-shadow: 0rem 0rem 0.5rem rgba(0, 0, 0, 0.2);
             width: 400px;
         }
 
@@ -225,6 +226,10 @@
             flex-direction: column;
             justify-content: center;
             height: 100%;
+        }
+
+        main > div.content > div.container > div.d-flex > div.card > div.row > div.col-md-8 > div.card-body > p.card-text {
+            margin-bottom: 0.25rem;
         }
 
         main > div.content > div.container > div.d-flex > div.card > div.row > div.col-md-8 > div.card-body > h5.card-title {
@@ -308,6 +313,9 @@
                 padding: 24px;
             }
 
+            main > div.content > div.container > div.d-flex > div.card > div.row > div.col-md-8 > div.card-body > p.card-text > span.num {
+                font-size: 24px;
+            }
 
             /* FORMATO DO ODÔMETRO (.ddd),dd */
 
@@ -379,6 +387,10 @@
 
             main > div.content > div.container > div.d-flex > div.card > div.row > div.col-md-8 > div.card-body {
                 padding: 1rem 0.5rem;
+            }
+
+            main > div.content > div.container > div.d-flex > div.card > div.row > div.col-md-8 > div.card-body > p.card-text > span.num {
+                font-size: 18px;
             }
 
             /* FORMATO DO ODÔMETRO (.ddd),dd */
