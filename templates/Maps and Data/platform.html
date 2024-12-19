@@ -16,45 +16,85 @@
     <script src="https://unpkg.com/leaflet@latest/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="d-flex align-items-center justify-content-center">
-                <a id="logo" href="/">
-                    <img src="../static/images/DataCana.svg" alt="Logo Datacana">
-                </a>
+    <div class="box-load">
+        <div class="loading"></div>
+        <div class="pre">Inicializando Plataforma...</div>
+    </div>
+
+    <div class="content">
+        <header>
+            <div class="container">
+                <div class="d-flex align-items-center justify-content-center">
+                    <a id="logo" href="/">
+                        <img src="../static/images/DataCana.svg" alt="Logo Datacana">
+                    </a>
+                </div>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <main>
-        <div id="map">
-            <a href="https://www.maptiler.com" style="position:absolute;right:10px;bottom:25px;z-index:999;"><img src="https://api.maptiler.com/resources/logo.svg" alt="MapTiler logo"></a>
-        </div>
-    </main>
+        <main>
+            <div id="map">
+                <a href="https://www.maptiler.com" style="position:absolute;right:10px;bottom:25px;z-index:999;"><img src="https://api.maptiler.com/resources/logo.svg" alt="MapTiler logo"></a>
+            </div>
+        </main>
 
-    <!-- Plug-in MapTiler -->
-    <script src="https://cdn.maptiler.com/maptiler-geocoding-control/v1.2.0/leaflet.umd.js"></script>
-    <link href="https://cdn.maptiler.com/maptiler-geocoding-control/v1.2.0/style.css" rel="stylesheet">
+        <!-- Plug-in MapTiler -->
+        <script src="https://cdn.maptiler.com/maptiler-geocoding-control/v1.2.0/leaflet.umd.js"></script>
+        <link href="https://cdn.maptiler.com/maptiler-geocoding-control/v1.2.0/style.css" rel="stylesheet">
 
-    <!-- Plug-in Responsive Pop-up -->
-    <script src="https://unpkg.com/leaflet-responsive-popup@1.0.0/leaflet.responsive.popup.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet-responsive-popup@1.0.0/leaflet.responsive.popup.css"/>
+        <!-- Plug-in Responsive Pop-up -->
+        <script src="https://unpkg.com/leaflet-responsive-popup@1.0.0/leaflet.responsive.popup.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet-responsive-popup@1.0.0/leaflet.responsive.popup.css"/>
 
-    <!-- Plug-in FullScreen -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet.fullscreen@latest/Control.FullScreen.css">
-    <script src="https://unpkg.com/leaflet.fullscreen@latest/Control.FullScreen.js"></script>
+        <!-- Plug-in FullScreen -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet.fullscreen@latest/Control.FullScreen.css">
+        <script src="https://unpkg.com/leaflet.fullscreen@latest/Control.FullScreen.js"></script>
 
-    <!-- Plug-in ResetView -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@drustack/leaflet.resetview/dist/L.Control.ResetView.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/@drustack/leaflet.resetview/dist/L.Control.ResetView.min.js"></script>
-    
-    <!-- Plug-in Invert -->
-    <script src = "/static/scripts/leaflet.snogylop.js"></script>
+        <!-- Plug-in ResetView -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@drustack/leaflet.resetview/dist/L.Control.ResetView.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/@drustack/leaflet.resetview/dist/L.Control.ResetView.min.js"></script>
+        
+        <!-- Plug-in Invert -->
+        <script src = "/static/scripts/leaflet.snogylop.js"></script>
 
-
-    <script src="/static/scripts/plataform.js"></script>
+        <script src="/static/scripts/plataform.js"></script>
+    </div>
 
     <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+
+        @keyframes load {
+            to {
+                transform: rotate(360deg)
+            }
+        }
+
+        .box-load {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loading {
+            width: 80px;
+            height: 80px;
+            background-image: url(../../static/images/Load.png);
+            background-position: center;
+            background-size: contain;
+            animation: load 2s infinite linear;
+        }
+        
+        .pre {
+            margin-top: 16px;
+        }
+
         .leaflet-control-zoom-in, .leaflet-control-zoom-out {
             font-family: monospace;
             font-weight: bolder;
