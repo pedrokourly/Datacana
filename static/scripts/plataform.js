@@ -31,6 +31,13 @@ $(document).ready(function () {
                 zoomDelta: 0.5
             });
 
+            // Esconder o elemento de carregamento após o mapa ser carregado
+            map.whenReady(function() {
+                $('.box-load').fadeOut('slow', function() {
+                    $(this).css('display', 'none');
+                });
+            });
+
             // Visualização
             map.setView([-18.918999, -48.277950], 7);
 
