@@ -26,8 +26,51 @@
         </div>
     </header>
 
-    <main>
+    <main> 
+
+        <div class="container">
+            <h2>Area por município</h2>
+            <canvas id="AreaMunicipio" width="400" height="100" aria-label="AreaHA Chart" role="img"></canvas>
+        </div>
+
+        <div class="container" >
+            <h2>Proporção de Área de Cana por Meso-Região de Minas Gerais</h2>
+            <div class="d-flex center" style="width: 50dvh; height: 50dvh">
+                <canvas id="AreaRegiao" aria-label="Regiao Chart" role="img"></canvas>
+            </div>
+        </div>
         
+        <div class="container" >
+            <h2>Proporção de Área de Cana por Micro-Região de Minas Gerais</h2>
+            <canvas id="AreaMicroRegiao" width="400" height="100" aria-label="Micro Regiao Chart" role="img"></canvas>
+        </div>
+
+        <div class="container">
+            <h2>Dados dos Municípios</h2>
+            <div class="table-responsive">
+                <table id="dadosCanaTable" class="display responsive wrap" width="100%">
+                    <thead>
+                        <tr>
+                            <th>MUNICIPIO</th>
+                            <th>TOTAL_AREA</th>
+                            <th>COD_MUNICIPIO</th>
+                            <th>MESO</th>
+                            <th>MICRO</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- Tabelas --> 
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+
+        <!-- Gráficos --> 
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="../../static/scripts/chartsTables.js"></script>
     </main>
 
     <style>
@@ -47,6 +90,21 @@
             header {
                 height: 12.3vh;
             }
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+        }
+
+        .chart-container {
+        width: 300px; /* Ajuste a largura conforme necessário */
+        height: 150px; /* Ajuste a altura conforme necessário */
+        position: relative;
+        }
+
+        .chart-container canvas {
+            width: 100% !important;
+            height: 100% !important;
         }
     </style>
 </body>
