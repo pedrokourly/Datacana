@@ -77,7 +77,7 @@ async function createChart_AreaRegiao() {
     const { regioes } = await loadCSVData();
     const ctxPie = document.getElementById('AreaRegiao');
     new Chart(ctxPie, {
-        type: 'pie',
+        type: 'doughnut',
         data: {
         labels: Object.keys(regioes),
         datasets: [{
