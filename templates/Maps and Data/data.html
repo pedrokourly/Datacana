@@ -16,64 +16,99 @@
     <script src="https://unpkg.com/leaflet@latest/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="d-flex align-items-center justify-content-center">
-                <a id="logo" href="/">
-                    <img src="../static/images/DataCana.svg" alt="Logo Datacana">
-                </a>
+    <div class="content">
+        <header>
+            <div class="container">
+                <div class="d-flex align-items-center justify-content-center">
+                    <a id="logo" href="/">
+                        <img src="../static/images/DataCana.svg" alt="Logo Datacana">
+                    </a>
+                </div>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <main> 
-
-        <div class="container">
-            <h2>Area por município</h2>
-            <canvas id="AreaMunicipio" width="400" height="100" aria-label="AreaHA Chart" role="img"></canvas>
-        </div>
-
-        <div class="container" >
-            <h2>Proporção de Área de Cana por Meso-Região de Minas Gerais</h2>
-            <div class="d-flex center" style="width: 50dvh; height: 50dvh">
-                <canvas id="AreaRegiao" aria-label="Regiao Chart" role="img"></canvas>
+        <main>
+            <div id="alert" class="container">
+                <div class="alert alert-primary" role="alert">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#052c65"><path d="m48-144 432-720 432 720H48Zm127-72h610L480-724 175-216Zm304.79-48q15.21 0 25.71-10.29t10.5-25.5q0-15.21-10.29-25.71t-25.5-10.5q-15.21 0-25.71 10.29t-10.5 25.5q0 15.21 10.29 25.71t25.5 10.5ZM444-384h72v-192h-72v192Zm36-86Z"/></svg>
+                    <br>
+                    Para uma melhor experiência, utilize um dispositivo com tela maior.
+                </div>
             </div>
-        </div>
-        
-        <div class="container" >
-            <h2>Proporção de Área de Cana por Micro-Região de Minas Gerais</h2>
-            <canvas id="AreaMicroRegiao" width="400" height="100" aria-label="Micro Regiao Chart" role="img"></canvas>
-        </div>
 
-        <div class="container">
-            <h2>Dados dos Municípios</h2>
-            <div class="table-responsive">
-                <table id="dadosCanaTable" class="display responsive wrap" width="100%">
-                    <thead>
-                        <tr>
-                            <th>MUNICIPIO</th>
-                            <th>TOTAL_AREA</th>
-                            <th>COD_MUNICIPIO</th>
-                            <th>MESO</th>
-                            <th>MICRO</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                </table>
+            <div class="container">
+                <h2>Dados de Cana dos Municípios</h2>
+                <div class="table-responsive">
+                    <table id="dadosCanaTable" class="display responsive wrap" width="100%">
+                        <thead>
+                            <tr>
+                                <th>MUNICIPIO</th>
+                                <th>TOTAL_AREA</th>
+                                <th>COD_MUNICIPIO</th>
+                                <th>MESO</th>
+                                <th>MICRO</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </div>
-        
-        <!-- Tabelas --> 
-        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
-        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
 
-        <!-- Gráficos --> 
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        <script src="../../static/scripts/chartsTables.js"></script>
-    </main>
+            <div class="container">
+                <h2>Proporção de Área de Cana por Município de MG</h2>
+                <canvas id="AreaMunicipio" width="400" height="100" aria-label="AreaHA Chart" role="img"></canvas>
+            </div>
+
+            <div class="container">
+                <h2>Proporção de Área de Cana por Microrregião de MG</h2>
+                <canvas id="AreaMicroRegiao" width="400" height="100" aria-label="Micro Regiao Chart" role="img"></canvas>
+            </div>
+
+            <div class="container" style="margin-bottom: 0px;">
+                <h2>Proporção de Área de Cana por Mesorregião de MG</h2>
+                <div class="d-flex">
+                    <canvas id="AreaRegiao" aria-label="Regiao Chart" role="img"></canvas>
+                </div>
+            </div>
+
+            <!-- Tabelas --> 
+            <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+            <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+
+            <!-- Gráficos --> 
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <script src="../../static/scripts/chartsTables.js"></script>
+        </main>
+    </div>
 
     <style>
+        main {
+            color: #424242; 
+            padding: 24px;
+        }
+
+        main > div#alert {
+            margin-bottom: 0px;
+        }
+
+        main > div.container {
+            margin-bottom: 48px;
+        }
+
+        main > div.container > div.alert {
+            text-align: center;
+        }
+
+        main > div.container > h2 {
+            margin-bottom: 16px;
+        }
+
+        main > div.container > div.d-flex {
+            justify-content: center;
+            align-items: center;
+        }
+
         /* MEDIA-QUERY PARA DISPOSITIVOS */
 
         /* DISPOSITIVOS GRANDES */
@@ -81,6 +116,18 @@
         @media screen and (min-width: 992px) {
             header {
                 height: 13.5vh;
+            }
+
+            main > div#alert {
+                display: none;
+            }
+
+            main > div.container > h2 {
+                font-size: 1.60rem;
+            }
+
+            main > div.container > div.d-flex {
+                height: 600px;
             }
         }
 
@@ -90,21 +137,18 @@
             header {
                 height: 12.3vh;
             }
-        }
 
-        .table-responsive {
-            overflow-x: auto;
-        }
+            main > div#alert {
+                display: block;
+            }
 
-        .chart-container {
-        width: 300px; /* Ajuste a largura conforme necessário */
-        height: 150px; /* Ajuste a altura conforme necessário */
-        position: relative;
-        }
+            main > div.container > h2 {
+                font-size: 1.40rem;
+            }
 
-        .chart-container canvas {
-            width: 100% !important;
-            height: 100% !important;
+            main > div.container > div.d-flex {
+                height: 360px;
+            }
         }
     </style>
 </body>
