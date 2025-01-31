@@ -44,122 +44,6 @@ async function loadCSVData() {
   }
 }
 
-
-async function createChart_AreaMunicipio() {
-  const { municipios, areas } = await loadCSVData();
-
-  const ctx = document.getElementById('AreaMunicipio');
-
-  new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: municipios,
-      datasets: [{
-        label: 'Área de Cana (ha)',
-        data: areas,
-        backgroundColor: '#0ABF6A',
-        borderWidth: 1,
-        hoverOffset: 4
-      }]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      },
-      responsive: true
-    }
-  });
-}
-
-async function createChart_AreaRegiao() {
-  const { regioes } = await loadCSVData();
-  const ctxPie = document.getElementById('AreaRegiao');
-  new Chart(ctxPie, {
-    type: 'doughnut',
-    data: {
-      labels: Object.keys(regioes),
-      datasets: [{
-        label: 'Área por Mesorregião (ha)',
-        data: Object.values(regioes),
-        borderWidth: 1,
-        backgroundColor: [
-          '#1D3328', // Cor 1
-          '#00BF63', // Cor 2
-          '#169B5B', // Cor 3
-          '#22764E', // Cor 4
-          '#23523B', // Cor 5
-
-          '#BF9300', // COR ALEATORIA
-        ]
-      }]
-    },
-    options: {
-      responsive: true,
-      plugins: {
-        legend: {
-          position: 'right',
-          maxHeight: 100, // Ajuste a altura máxima da legenda
-          labels: {
-            boxWidth: 10,
-            padding: 10
-          }
-        }
-      }
-    }
-  });
-}
-
-async function createChart_AreaMicroRegiao() {
-  const { dadosCana } = await loadCSVData();
-  const ctx = document.getElementById('AreaMicroRegiao').getContext('2d');
-  const microRegioes = {};
-
-  if (dadosCana && dadosCana.TOTAL_AREA && dadosCana.MICRO) {
-    const areasData = dadosCana.TOTAL_AREA;
-    const microData = dadosCana.MICRO;
-
-    for (const key in areasData) {
-      if (areasData.hasOwnProperty(key) && microData.hasOwnProperty(key)) {
-        const micro = microData[key];
-        if (!microRegioes[micro]) {
-          microRegioes[micro] = 0;
-        }
-        microRegioes[micro] += parseFloat(areasData[key]);
-      }
-    }
-
-    const sortedEntries = Object.entries(microRegioes).sort((a, b) => b[1] - a[1]);
-    const labels = sortedEntries.map(entry => entry[0]);
-    const dataValues = sortedEntries.map(entry => entry[1]);
-
-    new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: labels,
-        datasets: [{
-          label: 'Área por Microregião',
-          data: dataValues,
-          borderWidth: 1,
-          backgroundColor: '#0ABF6A'
-        }]
-      },
-      options: {
-        indexAxis: 'y', // Configuração para barras horizontais
-        responsive: true,
-        plugins: {
-          legend: {
-            display: false
-          }
-        },
-      }
-    });
-  } else {
-    console.error('Formato de dados inesperado:', dadosCana);
-  }
-}
-
 async function iniciarDataTable() {
   const { dadosCana } = await loadCSVData();
 
@@ -185,6 +69,204 @@ async function iniciarDataTable() {
     language: {
       url: "//cdn.datatables.net/plug-ins/1.10.21/i18n/Portuguese-Brasil.json"
     }
+  });
+}
+
+let watermarkImage = null;
+const watermarkPlugin = {
+  id: 'watermark',
+  beforeDraw: (chart) => {
+      const ctx = chart.ctx;
+      const width = chart.width;
+      const height = chart.height;
+
+      if (!watermarkImage) {
+          watermarkImage = new Image();
+          watermarkImage.src = '../static/images/DataCana.svg';
+      }
+
+      if (watermarkImage.complete) {
+          const imgWidth = watermarkImage.width;
+          const imgHeight = watermarkImage.height;
+          const aspectRatio = imgWidth / imgHeight;
+
+          let drawWidth, drawHeight;
+
+          if (width / height < aspectRatio) {
+              drawWidth = (width / 8);
+              drawHeight = drawWidth / aspectRatio;
+          } else {
+              drawHeight = (height / 8);
+              drawWidth = drawHeight * aspectRatio;
+          }
+
+          const x = width - drawWidth - 30; // 10 pixels de margem da borda direita
+          const y = height - drawHeight - 30;
+
+          ctx.save();
+          ctx.globalAlpha = 1;
+          ctx.drawImage(watermarkImage, x, y, drawWidth, drawHeight);
+          ctx.restore();
+      } else {
+          watermarkImage.onload = () => {
+              chart.draw();
+          };
+      }
+  }
+};
+
+async function createChart_AreaMunicipio() {
+    const { municipios, areas } = await loadCSVData();
+
+    // Combinar municipios e areas em um array de objetos
+    const combinedData = municipios.map((municipio, index) => ({
+        municipio,
+        area: areas[index]
+    }));
+
+    // Ordenar os dados em ordem decrescente com base na área
+    combinedData.sort((a, b) => b.area - a.area);
+
+    // Selecionar os 20 maiores
+    const top20Data = combinedData.slice(0, 20);
+
+    // Ordenar os 20 maiores em ordem decrescente
+    top20Data.sort((a, b) => b.area - a.area);
+
+    // Separar os dados ordenados em arrays de municipios e areas
+    const top20Municipios = top20Data.map(item => item.municipio);
+    const top20Areas = top20Data.map(item => item.area);
+
+    const ctx = document.getElementById('AreaMunicipio').getContext('2d');
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: top20Municipios,
+            datasets: [{
+                label: 'Área de Cana (ha)',
+                data: top20Areas,
+                backgroundColor: '#0ABF6A',
+                borderWidth: 1,
+                hoverOffset: 4
+            }]
+        },
+        options: {
+            indexAxis: 'y',
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        autoSkip: false, 
+                        padding: 10 
+                    }
+                }
+            },
+            responsive: true,
+            plugins: {
+                watermark: watermarkPlugin,
+            }
+        },
+        plugins: [watermarkPlugin]
+    });
+}
+
+async function createChart_AreaMicroRegiao() {
+  const { dadosCana } = await loadCSVData();
+  const ctx = document.getElementById('AreaMicroRegiao').getContext('2d');
+  const microRegioes = {};
+
+  if (dadosCana && dadosCana.TOTAL_AREA && dadosCana.MICRO) {
+    const areasData = dadosCana.TOTAL_AREA;
+    const microData = dadosCana.MICRO;
+
+    for (const key in areasData) {
+      if (areasData.hasOwnProperty(key) && microData.hasOwnProperty(key)) {
+        const micro = microData[key];
+        if (!microRegioes[micro]) {
+          microRegioes[micro] = 0;
+        }
+        microRegioes[micro] += parseFloat(areasData[key]);
+      }
+    }
+
+    const sortedEntries = Object.entries(microRegioes).sort((a, b) => b[1] - a[1]);
+    let labels = sortedEntries.map(entry => entry[0]);
+    let dataValues = sortedEntries.map(entry => entry[1]);
+    dataValues = dataValues.slice(0, 20);
+    labels = labels.slice(0, 20);
+
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'Área por Microregião',
+          data: dataValues,
+          borderWidth: 1,
+          backgroundColor: '#0ABF6A'
+        }]
+      },
+      options: {
+            indexAxis: 'y',
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        autoSkip: false, 
+                        padding: 10 
+                    }
+                }
+            },
+            responsive: true,
+            plugins: {
+                watermark: watermarkPlugin
+            }
+        },
+        plugins: [watermarkPlugin]
+    });
+  } else {
+    console.error('Formato de dados inesperado:', dadosCana);
+  }
+}
+
+async function createChart_AreaRegiao() {
+  const { regioes } = await loadCSVData();
+    const ctxPie = document.getElementById('AreaRegiao').getContext('2d');
+
+    // Ordenar os dados em ordem decrescente
+    const sortedEntries = Object.entries(regioes).sort((a, b) => b[1] - a[1]);
+    const labels = sortedEntries.map(entry => entry[0]);
+    const dataValues = sortedEntries.map(entry => entry[1]);
+
+    new Chart(ctxPie, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Área por Mesorregião (ha)',
+                data: dataValues,
+                borderWidth: 1,
+                backgroundColor:'#0ABF6A'
+            }]
+        },
+    options: {
+      indexAxis: 'y',
+      scales: {
+          y: {
+              beginAtZero: true,
+              ticks: {
+                  autoSkip: false, 
+                  padding: 10 
+              }
+          }
+      },
+      responsive: true,
+      plugins: {
+          watermark: watermarkPlugin
+      }
+    },
+    plugins: [watermarkPlugin]
   });
 }
 
