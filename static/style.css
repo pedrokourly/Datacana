@@ -69,6 +69,7 @@ header > div.container > div.d-flex > nav > ul > li.nav-item > a {
     color: var(--color-font);
     text-decoration: none;
     padding-block: 20px;
+    font-size: 16.5px;
 }
 
 header > div.container > div.d-flex > nav > ul > li.nav-item > a:hover {
@@ -234,10 +235,10 @@ main > div.content > div.container > p > a:hover > svg {
 footer {
     background-image: url('../static/images/Terra.png');
     background-size: cover;
-    background-position: center;
+    background-position: bottom;
     color: var(--color-header);
-    padding: 64px;
     box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+    padding: 64px;
 }
 
 footer > div.container > div.row > div.col-md-2 {
@@ -246,6 +247,7 @@ footer > div.container > div.row > div.col-md-2 {
 
 footer > div.container > div.row > div.col-md-2 > a > img {
     width: 130px;
+    margin: 8px 0px;
 }
 
 footer > div.container > div.row > div.col-md-9 {
@@ -271,6 +273,24 @@ footer > div.container > div.row > div.col-md-9 > div.row > div.col-md-3 > ul.na
 
 footer > div.container > div.row > div.col-md-9 > div.row > div.col-md-3 > ul.nav > li.nav-item > a:hover {
     text-decoration: underline;
+}
+
+footer > div.container > div.row > div.col-md-12 > h5 {
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+footer > div.container > div.row > div.col-md-12 > div.d-flex {
+    flex-wrap: wrap;
+    background-color: #ffffff50;
+    border-radius: 8px;
+    margin: auto;
+    gap: 32px;
+}
+
+footer > div.container > div.row > div.col-md-12 > div.d-flex > a > img {
+    width: 130px;
+    margin: 8px 0px;
 }
 
 footer > div.container > div#endrow {
@@ -304,6 +324,14 @@ footer > div.container > div#endrow > p.text-center > a:hover {
     main > div#cover-01 > div#title > h2 {
         font-size: 42px;
     }
+
+    footer > div.container > div.row > div.col-md-2 {
+        text-align: left;
+    }
+
+    footer > div.container > div.row > div.col-md-12 > div.d-flex {
+        padding: 8px 0px;
+    }
 }
 
 @media screen and (min-width: 992px) {
@@ -313,10 +341,6 @@ footer > div.container > div#endrow > p.text-center > a:hover {
 
     header > div.container > div.d-flex > button {
         display: none;
-    }
-
-    footer > div.container > div.row > div.col-md-2 {
-        text-align: left;
     }
 }
 
@@ -331,6 +355,14 @@ footer > div.container > div#endrow > p.text-center > a:hover {
     main > div#cover-01 > div#title > h2 {
         font-size: 35px;
     }
+
+    footer > div.container > div.row > div.col-md-2 {
+        text-align: center;
+    }
+
+    footer > div.container > div.row > div.col-md-12 > div.d-flex {
+        padding: 24px 0px 16px 0px;
+    }
 }
 
 @media screen and (max-width: 992px) {
@@ -340,9 +372,5 @@ footer > div.container > div#endrow > p.text-center > a:hover {
 
     header > div.container > div.d-flex > button {
         display: flex;
-    }
-
-    footer > div.container > div.row > div.col-md-2 {
-        text-align: center;
     }
 }
