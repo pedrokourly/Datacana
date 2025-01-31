@@ -268,14 +268,39 @@ $(document).ready(function () {
             // Para as layers
             var baseLayers = {
                 "Área Ocupada: Cultura": L.layerGroup([tileOffColor, geoJsonCana, geoJsonMG]),
-                "Área Ocupada: Estadual": L.layerGroup([geoJsonMGE]),
-                "Área Ocupada: Municipal": L.layerGroup([geoJsonMGMunicipiosProps])
+                "Área Ocupada: Municipal": L.layerGroup([geoJsonMGMunicipiosProps]),
+                "Área Ocupada: Estadual": L.layerGroup([geoJsonMGE])
             };
 
             baseLayers["Área Ocupada: Estadual"].addTo(map);
 
             // Controle de Camadas
-            var layerControl = L.control.layers(baseLayers, null, {position: 'topleft'}).addTo(map);
+            var layerControl = L.control.layers(null, baseLayers, {position: 'topleft', collapsed: false}).addTo(map);
+
+            // Função para manter a hierarquia das camadas
+            function maintainLayerOrder() {
+                baseLayers["Área Ocupada: Estadual"].eachLayer(function(layer) {
+                    layer.bringToBack();
+                });
+                baseLayers["Área Ocupada: Municipal"].eachLayer(function(layer) {
+                    layer.bringToBack();
+                });
+                baseLayers["Área Ocupada: Cultura"].eachLayer(function(layer) {
+                    layer.bringToFront();
+                });
+            }
+
+            // Eventos para manter a hierarquia ao adicionar/remover camadas
+            map.on('overlayadd', function(eventLayer) {
+                maintainLayerOrder();
+            });
+
+            map.on('overlayremove', function(eventLayer) {
+                maintainLayerOrder();
+            });
+
+            // Inicializa a ordem das camadas
+            maintainLayerOrder();
 
             // Eventos para mostrar/esconder a legenda
             map.on('overlayadd', function(eventLayer) {
@@ -291,6 +316,36 @@ $(document).ready(function () {
                     legend.getContainer().style.display = 'none';
                 }
             });
+
+            // Adiciona eventos para manter a hierarquia ao interagir com as camadas
+            baseLayers["Área Ocupada: Municipal"].eachLayer(function(layer) {
+                layer.on('mouseover', function() {
+                    maintainLayerOrder();
+                });
+                layer.on('mouseout', function() {
+                    maintainLayerOrder();
+                });
+            });
+
+            baseLayers["Área Ocupada: Estadual"].eachLayer(function(layer) {
+                layer.on('mouseover', function() {
+                    maintainLayerOrder();
+                });
+                layer.on('mouseout', function() {
+                    maintainLayerOrder();
+                });
+            });
+
+            baseLayers["Área Ocupada: Cultura"].eachLayer(function(layer) {
+                layer.on('mouseover', function() {
+                    maintainLayerOrder();
+                });
+                layer.on('mouseout', function() {
+                    maintainLayerOrder();
+                });
+            });
+
+            L.control.scale({position: 'bottomleft', maxWidth: 200}).addTo(map);
         })
         .catch(function (error) {
             console.error("Error fetching data:", error);
