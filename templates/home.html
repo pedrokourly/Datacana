@@ -12,9 +12,8 @@
         <div class="container text-center">
             <div class="row" id="row-01">
                 <div class="col-md" id="col-01">
-                    <h1>O MAPA DE MINAS GERAIS NAS SUAS MÃOS</h1>
-                    <p>O DataCana é mais do que uma plataforma: é uma nova forma de ver o mundo.</p>
-                    <p>Nossos dados vão te ajudar a alcançar os seus objetivos.</p>
+                    <h1>A ESPACIALIZAÇÃO DO CULTIVO DA CANA-DE-AÇÚCAR EM MINAS GERAIS A UM CLIQUE</h1>
+                    <p>O DataCana é mais do que uma plataforma; é a democratização do acesso à informação.</p>
                     <button class="btn" id="pc">
                         <a href="/plataforma" target="_blank" rel="external">Acesse a Plataforma</a>
                     </button>
@@ -31,9 +30,9 @@
 
     <div class="cover" id="cover-02" style="background-image: url('../static/images/Capa02.webp');">
         <div class="text-center">
-            <h2>Área de Cana Total em MG</h2>
+            <h2>Área Total de Cana em MG (2022)</h2>
             <p class="odometer" id="odometer"></p>
-            <span>km²</span>
+            <span>ha</span>
         </div>
     </div>
 
@@ -49,7 +48,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Área Territorial</h5>
                                 <p class="card-text"><small class="text-body-secondary">Minas Gerais</small></p>
-                                <p class="card-text" style="font-weight: bold;"><span class="num">586.513.983</span><span> km²</span></p>
+                                <p class="card-text" style="font-weight: bold;"><span class="num">586.513.983</span><span> ha</span></p>
                             </div>
                         </div>
                     </div>
@@ -64,7 +63,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Município de Maior Área</h5>
                                 <p class="card-text"><small class="text-body-secondary" id="maiorMuni"></small></p>
-                                <p class="card-text" style="font-weight: bold;"><span class="num" id="maiorArea"></span><span> km²</span></p>
+                                <p class="card-text" style="font-weight: bold;"><span class="num" id="maiorArea"></span><span> ha</span></p>
                             </div>
                         </div>
                     </div>
@@ -86,7 +85,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>          
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
@@ -237,13 +236,30 @@
             margin-bottom: 0px;
         }
 
+        main > div.content > div.container > div.text-center > div.d-flex {
+            width: 50dvw;
+            margin: auto;
+        }
+
+        main > div.content > div.container > div.text-center > div.d-flex > img {
+            width: 250px;
+            height: 250px;
+            object-fit: contain;
+        }
+
         button.btn {
             background-color: #9FD97C;
             border: none;
             border-radius: 16px;
             width: 250px;
+            margin-top: 12px;
             padding: 16px 24px;
             box-shadow: 0rem 0rem 0.5rem rgba(0, 0, 0, 0.2);
+            transition: background-color 0.5s;
+        }
+
+        button.btn:hover {
+            background-color: #FFFFFF;
         }
 
         button.btn a {
@@ -252,8 +268,6 @@
             font-weight: bold;
             font-size: 18px;
         }
-
-        /* FORMATO DO ODÔMETRO (.ddd),dd */
 
         .odometer-formatting-mark {
             font-size: 0px;
@@ -269,11 +283,7 @@
             }
 
             main > div.content > div.container > div#row-01 > div#col-01 > h1 {
-                font-size: 55px;
-            }
-
-            main > div.content > div.container > div#row-02 > div.col-md > div.d-flex > button#tel {
-                display: none;
+                font-size: 42px;
             }
 
             main > div.content > div.container > div#row-01 > div#col-01 > button#pc {
@@ -339,11 +349,7 @@
             }
 
             main > div.content > div.container > div#row-01 > div#col-01 > h1 {
-                font-size: 36px;
-            }
-
-            main > div.content > div.container > div#row-02 > div.col-md > div.d-flex > button#tel {
-                display: inline-block;
+                font-size: 32px;
             }
 
             main > div.content > div.container > div#row-01 > div#col-01 > button#pc {
@@ -356,6 +362,10 @@
 
             main > div#cover-02 {
                 height: 42vh;
+            }
+
+            main > div#cover-02 > div > h2 {
+                font-size: 20px;
             }
 
             main > div#cover-02 > div > p#odometer {

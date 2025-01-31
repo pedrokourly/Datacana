@@ -210,12 +210,12 @@ $(document).ready(function () {
                     if(Area_ha == 0){
                         this._div.innerHTML = '<h4>Município de ' + titleCase(municipio) + ':</h4>' + 'Área de Cana: <br>' + '<b>' + "Não Consta Dados" + '</b>';
                     } else {
-                        this._div.innerHTML = '<h4>Município de ' + titleCase(municipio) + ':</h4>' + 'Área de Cana: <br>' + '<b>' + Area_ha.toFixed(2).toString().replace(/\./, ',').replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' Km²' + '</b>';
+                        this._div.innerHTML = '<h4>Município de ' + titleCase(municipio) + ':</h4>' + 'Área de Cana: <br>' + '<b>' + Area_ha.toFixed(2).toString().replace(/\./, ',').replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' ha' + '</b>';
                     }
                     
                 }
                 else {
-                    this._div.innerHTML = '<h4>Minas Gerais</h4>' + 'Área de Cana Total: <br>' + '<b>' + totalArea_ha.toFixed(2).toString().replace(/\./, ',').replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' Km²' + '</b>';
+                    this._div.innerHTML = '<h4>Minas Gerais</h4>' + 'Área de Cana Total: <br>' + '<b>' + totalArea_ha.toFixed(2).toString().replace(/\./, ',').replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' ha' + '</b>';
                 }
             };
 
@@ -229,7 +229,7 @@ $(document).ready(function () {
                 div.innerHTML = '<div class="legend-color"></div>' +
                                 '<div style="display: flex; justify-content: space-between; margin-top: 8px;">' + 
                                 '<div style="font-weight: bold;">' + response.info.escala["min"].toFixed(1) + '</div>' +
-                                '<div style="font-weight: bold;"> Km²</div>' +
+                                '<div style="font-weight: bold;"> ha</div>' +
                                 '<div style="font-weight: bold;">' + (response.info.escala["max"]/1000).toFixed(1) + 'k</div> </div>';
 
                 return div;
@@ -267,15 +267,30 @@ $(document).ready(function () {
     
             // Para as layers
             var baseLayers = {
-                "Visualização Estadual": L.layerGroup([geoJsonMGE]),
-                "Visualização Municipal": L.layerGroup([geoJsonMGMunicipiosProps]),
-                "Visualização Detalhada": L.layerGroup([tileOffColor, geoJsonCana, geoJsonMG]),
+                "Área Ocupada: Cultura": L.layerGroup([tileOffColor, geoJsonCana, geoJsonMG]),
+                "Área Ocupada: Estadual": L.layerGroup([geoJsonMGE]),
+                "Área Ocupada: Municipal": L.layerGroup([geoJsonMGMunicipiosProps])
             };
 
-            baseLayers["Visualização Estadual"].addTo(map);
+            baseLayers["Área Ocupada: Estadual"].addTo(map);
 
             // Controle de Camadas
             var layerControl = L.control.layers(baseLayers, null, {position: 'topleft'}).addTo(map);
+
+            // Eventos para mostrar/esconder a legenda
+            map.on('overlayadd', function(eventLayer) {
+                console.log('Layer added:', eventLayer.name);
+                if (eventLayer.name === 'Área Ocupada: Municipal') {
+                    legend.getContainer().style.display = 'block';
+                }
+            });
+
+            map.on('overlayremove', function(eventLayer) {
+                console.log('Layer removed:', eventLayer.name);
+                if (eventLayer.name === 'Área Ocupada: Municipal') {
+                    legend.getContainer().style.display = 'none';
+                }
+            });
         })
         .catch(function (error) {
             console.error("Error fetching data:", error);
