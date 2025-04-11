@@ -1,0 +1,108 @@
+/* Component: NavCanvas StyleSheet */
+
+/* 
+
+INDEX 
+
+    1. Button Off Canvas
+    2. Off Canvas
+        2.1. Off Canvas Header
+        2.2. Off Canvas Body
+            2.2.1. Off Canvas Menu
+                2.2.1.1. Links
+                2.2.1.2. Off Canvas SubMenu
+                    2.2.1.2.1. Links
+
+    @ MediaQuery Laptop LARGE
+
+*/
+
+/* 1. Button Off Canvas */
+
+button.btn-canvas {
+    background-color: transparent;
+
+    border: none;
+    padding: 20px 8px;
+}
+
+
+
+/* 2. Off Canvas */
+
+div.offcanvas {
+    max-width: 75%;
+}
+
+/* 2.1. Off Canvas > Off Canvas Header */
+
+div.offcanvas > div.offcanvas-header > h5.offcanvas-title{
+    font-weight: bold;
+}
+
+/* 2.2.1. Off Canvas > Off Canvas Body > Off Canvas Menu */
+
+div.offcanvas > div.offcanvas-body > ul.offcanvas-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    list-style: none;
+
+    margin: 0px;
+    padding: 0px;
+}
+
+/* 2.2.1.1. Off Canvas > Off Canvas Body > Off Canvas Menu > Links */
+
+div.offcanvas > div.offcanvas-body > ul.offcanvas-menu > li > a {
+    color: var(--color-font);
+
+    text-decoration: none;
+
+    transition: 0.5s;
+}
+
+div.offcanvas > div.offcanvas-body > ul.offcanvas-menu > li > a:hover {
+    color: var(--color02)
+}
+
+/* 2.2.1.2. Off Canvas > Off Canvas Body > Off Canvas Menu > Off Canvas SubMenu */
+
+div.offcanvas > div.offcanvas-body > ul.offcanvas-menu > li > ul.offcanvas-subMenu {
+    background-color: var(--color02);
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    list-style: none;
+    border-radius: 8px;
+
+    margin: 4px 0px;
+    padding: 16px;
+
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+/* 2.2.1.2.1. Off Canvas > Off Canvas Body > Off Canvas Menu > Off Canvas SubMenu > Links */
+
+div.offcanvas > div.offcanvas-body > ul.offcanvas-menu > li > ul.offcanvas-subMenu > li > a {
+    color: var(--color-header);
+
+    text-decoration: none;
+}
+
+div.offcanvas > div.offcanvas-body > ul.offcanvas-menu > li > ul.offcanvas-subMenu > li > a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* Media-Query Laptop LARGE */
+
+@media (min-width: 992px) {
+    button.btn-canvas {
+        display: none;
+    }
+}
