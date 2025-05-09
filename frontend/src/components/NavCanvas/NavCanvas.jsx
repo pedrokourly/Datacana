@@ -29,7 +29,7 @@ const NavCanvas = () => {
                             <NavLink to="/about">Sobre o DataCana</NavLink>
                             <ul className="offcanvas-subMenu">
                                 <li>
-                                    <NavLink to="/about/projects">Projetos</NavLink>
+                                    <NavLink to="/about/project">Projeto</NavLink>
                                 </li>
                                 <li>
                                     <NavLink to="/about/products">Produtos</NavLink>

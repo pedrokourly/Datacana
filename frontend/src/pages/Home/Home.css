@@ -1,0 +1,306 @@
+/* Page: Home StyleSheet */
+
+/* 
+
+INDEX
+
+    1. Content
+        1.1. Div Line
+            1.1.1. Slogan
+                1.1.1.1. Slogan Titlte
+                1.1.1.2. Slogan Body
+                1.1.1.3. Slogan Button
+            1.1.2. Map Home
+    2. Brief Cover
+        2.1. Div Blur
+            2.1.1. Brief Text
+            2.1.2. Brief Number Flow
+    3. Content
+        3.1. Div Carton
+            3.1.1. Carton
+                3.1.1.1. Carton Image
+                3.1.1.2. Carton Body
+                    3.1.1.2.1. Carton Title
+                    3.1.1.2.2. Carton Text
+                    3.1.1.2.3. Carton Number
+        
+    @ Media-Query Tablet MEDIUM
+    @ Media-Query Laptop LARGE
+    @ Media-Query Desktop X-LALRGE
+    
+*/
+
+/* 1.1. Content > Div Line */
+
+div.Home > div.content > div.container > div.line {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: 100%;
+}
+
+/* 1.1.1. Content > Div Line > Slogan */
+
+div.Home > div.content > div.container > div.line > div.slogan {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    padding: 0px 16px;
+}
+
+/* 1.1.1.1. Content > Div Line > Slogan > Slogan Title */
+
+div.Home > div.content > div.container > div.line > div.slogan > h2 {
+    font-size: 32px;
+    font-weight: bolder;
+}
+
+/* 1.1.1.2. Content > Div Line > Slogan > Slogan Body */
+
+div.Home > div.content > div.container > div.line > div.slogan > p {
+    font-size: 20px;
+}
+
+/* 1.1.1.3. Content > Div Line > Slogan > Slogan Button */
+
+div.Home > div.content > div.container > div.line > div.slogan > a {
+    background-color: var(--color03);
+    color: var(--color-font);
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+
+    font-size: 18px;
+    font-weight: bolder;
+    text-decoration: none;
+
+    border-radius: 16px;
+
+    padding: 20px 32px;
+    width: 288px;
+
+    transition: 0.5s;
+    box-shadow: 0rem 0.25rem 1rem rgba(0, 0, 0, 0.25);
+}
+
+div.Home > div.content > div.container > div.line > div.slogan > a:hover {
+    scale: 0.95;
+
+    box-shadow: 0rem 0rem 0.5rem rgba(0, 0, 0, 0.25);
+}
+
+div.Home > div.content > div.container > div.line > div.slogan > a > svg {
+    font-size: 20px;
+}
+
+/* 1.1.2. Content > Div Line > Map Home */
+
+div.Home > div.content > div.container > div.line > div#map {
+    flex: 1;
+
+    background-color: transparent;
+
+    min-height: 240px;
+}
+
+/* 2. Brief Cover */
+
+div.Home > div.brief-cover {
+    background-image: url('/assets/images/Cover02.webp');
+    background-size: cover;
+
+    height: 42dvh;
+}
+
+/* 2.1. Brief Cover > Div Blur */
+
+div.Home > div.brief-cover > div.blur {
+    backdrop-filter: blur(3px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+}
+
+/* 2.1.1. Brief Cover > Div Blur > Brief Text */
+
+div.Home > div.brief-cover > div.blur > h2 {
+    color: var(--color-header);
+
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* 2.1.2. Brief Cover > Div Blur > Brief Number Flow */
+
+div.Home > div.brief-cover > div.blur > number-flow-react {
+    color: var(--color03);
+
+    font-size: 64px;
+    font-weight: bold;
+}
+
+div.Home > div.brief-cover > div.blur > number-flow-react::part(symbol suffix) {
+    font-size: 32px;
+}
+
+/* 3.1. Content > Div Carton */
+
+div.Home > div.content > div.container > div.carton-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* 3.1.1. Content > Div Carton > Carton */
+
+div.Home > div.content > div.container > div.carton-container > div.carton {
+    background-color: var(--color03);
+
+    display: flex;
+    gap: 16px;
+
+    border-radius: 16px;
+    border: 1.5px solid rgba(0, 0, 0, 0.25);
+
+    margin: 0px auto;
+    padding: 16px;
+    width: 100%;
+    max-width: 416px;
+
+    box-shadow: 0rem 0rem 0.75rem rgba(0, 0, 0, 0.25);
+}
+
+/* 3.1.1.1. Content > Div Carton > Carton > Carton Image */
+
+div.Home > div.content > div.container > div.carton-container > div.carton > div.carton-image {
+    flex: 0 0 calc(50% - 8px);
+}
+
+div.Home > div.content > div.container > div.carton-container > div.carton > div.carton-image#iconMG {
+    padding: 8px;
+}
+
+div.Home > div.content > div.container > div.carton-container > div.carton > div.carton-image#iconMuni {
+    padding: 20px;
+}
+
+div.Home > div.content > div.container > div.carton-container > div.carton > div.carton-image#iconCana {
+    padding: 20px;
+}
+
+div.Home > div.content > div.container > div.carton-container > div.carton > div.carton-image > img {
+    width: 100%;
+    height: auto;
+}
+
+/* 3.1.1.2. Content > Div Carton > Carton > Carton Body */
+
+div.Home > div.content > div.container > div.carton-container > div.carton > div.carton-body {
+    flex: 0 0 calc(50% - 8px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+}
+
+/* 3.1.1.2.1. Content > Div Carton > Carton > Carton Body > Carton Title */
+
+div.Home > div.content > div.container > div.carton-container > div.carton > div.carton-body > h3 {
+    font-weight: bold;
+    font-size: 20px;
+
+    margin: 0px !important;
+}
+
+/* 3.1.1.2.2. Content > Div Carton > Carton > Carton Body > Carton Text */
+
+div.Home > div.content > div.container > div.carton-container > div.carton > div.carton-body > p.carton-text {
+    margin: 0px !important;
+}
+
+div.Home > div.content > div.container > div.carton-container > div.carton > div.carton-body > p.carton-text > small {
+    color: rgb(100, 100, 100);
+
+    font-size: 16px;
+}
+
+/* 3.1.1.2.3. Content > Div Carton > Carton > Carton Body > Carton Number */
+
+div.Home > div.content > div.container > div.carton-container > div.carton > div.carton-body > p.carton-text.data-number {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+div.Home > div.content > div.container > div.carton-container > div.carton > div.carton-body > p.carton-text.data-number > span {
+    font-size: 16px;
+}
+
+
+
+/* Media-Query Tablet MEDIUM */
+
+@media (min-width: 768px) {    
+    div.Home > div.content > div.container > div.line > div.slogan > h2 {
+        font-size: 40px;
+    }
+
+    div.Home > div.content > div.container > div.line > div#map {
+        min-height: 432px;
+    }
+
+    div.Home > div.brief-cover {
+        height: 65vh;
+    }
+
+    div.Home > div.brief-cover > div.blur > h2 {
+        font-size: 32px;
+    }
+
+    div.Home > div.brief-cover > div.blur > number-flow-react {
+        font-size: 96px;
+    }
+
+    div.Home > div.brief-cover > div.blur > number-flow-react::part(symbol suffix) {
+        font-size: 54px;
+    }
+}
+
+/* Media-Query Laptop LARGE */
+
+@media (min-width: 992px) {
+    div.Home > div.content > div.container > div.line {
+        flex-direction: row;
+    }
+
+    div.Home > div.content > div.container > div.line > div.slogan > a {
+        display: flex;
+    }
+}
+
+/* Media-Query Desktop X-LARGE */
+
+@media (min-width: 1200px) {
+    div.Home > div.content > div.container > div.carton-container {
+        flex-direction: row;
+    }
+
+    div.Home > div.content > div.container > div.carton-container > div.carton > div.carton-image {
+        flex: 0 0 35%;
+    }
+
+    div.Home > div.content > div.container > div.carton-container > div.carton > div.carton-body {
+        flex: 0 0 65%;
+    }
+}
