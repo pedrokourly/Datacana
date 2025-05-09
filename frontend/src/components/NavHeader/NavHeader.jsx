@@ -19,7 +19,7 @@ const NavHeader = () => {
                         <NavLink to="/about">Sobre o DataCana</NavLink>
                         <ul className="navHeader-subMenu">
                             <li>
-                                <NavLink to="/about/projects">Projetos</NavLink>
+                                <NavLink to="/about/project">Projeto</NavLink>
                             </li>
                             <li>
                                 <NavLink to="/about/products">Produtos</NavLink>
@@ -39,7 +39,7 @@ const NavHeader = () => {
                         <NavLink to="/mapsdata">Mapas e Dados</NavLink>
                         <ul className="navHeader-subMenu">
                             <li>
-                                <NavLink to="/mapsdata/plataform" target="_blank">Acesso a Plataforma</NavLink> <MdOpenInNew style={{ fill: "white" }} />
+                                <NavLink to="/mapsdata/platform" target="_blank">Acesso a Plataforma</NavLink> <MdOpenInNew style={{ fill: "white" }} />
                             </li>
                             <li>
                                 <NavLink to="/mapsdata/data" target="_blank">Acesso aos Dados</NavLink> <MdOpenInNew style={{ fill: "white" }} />

@@ -2,7 +2,7 @@
 import './Navbar.css';
 
 // Import Images
-import Logo from '../../assets/DataCana.svg';
+import Logo from '/assets/images/DataCana.svg';
 
 // Import React Router DOM
 import { NavLink } from 'react-router-dom';
