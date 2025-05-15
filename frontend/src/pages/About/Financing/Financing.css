@@ -1,0 +1,53 @@
+/* Component: Financing StyleSheet */
+
+/* 
+
+INDEX
+
+    1. Content
+        1.2. Carton
+            1.2.1. Carton Image
+            1.2.2. Carton Body
+                1.2.2.1. Carton Title
+                1.2.2.2. Carton Text
+
+*/
+
+/* 1.2. Content > Carton */
+
+div.Financing > div.content > div.container > article > div.carton {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    text-align: center;
+
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+
+    margin: 0px auto;
+    padding: 24px;
+    width: 100%;
+    max-width: 624px;
+
+    box-shadow: 0rem 0rem 0.50rem rgba(0, 0, 0, 0.25);
+}
+
+/* 1.2.1. Content > Carton > Carton Image */
+
+div.Financing > div.content > div.container > article > div.carton > div.carton-image > img {
+    width: 100%;
+    max-width: 192px;
+}
+
+/* 1.2.2.1. Content > Carton > Carton Body > Carton Title */
+
+div.Financing > div.content > div.container > article > div.carton > div.carton-body > h3 {
+    font-size: 20px;
+}
+
+/* 1.2.2.2. Content > Carton > Carton Body > Carton Text */
+
+div.Financing > div.content > div.container > article > div.carton > div.carton-body > p.carton-text {
+    font-size: 16px;
+}

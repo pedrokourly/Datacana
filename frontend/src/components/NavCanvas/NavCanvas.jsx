@@ -4,10 +4,34 @@ import './NavCanvas.css';
 // Import React Icons
 import { MdMenuOpen, MdOpenInNew } from "react-icons/md";
 
+// Import React Libs
+import { useEffect } from 'react';
+
 // Import React Router DOM
 import { NavLink } from 'react-router-dom';
 
 const NavCanvas = () => {
+    // Function to Close Offcanvas after Clicking a Link
+    useEffect(() => {
+        const offcanvasElement = document.getElementById('offcanvasRight');
+        const offcanvasLinks = document.querySelectorAll('.offcanvas-menu a');
+
+        offcanvasLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                const offcanvasInstance = bootstrap.Offcanvas.getInstance(offcanvasElement);
+                if (offcanvasInstance) {
+                    offcanvasInstance.hide();
+                }
+            });
+        });
+
+        return () => {
+            offcanvasLinks.forEach(link => {
+                link.removeEventListener('click', () => {});
+            });
+        };
+    }, []);
+
     return (
         <>
             <button className="btn-canvas" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">

@@ -20,11 +20,16 @@
     background-color: var(--color-header);
 
     width: 10px;
-    box-shadow: 0rem 0rem 0.25rem rgba(0, 0, 0, 0.25);
+    box-shadow: inset 0rem 0rem 0.25rem rgba(0, 0, 0, 0.25);
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: var(--color03);
+    background-color: var(--color01);
+
+}
+
+::selection {
+    background-color: var(--color-background);
 }
 
 body {
@@ -37,5 +42,37 @@ body {
 div.content {
     background-color: var(--color-header);
 
-    padding: 64px 0px;
+    padding: 64px 24px;
+}
+
+article > h2 {
+    font-size: 28px;
+    font-weight: bold;
+
+    margin-bottom: 32px;
+}
+
+article > h3 {
+    font-size: 24px;
+    margin-bottom: 32px;
+}
+
+article > p {
+    font-size: 18px;
+
+    text-align: justify;
+    text-indent: 32px;
+}
+
+article > p > a {
+    color: var(--color02);
+
+    font-weight: bold;
+
+    text-decoration: dotted underline;
+}
+
+article > p > a > svg {
+    margin-left: 4px;
+    margin-bottom: 3px;
 }
