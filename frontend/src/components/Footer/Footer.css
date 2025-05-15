@@ -24,6 +24,7 @@ footer.Footer {
     background-image: url('/assets/images/Terra.png');
     background-size: cover;
 
+    margin-top: 32px;
     padding: 64px 0px;
 }
 
@@ -99,10 +100,14 @@ footer.Footer > div.container > div.links > ul.links-list > li > a {
     color: var(--color-header);
 
     text-decoration: none;
+
+    border-bottom: 2px solid transparent;
+
+    transition: 0.25s;
 }
 
 footer.Footer > div.container > div.links > ul.links-list > li > a:hover {
-    text-decoration: underline;
+    border-color: var(--color-header);
 }
 
 /* 1.3. Footer > Support */
@@ -119,21 +124,22 @@ footer.Footer > div.container > div.support > p {
 /* 1.3.1. Footer > Support > Support Logos */
 
 footer.Footer > div.container > div.support > div.support-logos {
-    background-color: rgba(255, 255, 255, 0.60);
+    background-color: rgba(255, 255, 255, 0.75);
 
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 32px;
+    gap: 24px;
 
     border-radius: 16px;
 
     margin: 0px auto;
     padding: 16px;
 
-    width: 100%;
     max-width: 416px;
+
+    box-shadow: inset 0rem 0rem 1rem rgba(0, 0, 0, 0.75);
 }
 
 /* 1.3.1.1. Footer > Support > Support Logos > Logos */
@@ -141,7 +147,7 @@ footer.Footer > div.container > div.support > div.support-logos {
 footer.Footer > div.container > div.support > div.support-logos > img {
     object-fit: cover;
     
-    width: 128px;
+    width: 96px;
 }
 
 /* 1.4. Footer > Div Rule */

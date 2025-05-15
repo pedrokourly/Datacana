@@ -109,11 +109,13 @@ nav.NavHeader > ul.navHeader-menu > li > ul.navHeader-subMenu > li > a {
 
     text-decoration: none;
 
-    transition: 0.5s;
+    border-bottom: 2px solid transparent;
+
+    transition: 0.25s;
 }
 
 nav.NavHeader > ul.navHeader-menu > li > ul.navHeader-subMenu > li > a:hover {
-    text-decoration: underline;
+    border-color: var(--color-header);
 }
 
 
