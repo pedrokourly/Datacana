@@ -1,0 +1,28 @@
+/* Page: Data StyleSheet */
+
+/* 
+
+INDEX
+
+    1. NavBar
+        1.1. Logo
+    
+*/
+
+/* 1. NavBar */
+
+div.Data > div.navBar {
+    background-color: var(--color-header);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 8px 0px;
+}
+
+/* 1.1. NavBar > Logo */
+
+div.Data  > div.navBar > a.logo > img {
+    width: 112px;
+}

@@ -12,8 +12,8 @@ import Financing from './pages/About/Financing/Financing.jsx';
 import Products from './pages/About/Products/Products.jsx';
 import Team from './pages/About/Team/Team.jsx';
 
-/* import Plataform from './pages/MapsData/Platform/Platform.jsx'; */
-/* import Data from './pages/MapsData/Data/Data.jsx'; */
+import Platform from './pages/MapsData/Platform/Platform.jsx';
+import Data from './pages/MapsData/Data/Data.jsx';
 import Downloads from './pages/MapsData/Downloads/Downloads.jsx';
 
 import Procedures from './pages/Metodology/Procedures/Procedures.jsx';
@@ -22,17 +22,14 @@ import Terms from './pages/Metodology/Terms/Terms.jsx';
 import Contact from './pages/Contact/Contact.jsx';
 
 // Import Components
-import Navbar from './components/Navbar/Navbar.jsx';
-import Footer from './components/Footer/Footer.jsx';
+import Layout from './components/Layout/Layout.jsx';
 
 function App() {
     return (
         <>
             <div className="App">
                 <BrowserRouter>
-                    <Navbar />
-
-                    <main>
+                    <Layout>
                         <Routes>
                             <Route path="/" element={<Home />} />
 
@@ -43,8 +40,8 @@ function App() {
                             <Route path="/about/team" element={<Team />} />
 
                             <Route path="/mapsdata" element={<Navigate to="/mapsdata/downloads" replace />} />
-                            {/* <Route path="/mapsdata/platform" element={<Platform />} /> */}
-                            {/* <Route path="/mapsdata/data" element={<Data />} /> */}
+                            <Route path="/mapsdata/platform" element={<Platform />} />
+                            <Route path="/mapsdata/data" element={<Data />} />
                             <Route path="/mapsdata/downloads" element={<Downloads />} />
 
                             <Route path="/metodology" element={<Navigate to="/metodology/procedures" replace />} />
@@ -53,10 +50,7 @@ function App() {
 
                             <Route path="/contact" element={<Contact />} />
                         </Routes>
-                    </main>
-
-                    <Footer />
-
+                    </Layout>
                 </BrowserRouter>
             </div>
         </>
