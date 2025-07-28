@@ -73,7 +73,7 @@ const NavCanvas = () => {
                             <NavLink to="/mapsdata">Mapas e Dados</NavLink>
                             <ul className="offcanvas-subMenu">
                                 <li>
-                                    <NavLink to="/mapsdata/plataform" target="_blank">Acesso a Plataforma</NavLink> <MdOpenInNew style={{ fill: "white" }} />
+                                    <NavLink to="/mapsdata/platform" target="_blank">Acesso a Plataforma</NavLink> <MdOpenInNew style={{ fill: "white" }} />
                                 </li>
                                 <li>
                                     <NavLink to="/mapsdata/data" target="_blank">Acesso aos Dados</NavLink> <MdOpenInNew style={{ fill: "white" }} />
