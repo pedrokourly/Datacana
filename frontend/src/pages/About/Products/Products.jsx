@@ -16,8 +16,13 @@ const Products = () => {
 
                         <p>São vários os produtos que os usuários da plataforma podem consultar e realizar o <i>download</i> para os municípios, regiões imediatas e intermediárias de Minas Gerais, acerca da produção canavieira:</p>
 
+                        <br />
                         <h3>Mapas Temáticos</h3>
+
+                        <br />
                         <h3>Gráficos</h3>
+
+                        <br />
                         <h3>Tabelas</h3>
                     </article>
                 </div>
