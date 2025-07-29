@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste DataProcessor vs Flask Endpoint</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .test-panel {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .result {
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 10px;
+            margin-top: 10px;
+            font-family: monospace;
+            font-size: 12px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .loading {
+            background-color: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeeba;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 Teste: DataProcessor vs Flask Endpoint</h1>
+    <p>Esta página compara os resultados entre o <strong>dataProcessor.js</strong> (local) e o <strong>endpoint Flask</strong> (/data/2022).</p>
+    
+    <div style="text-align: center;">
+        <button class="btn" onclick="testarAmbos()">🚀 Testar Ambos</button>
+        <button class="btn" onclick="compararResultados()">⚖️ Comparar Resultados</button>
+        <button class="btn" onclick="limparResultados()">🧹 Limpar</button>
+    </div>
+
+    <div class="container">
+        <!-- Painel DataProcessor -->
+        <div class="test-panel">
+            <h2>📊 DataProcessor.js (Local)</h2>
+            <button class="btn" onclick="testarDataProcessor()">Testar DataProcessor</button>
+            <div id="status-dataprocessor" class="status" style="display: none;"></div>
+            <div id="result-dataprocessor" class="result" style="display: none;"></div>
+        </div>
+
+        <!-- Painel Flask Endpoint -->
+        <div class="test-panel">
+            <h2>🌐 Flask Endpoint (/data/2022)</h2>
+            <button class="btn" onclick="testarFlaskEndpoint()">Testar Flask Endpoint</button>
+            <div id="status-flask" class="status" style="display: none;"></div>
+            <div id="result-flask" class="result" style="display: none;"></div>
+        </div>
+    </div>
+
+    <div id="comparison-result" style="margin-top: 30px; display: none;">
+        <h2>🔍 Resultado da Comparação</h2>
+        <div id="comparison-content" class="result"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/static/scripts/dataProcessor.js"></script>
+    
+    <script>
+        let resultadoDataProcessor = null;
+        let resultadoFlask = null;
+
+        // Função para mostrar status
+        function mostrarStatus(tipo, mensagem, classe) {
+            const statusElement = document.getElementById(`status-${tipo}`);
+            statusElement.textContent = mensagem;
+            statusElement.className = `status ${classe}`;
+            statusElement.style.display = 'block';
+        }
+
+        // Função para mostrar resultado
+        function mostrarResultado(tipo, dados) {
+            const resultElement = document.getElementById(`result-${tipo}`);
+            resultElement.textContent = JSON.stringify(dados, null, 2);
+            resultElement.style.display = 'block';
+        }
+
+        // Testar DataProcessor
+        async function testarDataProcessor() {
+            mostrarStatus('dataprocessor', '⏳ Carregando com DataProcessor...', 'loading');
+            
+            try {
+                const inicio = performance.now();
+                resultadoDataProcessor = await fetchDataForYear(2022);
+                const fim = performance.now();
+                
+                mostrarStatus('dataprocessor', `✅ Sucesso! Tempo: ${(fim - inicio).toFixed(2)}ms`, 'success');
+                mostrarResultado('dataprocessor', {
+                    ...resultadoDataProcessor,
+                    geoJsonCana: `GeoJSON com ${resultadoDataProcessor.geoJsonCana?.features?.length || 0} features`
+                });
+                
+            } catch (error) {
+                mostrarStatus('dataprocessor', `❌ Erro: ${error.message}`, 'error');
+                console.error('Erro DataProcessor:', error);
+            }
+        }
+
+        // Testar Flask Endpoint
+        async function testarFlaskEndpoint() {
+            mostrarStatus('flask', '⏳ Carregando do Flask...', 'loading');
+            
+            try {
+                const inicio = performance.now();
+                const response = await fetch('/data/2022');
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                
+                resultadoFlask = await response.json();
+                const fim = performance.now();
+                
+                mostrarStatus('flask', `✅ Sucesso! Tempo: ${(fim - inicio).toFixed(2)}ms`, 'success');
+                mostrarResultado('flask', {
+                    ...resultadoFlask,
+                    geoJsonCana: `GeoJSON com ${resultadoFlask.geoJsonCana?.features?.length || 0} features`
+                });
+                
+            } catch (error) {
+                mostrarStatus('flask', `❌ Erro: ${error.message}`, 'error');
+                console.error('Erro Flask:', error);
+            }
+        }
+
+        // Testar ambos
+        async function testarAmbos() {
+            await Promise.all([
+                testarDataProcessor(),
+                testarFlaskEndpoint()
+            ]);
+        }
+
+        // Comparar resultados
+        function compararResultados() {
+            if (!resultadoDataProcessor || !resultadoFlask) {
+                alert('⚠️ Execute ambos os testes primeiro!');
+                return;
+            }
+
+            const comparacao = {
+                quantidade_registros: {
+                    dataProcessor: resultadoDataProcessor.qnt,
+                    flask: resultadoFlask.qnt,
+                    iguais: resultadoDataProcessor.qnt === resultadoFlask.qnt
+                },
+                area_total: {
+                    dataProcessor: resultadoDataProcessor.totalArea,
+                    flask: resultadoFlask.totalArea,
+                    diferenca: Math.abs(resultadoDataProcessor.totalArea - resultadoFlask.totalArea),
+                    iguais: Math.abs(resultadoDataProcessor.totalArea - resultadoFlask.totalArea) < 0.01
+                },
+                estatisticas_escala: {
+                    dataProcessor: resultadoDataProcessor.escala,
+                    flask: resultadoFlask.escala,
+                    iguais: JSON.stringify(resultadoDataProcessor.escala) === JSON.stringify(resultadoFlask.escala)
+                },
+                geojson_features: {
+                    dataProcessor: resultadoDataProcessor.geoJsonCana?.features?.length || 0,
+                    flask: resultadoFlask.geoJsonCana?.features?.length || 0,
+                    iguais: (resultadoDataProcessor.geoJsonCana?.features?.length || 0) === (resultadoFlask.geoJsonCana?.features?.length || 0)
+                }
+            };
+
+            document.getElementById('comparison-content').textContent = JSON.stringify(comparacao, null, 2);
+            document.getElementById('comparison-result').style.display = 'block';
+
+            // Verifica se tudo está igual
+            const tudoIgual = Object.values(comparacao).every(item => item.iguais);
+            
+            if (tudoIgual) {
+                alert('🎉 Perfeito! Os resultados são idênticos!');
+            } else {
+                alert('⚠️ Existem diferenças entre os resultados. Verifique a comparação abaixo.');
+            }
+        }
+
+        // Limpar resultados
+        function limparResultados() {
+            ['dataprocessor', 'flask'].forEach(tipo => {
+                document.getElementById(`status-${tipo}`).style.display = 'none';
+                document.getElementById(`result-${tipo}`).style.display = 'none';
+            });
+            document.getElementById('comparison-result').style.display = 'none';
+            resultadoDataProcessor = null;
+            resultadoFlask = null;
+        }
+
+        // Auto-teste ao carregar a página
+        window.addEventListener('load', () => {
+            console.log('🔧 Página de teste carregada. DataProcessor disponível:', typeof fetchDataForYear !== 'undefined');
+        });
+    </script>
+</body>
+</html>

@@ -57,6 +57,9 @@
         <!-- Plug-in Invert -->
         <script src = "/static/scripts/leaflet.snogylop.js"></script>
 
+        <!-- DataProcessor - Replica funcionalidade do endpoint Flask -->
+        <script src="/static/scripts/dataProcessor.js"></script>
+        
         <script src="/static/scripts/plataform.js"></script>
     </div>
 
@@ -100,15 +103,168 @@
             font-weight: bolder;
         }
 
+        /* === CONTROLE DE CAMADAS PERSONALIZADO === */
+        
+        /* Botão toggle principal */
         .leaflet-control-layers-toggle {
-            width: 30px !important;
-            height: 30px !important;
+            width: 45px !important;
+            height: 45px !important;
+            background: linear-gradient(135deg, #03A65A, #0ABF6A) !important;
+            border-radius: 12px !important;
+            box-shadow: 0 4px 15px rgba(3, 166, 90, 0.3) !important;
+            border: 2px solid rgba(255, 255, 255, 0.2) !important;
+            transition: all 0.3s ease !important;
         }
 
-        .leaflet-control-layers-base {
+        .leaflet-control-layers-toggle:hover {
+            transform: translateY(-2px) !important;
+            box-shadow: 0 6px 20px rgba(3, 166, 90, 0.4) !important;
+            background: linear-gradient(135deg, #0ABF6A, #03A65A) !important;
+        }
+
+        .leaflet-control-layers-toggle:active {
+            transform: translateY(0px) !important;
+        }
+
+        /* Container principal do controle */
+        .leaflet-control-layers {
+            border-radius: 15px !important;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15) !important;
+            border: none !important;
+            background: rgba(255, 255, 255, 0.95) !important;
+            backdrop-filter: blur(10px) !important;
+            overflow: hidden !important;
+        }
+
+        /* Painel expandido */
+        .leaflet-control-layers-expanded {
+            padding: 20px !important;
+            min-width: 280px !important;
+            border-radius: 15px !important;
+        }
+
+        /* Seção de overlays */
+        .leaflet-control-layers-overlays {
             display: flex;
             flex-direction: column;
-            gap: 4px;
+            gap: 12px;
+            margin-top: 8px;
+        }
+
+        /* Labels das camadas */
+        .leaflet-control-layers-overlays label {
+            display: flex !important;
+            align-items: center !important;
+            padding: 12px 16px !important;
+            margin: 0 !important;
+            background: linear-gradient(135deg, #f8f9fa, #ffffff) !important;
+            border: 2px solid #e9ecef !important;
+            border-radius: 10px !important;
+            cursor: pointer !important;
+            transition: all 0.3s ease !important;
+            font-family: 'Rethink Sans', sans-serif !important;
+            font-weight: 500 !important;
+            font-size: 14px !important;
+            color: #495057 !important;
+            position: relative !important;
+            overflow: hidden !important;
+        }
+
+        .leaflet-control-layers-overlays label:hover {
+            background: linear-gradient(135deg, #03A65A, #0ABF6A) !important;
+            border-color: #03A65A !important;
+            color: white !important;
+            transform: translateX(5px) !important;
+            box-shadow: 0 4px 15px rgba(3, 166, 90, 0.2) !important;
+        }
+
+        /* Labels das camadas ativas */
+        .leaflet-control-layers-overlays label:has(input:checked) {
+            background: linear-gradient(135deg, #03A65A, #0ABF6A) !important;
+            border-color: #03A65A !important;
+            color: white !important;
+            box-shadow: 0 4px 15px rgba(3, 166, 90, 0.3) !important;
+        }
+
+        /* Checkboxes customizados */
+        .leaflet-control-layers-overlays input[type="checkbox"] {
+            appearance: none !important;
+            width: 20px !important;
+            height: 20px !important;
+            border: 2px solid #dee2e6 !important;
+            border-radius: 5px !important;
+            margin-right: 12px !important;
+            position: relative !important;
+            background: white !important;
+            transition: all 0.3s ease !important;
+            flex-shrink: 0 !important;
+        }
+
+        .leaflet-control-layers-overlays input[type="checkbox"]:checked {
+            background: white !important;
+            border-color: white !important;
+        }
+
+        .leaflet-control-layers-overlays input[type="checkbox"]:checked::after {
+            content: '✓' !important;
+            position: absolute !important;
+            top: 50% !important;
+            left: 50% !important;
+            transform: translate(-50%, -50%) !important;
+            color: #03A65A !important;
+            font-weight: bold !important;
+            font-size: 14px !important;
+        }
+
+        /* Hover nos checkboxes */
+        .leaflet-control-layers-overlays label:hover input[type="checkbox"] {
+            border-color: white !important;
+        }
+
+        .leaflet-control-layers-overlays label:hover input[type="checkbox"]:checked::after {
+            color: white !important;
+        }
+
+        /* Título do controle */
+        .leaflet-control-layers-overlays::before {
+            content: "Camadas Disponíveis";
+            display: block;
+            font-family: 'Rethink Sans', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            color: #495057;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        /* Animação de entrada */
+        .leaflet-control-layers-expanded {
+            animation: slideIn 0.3s ease !important;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsividade */
+        @media screen and (max-width: 768px) {
+            .leaflet-control-layers-expanded {
+                min-width: 250px !important;
+                padding: 16px !important;
+            }
+            
+            .leaflet-control-layers-overlays label {
+                padding: 10px 12px !important;
+                font-size: 13px !important;
+            }
         }
 
         .info {

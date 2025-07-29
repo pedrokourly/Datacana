@@ -1,5 +1,6 @@
 from datacana import app
-from flask import render_template
+from flask import render_template, send_from_directory
+import os
 
 @app.route('/')
 def home():
@@ -45,6 +46,19 @@ def plataform():
 def downloads():
     return render_template('Maps and Data/downloads.html',
                            DocTitle = 'DataCana - Downloads')
+
+@app.route('/teste-dataprocessor')
+def testeDataProcessor():
+    return render_template('teste_dataprocessor.html',
+                           DocTitle = 'DataCana - Teste DataProcessor')
+
+# Rotas para servir arquivos da cache (necessário para o DataProcessor)
+@app.route('/cache/<path:filename>')
+def serve_cache_file(filename):
+    """Serve arquivos da pasta cache para o DataProcessor"""
+    cache_dir = os.path.join(app.root_path, 'cache')
+    return send_from_directory(cache_dir, filename)
+
 @app.route('/termos')
 def termsOfUse():
     return render_template('terms.html',
