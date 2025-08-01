@@ -20,21 +20,27 @@ import { fetchDataForYear, fetchGeoJsonFiles } from '../../../services/dataServi
 import '../../../utils/Snogylop.js';
 
 // Import Components
-import { MapControlPanel } from '../../../components/MapControlPanel/MapControlPanel.jsx'
+import MapControlPanel from '../../../components/MapControlPanel/MapControlPanel.jsx';
+import MapInfoPanel from '../../../components/MapInfoPanel/MapInfoPanel.jsx';
 
 const Platform = () => {
+    // Variables and Constants
+    const layerPriority = ['Cultura', 'Municipal', 'Estadual'];
+
+    // State Management
+    const [mapData, setMapData] = useState(null);
+    const [availableYears] = useState([2017, 2022]);
+    const [currentYear, setCurrentYear] = useState(2022);
+    const [activeOverlays, setActiveOverlays] = useState(['Estadual']);
+    const [hoverInfo, setHoverInfo] = useState({ name: 'Minas Gerais (MG)', area: null });
+    const [isLoading, setIsLoading] = useState(true);
+
     // Refs
+    const mapContainerRef = useRef(null);
     const mapRef = useRef(null);
     const layersRef = useRef({});
     const tileBaseRef = useRef(null);
     const tileOffColorRef = useRef(null);
-
-    // State Management
-    const [currentYear, setCurrentYear] = useState(2022);
-    const [availableYears] = useState([2017, 2022]);
-    const [mapData, setMapData] = useState(null);
-    const [isLoading, setIsLoading] = useState(true);
-    const [activeOverlays, setActiveOverlays] = useState(['Estadual']);
 
     // Handling the Leaflet Map
     useEffect(() => {
@@ -65,7 +71,8 @@ const Platform = () => {
             position: 'topleft',
             title: 'Full Screen',
             titleCancel: 'Exit Full Screen',
-            forceSeparateButton: true
+            forceSeparateButton: true,
+            fullscreenElement: mapContainerRef.current,
         }).addTo(map);
 
         // Map Control (ResetView)
@@ -94,7 +101,9 @@ const Platform = () => {
                     fetchDataForYear(currentYear),
                     fetchGeoJsonFiles()
                 ]);
+
                 setMapData({ info, ...geoJsonFiles });
+                setHoverInfo({ name: 'Minas Gerais (MG)', area: info.totalArea });
             } catch (error) {
                 console.error(`Failed to Load Data for Year ${currentYear}:`, error);
             } finally {
@@ -117,10 +126,13 @@ const Platform = () => {
             }
         });
 
+        // Priorirty Layer Management
+        const highestPriorityLayer = layerPriority.find(layerName => activeOverlays.includes(layerName));
+
         // Features (Color Scale)
         const getColor = (area) => {
             const scale = mapData.info.escala;
-            return area === 0 || area == null ? '#9d9d9d' :
+            return area === null || area === 0 ? '#9d9d9d' :
                 area >= scale['max'] ? '#0a4a1a' :
                     area >= scale['75%'] ? '#1a7a2a' :
                         area >= scale['50%'] ? '#2a9a3a' :
@@ -132,12 +144,24 @@ const Platform = () => {
         // Features (Style)
         const styleFeature = (feature) => ({
             fillColor: getColor(feature.properties.Area_ha),
+            fillOpacity: 0.85,
             color: 'white',
             weight: 2,
             opacity: 0.25,
-            dashArray: '1',
-            fillOpacity: 0.75
+            dashArray: '1'
         });
+
+        // Features (Highlight)
+        const highlightFeature = (e) => {
+            const layer = e.target;
+            layer.setStyle({
+                color: '#666666',
+                weight: 2,
+                opacity: 0.5,
+                dashArray: '1',
+            });
+            layer.bringToFront();
+        };
 
         // Prepare GeoJSON Data
         const { geoJsonMG, geoJsonMGMunicipios, info } = mapData;
@@ -150,12 +174,52 @@ const Platform = () => {
         geoJsonMGMunicipios.features.forEach(feature => {
             const municipioName = feature.properties.name.toUpperCase();
             const index = Object.values(info.dadosCana['MUNICIPIO']).findIndex(val => val.toUpperCase() === municipioName);
-            feature.properties.Area_ha = (index !== -1) ? info.dadosCana['TOTAL_AREA'][index] : 0;
+            feature.properties.Area_ha = (index !== -1) ? info.dadosCana['TOTAL_AREA'][index] : null;
         });
-        const municipalLayer = L.geoJson(geoJsonMGMunicipios, { style: styleFeature });
+        const municipalLayer = L.geoJson(geoJsonMGMunicipios, {
+            style: styleFeature,
+            onEachFeature: highestPriorityLayer === 'Municipal' ? (feature, layer) => {
+                layer.on({
+                    mouseover: (e) => {
+                        highlightFeature(e);
+                        setHoverInfo({
+                            name: feature.properties.name,
+                            area: e.target.feature.properties.Area_ha
+                        });
+                    },
+                    mouseout: (e) => {
+                        municipalLayer.resetStyle(e.target);
+                        setHoverInfo({
+                            name: 'Minas Gerais (MG)',
+                            area: info.totalArea
+                        });
+                    }
+                });
+            } : undefined
+        });
 
         // 3. Culture Layer
-        const cultureLayer = L.geoJson(info.geoJsonCana, { style: styleFeature });
+        const cultureLayer = L.geoJson(info.geoJsonCana, {
+            style: styleFeature,
+            onEachFeature: highestPriorityLayer === 'Cultura' ? (feature, layer) => {
+                layer.on({
+                    mouseover: (e) => {
+                        highlightFeature(e);
+                        setHoverInfo({
+                            name: 'Talhão de Cana',
+                            area: e.target.feature.properties.Area_ha
+                        });
+                    },
+                    mouseout: (e) => {
+                        cultureLayer.resetStyle(e.target);
+                        setHoverInfo({
+                            name: 'Minas Gerais (MG)',
+                            area: info.totalArea
+                        });
+                    }
+                })
+            } : undefined
+        });
 
         // 4. Inverted Mask
         const invertedStateMask = L.geoJson(geoJsonMG, {
@@ -168,14 +232,15 @@ const Platform = () => {
         const layersGroup = { "Estadual": stateLayer, "Municipal": municipalLayer, "Cultura": cultureLayerGroup };
         layersRef.current = layersGroup;
 
-        activeOverlays.forEach(layerName => {
-            if (layersGroup[layerName]) {
+        layerPriority.slice().reverse().forEach(layerName => {
+            if (activeOverlays.includes(layerName) && layersGroup[layerName]) {
                 layersGroup[layerName].addTo(map);
             }
         });
 
     }, [mapData, activeOverlays]);
 
+    // Handling Tile Layer Swapping
     useEffect(() => {
         const map = mapRef.current;
         if (!map || !tileBaseRef.current || !tileOffColorRef.current) return;
@@ -225,11 +290,16 @@ const Platform = () => {
                 </NavLink>
             </div>
 
-            <div id="map"></div>
+            <div className="mapContainer" ref={mapContainerRef}>
+                <div id="map"></div>
 
-            <div className="map-ui-container">
-                <div className="map-ui-bottom-right">
-                    <MapControlPanel availableYears={availableYears} currentYear={currentYear} onYearChange={handleYearChange} layers={layerDefinitions} activeOverlays={activeOverlays} onLayerChange={handleLayerChange} isLoading={isLoading} />
+                <div className="mapUI-container">
+                    <div className="mapUI-bottom-left">
+                        <MapInfoPanel title={hoverInfo.name} area={hoverInfo.area} isLoading={isLoading} />
+                    </div>
+                    <div className="mapUI-bottom-right">
+                        <MapControlPanel availableYears={availableYears} currentYear={currentYear} onYearChange={handleYearChange} layers={layerDefinitions} activeOverlays={activeOverlays} onLayerChange={handleLayerChange} isLoading={isLoading} />
+                    </div>
                 </div>
             </div>
         </div>
