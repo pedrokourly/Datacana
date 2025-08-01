@@ -53,4 +53,4 @@ const MapControlPanel = (props) => {
     );
 };
 
-export { MapControlPanel };
+export default MapControlPanel;
