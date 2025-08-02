@@ -7,9 +7,6 @@ import Logo from '/assets/images/DataCana.svg';
 // Import React Libs
 import { useState, useEffect, useRef } from 'react';
 
-// Import React DOM
-import { createRoot } from 'react-dom/client';
-
 // Import React Router DOM
 import { NavLink } from 'react-router-dom';
 
@@ -22,13 +19,18 @@ import '../../../utils/Snogylop.js';
 // Import Components
 import MapControlPanel from '../../../components/MapControlPanel/MapControlPanel.jsx';
 import MapInfoPanel from '../../../components/MapInfoPanel/MapInfoPanel.jsx';
+import MapLegend from '../../../components/MapLegend/MapLegend.jsx';
+import MapScale from '../../../components/MapScale/MapScale.jsx';
 
 const Platform = () => {
     // Variables and Constants
     const layerPriority = ['Cultura', 'Municipal', 'Estadual'];
+    const colorScaleColors = ['#0A4A1A', '#1A7A2A', '#2A9A3A', '#4ABA5A', '#6ADA7A'];
+    const noDataColor = '#9D9D9D';
 
     // State Management
     const [mapData, setMapData] = useState(null);
+    const [mapInstance, setMapInstance] = useState(null);
     const [availableYears] = useState([2017, 2022]);
     const [currentYear, setCurrentYear] = useState(2022);
     const [activeOverlays, setActiveOverlays] = useState(['Estadual']);
@@ -37,19 +39,18 @@ const Platform = () => {
 
     // Refs
     const mapContainerRef = useRef(null);
-    const mapRef = useRef(null);
     const layersRef = useRef({});
     const tileBaseRef = useRef(null);
     const tileOffColorRef = useRef(null);
 
     // Handling the Leaflet Map
     useEffect(() => {
-        if (mapRef.current) return;
+        if (mapInstance) return;
 
         // Map Initialization
         const map = L.map('map', { zoomSnap: 0.5, zoomDelta: 0.5 });
         map.setView([-19, -46], 7);
-        mapRef.current = map;
+        setMapInstance(map);
 
         // API Key
         const APIKey = import.meta.env.VITE_MAPTILER_API_KEY;
@@ -89,7 +90,7 @@ const Platform = () => {
         }).addTo(map);
 
         // Map Cleanup
-        return () => { map.remove(); mapRef.current = null; };
+        return () => { map.remove(); setMapInstance(null); }
     }, []);
 
     // Handling Data Fetching
@@ -101,6 +102,28 @@ const Platform = () => {
                     fetchDataForYear(currentYear),
                     fetchGeoJsonFiles()
                 ]);
+
+                // Equal Interval Scale (Logic)
+                if (info && info.dadosCana && info.dadosCana['TOTAL_AREA']) {
+                    const areaData = Object.values(info.dadosCana['TOTAL_AREA']).filter(area => area != null && area > 0);
+                    
+                    if (areaData.length > 0) {
+                        const minValue = Math.min(...areaData);
+                        const maxValue = Math.max(...areaData);
+                        const range = maxValue - minValue;
+                        const numClasses = 5;
+                        const interval = range / numClasses;
+
+                        info.escala = {
+                            min: minValue,
+                            break1: minValue + interval,
+                            break2: minValue + (2 * interval),
+                            break3: minValue + (3 * interval),
+                            break4: minValue + (4 * interval),
+                            max: maxValue,
+                        };
+                    }
+                } 
 
                 setMapData({ info, ...geoJsonFiles });
                 setHoverInfo({ name: 'Minas Gerais (MG)', area: info.totalArea });
@@ -116,7 +139,7 @@ const Platform = () => {
 
     // Handling Map Layers and Features
     useEffect(() => {
-        const map = mapRef.current;
+        const map = mapInstance;
         if (!map || !mapData) return;
 
         // Clear Previous Layers
@@ -132,13 +155,16 @@ const Platform = () => {
         // Features (Color Scale)
         const getColor = (area) => {
             const scale = mapData.info.escala;
-            return area === null || area === 0 ? '#9d9d9d' :
-                area >= scale['max'] ? '#0a4a1a' :
-                    area >= scale['75%'] ? '#1a7a2a' :
-                        area >= scale['50%'] ? '#2a9a3a' :
-                            area >= scale['25%'] ? '#4aba5a' :
-                                area >= scale['min'] ? '#6ada7a' :
-                                    '#9d9d9d';
+
+            // Equal Interval Scale (Color)
+            if (area === null || area === 0) return noDataColor;
+            if (area > scale.break4) return colorScaleColors[0];
+            if (area > scale.break3) return colorScaleColors[1];
+            if (area > scale.break2) return colorScaleColors[2];
+            if (area > scale.break1) return colorScaleColors[3];
+            if (area >= scale.min) return colorScaleColors[4];
+
+            return noDataColor;
         };
 
         // Features (Style)
@@ -238,11 +264,11 @@ const Platform = () => {
             }
         });
 
-    }, [mapData, activeOverlays]);
+    }, [mapData, mapInstance, activeOverlays]);
 
     // Handling Tile Layer Swapping
     useEffect(() => {
-        const map = mapRef.current;
+        const map = mapInstance;
         if (!map || !tileBaseRef.current || !tileOffColorRef.current) return;
 
         const culturaIsActive = activeOverlays.includes('Cultura');
@@ -262,7 +288,7 @@ const Platform = () => {
                 tileBaseRef.current.addTo(map).bringToBack();
             }
         }
-    }, [activeOverlays]);
+    }, [mapInstance, activeOverlays]);
 
     // Handling Year Change
     const handleYearChange = (year) => {
@@ -295,7 +321,9 @@ const Platform = () => {
 
                 <div className="mapUI-container">
                     <div className="mapUI-bottom-left">
+                        <MapScale map={mapInstance} />
                         <MapInfoPanel title={hoverInfo.name} area={hoverInfo.area} isLoading={isLoading} />
+                        <MapLegend scale={mapData ? mapData.info.escala : null} colors={colorScaleColors} noDataColor={noDataColor} isLoading={isLoading} />
                     </div>
                     <div className="mapUI-bottom-right">
                         <MapControlPanel availableYears={availableYears} currentYear={currentYear} onYearChange={handleYearChange} layers={layerDefinitions} activeOverlays={activeOverlays} onLayerChange={handleLayerChange} isLoading={isLoading} />
