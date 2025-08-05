@@ -31,7 +31,7 @@ const Downloads = () => {
                                 <td>2017</td>
                             </tr>
                             <tr>
-                                <td><a href="#" download="DataCana ShapeFile 2017">DC_ShapeFile_2017</a></td>
+                                <td><a href="/assets/datacana/Cana_2017_Datacana.rar" download="DataCana ShapeFile 2017">DC_ShapeFile_2017</a></td>
                                 <td>Compactado</td>
                                 <td>2017</td>
                             </tr>
@@ -39,6 +39,27 @@ const Downloads = () => {
                                 <td><a href="/assets/datacana/Cana_2017.geojson" download="DataCana GeoJSON 2017">DC_GeoJSON_2017</a></td>
                                 <td>GeoJSON</td>
                                 <td>2017</td>
+                            </tr>
+
+                            <tr>
+                                <td><a href="/assets/datacana/Data_2018.csv" download="DataCana Tabela 2018">DC_Table_2018</a></td>
+                                <td>Tabela</td>
+                                <td>2018</td>
+                            </tr>
+                            <tr>
+                                <td><a href="/assets/datacana/Data_2018_Resume.csv" download="DataCana Resume 2018">DC_Resume_2018</a></td>
+                                <td>Tabela</td>
+                                <td>2018</td>
+                            </tr>
+                            <tr>
+                                <td><a href="/assets/datacana/Cana_2018_Datacana.rar" download="DataCana ShapeFile 2018">DC_ShapeFile_2018</a></td>
+                                <td>Compactado</td>
+                                <td>2018</td>
+                            </tr>
+                            <tr>
+                                <td><a href="/assets/datacana/Cana_2018.geojson" download="DataCana GeoJSON 2018">DC_GeoJSON_2018</a></td>
+                                <td>GeoJSON</td>
+                                <td>2018</td>
                             </tr>
 
                             <tr>
@@ -52,7 +73,7 @@ const Downloads = () => {
                                 <td>2022</td>
                             </tr>
                             <tr>
-                                <td><a href="#" download="DataCana ShapeFile 2022">DC_ShapeFile_2022</a></td>
+                                <td><a href="/assets/datacana/Cana_2022_Datacana.rar" download="DataCana ShapeFile 2022">DC_ShapeFile_2022</a></td>
                                 <td>Compactado</td>
                                 <td>2022</td>
                             </tr>
