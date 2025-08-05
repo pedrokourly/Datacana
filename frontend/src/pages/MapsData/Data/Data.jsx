@@ -21,7 +21,7 @@ import GraphBar from '../../../components/GraphBar/GraphBar.jsx';
 
 const Data = () => {
     // State Management
-    const [availableYears] = useState([2017, 2022]);
+    const [availableYears] = useState([2017, 2018, 2022]);
     const [selectedYear, setSelectedYear] = useState(2022);
     const [isLoading, setIsLoading] = useState(true);
 
