@@ -43,7 +43,7 @@ async function getDados(year = 2022) {
 let currentYear = 2022;
 let map, geoJsonMGMunicipiosProps, geoJsonMG, geoJsonMGE, geoJsonCana;
 let info, layerControl, baseLayers;
-let availableYears = [2017, 2022]; // Anos disponíveis
+let availableYears = [2017, 2018, 2022]; // Anos disponíveis
 let activeLayers = ["Área Ocupada: Estadual"]; // Camadas ativas atualmente
 
 // Função para criar o controle da timeline
