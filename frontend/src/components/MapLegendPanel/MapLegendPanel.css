@@ -17,15 +17,12 @@ INDEX
 
 */
 
-* {
-    font-family: var(--default-font);
-    color: var(--color-font);
-}
-
 /* 1. Legend Panel */
 
 div.MapLegend {
     background-color: var(--color-header);
+    color: var(--color-font);
+    font-family: var(--default-font);
 
     display: flex;
     flex-direction: column;

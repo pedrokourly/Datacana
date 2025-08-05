@@ -1,5 +1,5 @@
 // Import Style Component
-import './MapLegend.css';
+import './MapLegendPanel.css';
 
 const MapLegend = ({ scale, colors, noDataColor, isLoading }) => {
     // Formats Number

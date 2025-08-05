@@ -19,15 +19,12 @@ INDEX
 
 */
 
-* {
-    font-family: var(--default-font);
-    color: var(--color-font);
-}
-
 /* 1. Control Panel */
 
 div.MapControlPanel {
+    font-family: var(--default-font);
     background-color: var(--color-header);
+    color: var(--color-font);
 
     display: flex;
     flex-direction: column;
@@ -128,8 +125,6 @@ div.MapControlPanel > div.panelSection > div.layerOptions > label.checkboxLayerL
 }
 
 div.MapControlPanel > div.panelSection > div.layerOptions > label.checkboxLayerLabel.disabled {
-    color: var(--color-background);
-
     cursor: not-allowed;
 }
 

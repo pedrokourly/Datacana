@@ -10,15 +10,12 @@ INDEX
 
 */
 
-* {
-    font-family: var(--default-font);
-    color: var(--color-font);
-}
-
 /* 1. Scale Panel (Custom) */
 
 div.MapScale {
     background-color: var(--color-header);
+    color: var(--color-font);
+    font-family: var(--default-font);
 
     border-radius: 8px;
     border: 2px solid rgba(0, 0, 0, 0.25);
