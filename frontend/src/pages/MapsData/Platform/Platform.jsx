@@ -19,8 +19,8 @@ import '../../../utils/Snogylop.js';
 // Import Components
 import MapControlPanel from '../../../components/MapControlPanel/MapControlPanel.jsx';
 import MapInfoPanel from '../../../components/MapInfoPanel/MapInfoPanel.jsx';
-import MapLegend from '../../../components/MapLegend/MapLegend.jsx';
-import MapScale from '../../../components/MapScale/MapScale.jsx';
+import MapLegend from '../../../components/MapLegendPanel/MapLegendPanel.jsx';
+import MapScale from '../../../components/MapScalePanel/MapScalePanel.jsx';
 
 const Platform = () => {
     // Variables and Constants

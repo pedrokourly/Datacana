@@ -1,5 +1,5 @@
 // Import Style Component
-import './MapScale.css';
+import './MapScalePanel.css';
 
 // Import React Libs
 import { useState, useEffect } from 'react';

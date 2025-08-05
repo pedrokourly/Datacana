@@ -21,12 +21,33 @@ const Downloads = () => {
                         </thead>
                         <tbody className="align-middle">
                             <tr>
-                                <td><a href="#" download="DataCana Tabela 2022">DC_Table_2022</a></td>
+                                <td><a href="/assets/datacana/Data_2017.csv" download="DataCana Tabela 2017">DC_Table_2017</a></td>
+                                <td>Tabela</td>
+                                <td>2017</td>
+                            </tr>
+                            <tr>
+                                <td><a href="/assets/datacana/Data_2017_Resume.csv" download="DataCana Resume 2017">DC_Resume_2017</a></td>
+                                <td>Tabela</td>
+                                <td>2017</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" download="DataCana ShapeFile 2017">DC_ShapeFile_2017</a></td>
+                                <td>Compactado</td>
+                                <td>2017</td>
+                            </tr>
+                            <tr>
+                                <td><a href="/assets/datacana/Cana_2017.geojson" download="DataCana GeoJSON 2017">DC_GeoJSON_2017</a></td>
+                                <td>GeoJSON</td>
+                                <td>2017</td>
+                            </tr>
+
+                            <tr>
+                                <td><a href="/assets/datacana/Data_2022.csv" download="DataCana Tabela 2022">DC_Table_2022</a></td>
                                 <td>Tabela</td>
                                 <td>2022</td>
                             </tr>
                             <tr>
-                                <td><a href="#" download="DataCana Resume 2022">DC_Resume_2022</a></td>
+                                <td><a href="/assets/datacana/Data_2022_Resume.csv" download="DataCana Resume 2022">DC_Resume_2022</a></td>
                                 <td>Tabela</td>
                                 <td>2022</td>
                             </tr>
@@ -36,7 +57,7 @@ const Downloads = () => {
                                 <td>2022</td>
                             </tr>
                             <tr>
-                                <td><a href="#" download="DataCana GeoJSON 2022">DC_GeoJSON_2022</a></td>
+                                <td><a href="/assets/datacana/Cana_2022.geojson" download="DataCana GeoJSON 2022">DC_GeoJSON_2022</a></td>
                                 <td>GeoJSON</td>
                                 <td>2022</td>
                             </tr>

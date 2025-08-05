@@ -81,7 +81,7 @@ div.Home > div.content > div.container > div.line > div.slogan > a {
     border-radius: 16px;
     border: 1px solid rgba(0, 0, 0, 0.25);
 
-    padding: 20px 32px;
+    padding: 16px 32px;
     width: 272px;
 
     transition: 0.5s;
