@@ -2,7 +2,7 @@
 import './App.css'
 
 // Import React Router DOM
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 // Import Pages
 import Home from './pages/Home/Home.jsx';
@@ -28,7 +28,7 @@ function App() {
     return (
         <>
             <div className="App">
-                <BrowserRouter>
+                <HashRouter>
                     <Layout>
                         <Routes>
                             <Route path="/" element={<Home />} />
@@ -51,7 +51,7 @@ function App() {
                             <Route path="/contact" element={<Contact />} />
                         </Routes>
                     </Layout>
-                </BrowserRouter>
+                </HashRouter>
             </div>
         </>
     );
