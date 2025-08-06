@@ -87,7 +87,7 @@ const Home = () => {
     const { ref } = useInView({
         threshold: 0.25,
         onChange: (inView) => {
-            setValue(inView ? 821226.9 : null);
+            setValue(inView ? 912.211 : null);
         }
     });
 
@@ -144,7 +144,7 @@ const Home = () => {
                                     <small>Uberaba</small>
                                 </p>
                                 <p className="carton-text data-number">
-                                    98.926,21 <span>ha</span>
+                                    100.952,24 <span>ha</span>
                                 </p>
                             </div>
                         </div>
@@ -159,7 +159,7 @@ const Home = () => {
                                     <small>Arquivo .SHP</small>
                                 </p>
                                 <p className="carton-text data-number">
-                                    9073 <span>Polígonos</span>
+                                    22502 <span>Polígonos</span>
                                 </p>
                             </div>
                         </div>
