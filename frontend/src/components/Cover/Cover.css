@@ -1,0 +1,69 @@
+/* Component: Cover StyleSheet */
+
+/* 
+
+INDEX 
+
+    1. Cover
+        1.1. Title
+            1.1.1. Rule
+
+    @ Media-Query Tablet MEDIUM
+
+*/
+
+/* 1. Cover */
+
+div.Cover {
+    background-image: url('/assets/images/Cover01.jpg');
+    background-size: cover;
+    background-position: right bottom;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 24px;
+    height: 42dvh;
+}
+
+/* 1.1. Cover > Title */
+
+div.Cover > div.title > h1 {
+    color: var(--color-header);
+
+    text-align: center;
+    font-weight: bold;
+    font-size: 35px;
+
+    animation: fadeInDown;
+    animation-duration: 0.75s;
+}
+
+/* 1.1.1. Cover > Title > Rule */
+
+div.Cover > div.title > div.rule {
+    border-bottom: 3px solid var(--color-header);
+}
+
+div.Cover > div.title > div.container {
+    max-width: 75%;
+
+    animation: zoomIn;
+    animation-duration: 0.75s;
+}
+
+
+
+/* Media-Query Tablet MEDIUM */
+
+@media (min-width: 768px) {
+    div.Cover {
+        background-position: center;
+        height: 65vh;
+    }
+
+    div.Cover > div.title > h1 {
+        font-size: 42px;
+    }
+}

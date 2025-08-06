@@ -1,0 +1,318 @@
+/* Page: Data StyleSheet */
+
+/* 
+
+INDEX
+
+    1. Data
+        1.1. NavBar
+            1.1.1. Logo
+        1.2. Container
+            1.2.1. Page Title
+            1.2.2. Year Selection
+                1.2.2.1. Radio Buttons
+            1.2.3. Data Table
+                1.2.3.1. Header
+                1.2.3.2. Sorting Buttons
+                1.2.3.3. Pagination Buttons
+                1.2.3.4. Length Control
+                1.2.3.5. Search Control
+            1.2.4. Data Graph
+    2. Loading Animation
+
+    @Keyframe Loading Spinner
+
+*/
+
+/* 1. Data */
+
+div.Data {
+    color: var(--color-font);
+    font-family: var(--default-font);
+}
+
+/* 1.1. Data > NavBar */
+
+div.Data > div.navBar {
+    background-color: var(--color-header);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 8px 0px;
+}
+
+/* 1.1.1. Data > NavBar > Logo */
+
+div.Data  > div.navBar > a.logo > img {
+    width: 112px;
+}
+
+/* 1.2. Data > Container */
+
+div.Data > div.container {
+    padding: 32px 0px;
+}
+
+/* 1.2.1. Data > Container > Page Title */
+
+div.Data > div.container > article > h2 {
+    text-align: center;
+}
+
+div.Data > div.container > article > h2 > span {
+    color: var(--color01);
+}
+
+/* 1.2.2. Data > Container > Year Selection */
+
+div.Data > div.container > div.yearSelector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+
+    font-size: 14px;
+
+    margin-bottom: 64px;
+}
+
+/* 1.2.2.1. Data > Container > Year Selection > Radio Buttons */
+
+div.Data > div.container > div.yearSelector > label.radioYear-label > input[type="radio"] {
+    display: none;
+}
+
+div.Data > div.container > div.yearSelector > label.radioYear-label > input[type="radio"]:checked + span.radioYear-text {
+    background-color: var(--color01);
+    color: var(--color-header);
+
+    border-color: var(--color-header);
+    box-shadow: 0 0 10px #2a9a3a80;
+
+    transform: scale(1.10); 
+}
+
+div.Data > div.container > div.yearSelector > label.radioYear-label > input[type="radio"]:disabled + span.radioYear-text {
+    background-color: var(--color-background);
+    color: var(--color-header);
+
+    cursor: not-allowed;
+}
+
+div.Data > div.container > div.yearSelector > label.radioYear-label > span.radioYear-text {
+    background-color: var(--color-header);
+
+    display: inline-block;
+
+    font-weight: bold;
+
+    border-radius: 16px;
+    border: 2px solid transparent;
+
+    padding: 6px 12px;
+
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+/* 1.2.3. Data > Container > Data Table */
+
+div.Data > div.container > div.dataTable {
+    margin-bottom: 64px;
+}
+
+div.Data > div.container > div.dataTable tbody tr:nth-child(even) {
+    background-color: #0ABF6A20;
+}
+
+/* 1.2.3.1. Data > Container > Data Table > Header */
+
+div.Data > div.container > div.dataTable thead th {
+    background-color: var(--color01) !important;
+    color: var(--color-header) !important;
+}
+
+/* 1.2.3.2. Data > Container > Data Table > Sorting Buttons */
+
+div.Data > div.container > div.dataTable thead th span.dt-column-order::before {
+    margin-bottom: 1px;
+}
+
+div.Data > div.container > div.dataTable thead th span.dt-column-order::after {
+    margin-top: 1px;
+}
+
+div.Data > div.container > div.dataTable thead th.dt-ordering-asc span.dt-column-order::before,
+div.Data > div.container > div.dataTable thead th.dt-ordering-desc span.dt-column-order::after {
+    color: var(--color-header) !important;
+    opacity: 1 !important;
+}
+
+div.Data > div.container > div.dataTable thead th:not(.dt-ordering-asc) span.dt-column-order::before,
+div.Data > div.container > div.dataTable thead th:not(.dt-ordering-desc) span.dt-column-order::after {
+    color: var(--color-header) !important;
+    opacity: 0.5 !important;
+}
+
+/* 1.2.3.3. Data > Container > Data Table > Pagination Buttons */
+
+div.Data > div.container > div.dataTable .dt-paging-button {
+    background-color: var(--color-header) !important;
+    color: var(--color-font) !important;
+
+    display: inline-block;
+
+    font-weight: bold;
+    text-decoration: none !important;
+
+    border-radius: 16px !important;
+    border: 2px solid transparent !important;
+
+    padding: 6px 12px !important;
+    margin: 0px 2px !important;
+
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+div.Data > div.container > div.dataTable .dt-paging-button:hover {
+    background: var(--color01) !important;
+    color: var(--color-header) !important;
+
+    border-color: var(--color-header) !important;
+    box-shadow: 0px 0px 10px #2A9A3A80 !important;
+
+    transform: scale(1.10) !important;
+}
+
+div.Data > div.container > div.dataTable .dt-paging-button.current {
+    background: var(--color01) !important;
+    color: var(--color-header) !important;
+
+    border-color: var(--color-header) !important;
+    box-shadow: 0px 0px 10px #2A9A3A80 !important;
+
+    transform: scale(1.10) !important;
+}
+
+div.Data > div.container > div.dataTable .dt-paging-button.disabled {
+    background-color: var(--color-header) !important;
+    color: var(--color-font) !important;
+
+    opacity: 0.5;
+}
+
+div.Data > div.container > div.dataTable .dt-paging-button.disabled:hover {
+    transform: none !important;
+}
+
+/* 1.2.3.4. Data > Container > Data Table > Label Control */
+
+div.Data > div.container > div.dataTable .dt-length select {
+    background-color: var(--color-header) !important;
+    color: var(--color-font) !important;
+
+    font-weight: bold;
+    
+    border-radius: 16px !important;
+    border: 2px solid var(--color-header) !important;
+
+    padding: 6px 12px !important;
+    margin: 0px 8px !important;
+
+    transition: all 0.5s;
+}
+
+div.Data > div.container > div.dataTable .dt-length select:focus {
+    border-color: var(--color01) !important;
+
+    box-shadow: 0 0 10px #2a9a3a80 !important;
+
+    outline: none !important;
+}
+
+div.Data div.dataTable .dt-length label {
+    font-weight: bold;
+    color: var(--color-font);
+}
+
+/* 1.2.3.5. Data > Container > Data Table > Search Control */
+
+div.Data > div.container > div.dataTable .dt-search input[type="search"] {
+    background-color: var(--color-header) !important;
+    color: var(--color-font) !important;
+
+    font-weight: bold;
+    
+    border-radius: 16px !important;
+    border: 2px solid var(--color-header) !important;
+
+    width: 320px;
+    padding: 6px 12px !important;
+    margin: 0px 8px !important;
+
+    transition: all 0.5s;
+}
+
+div.Data > div.container > div.dataTable .dt-search input[type="search"]:focus {
+    border-color: var(--color01) !important;
+
+    box-shadow: 0 0 10px #2a9a3a80 !important;
+
+    outline: none !important;
+}
+
+div.Data div.dataTable .dt-search input[type="search"]::placeholder {
+    color: var(--color-font);
+    opacity: 0.5;
+}
+
+/* 1.2.4. Data > Container > Data Graph */
+
+div.Data > div.container > div.dataGraph {
+    margin-bottom: 64px;
+}
+
+/* 2. Loading Animation */
+
+div.Data div.loading-state {
+    color: var(--color-font);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+
+    font-weight: bold;
+
+    min-height: 200px;
+    padding: 64px 0;
+}
+
+div.Data div.loading-spinner {
+    border: 4px solid var(--color-header);
+    border-top-color: var(--color01);
+    border-radius: 50%;
+
+    width: 40px;
+    height: 40px;
+
+    animation: spin 1s linear infinite;
+}
+
+
+
+/* Keyframes Loading Spinner */
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

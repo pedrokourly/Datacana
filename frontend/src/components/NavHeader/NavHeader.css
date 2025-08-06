@@ -1,0 +1,129 @@
+/* Component: NavHeader StyleSheet */
+
+/* 
+
+INDEX
+
+    1. NavHeader
+        1.1. Menu
+            1.1.1. Links
+            1.1.2. SubMenu
+                1.1.2.1. Hover
+                1.1.2.2. Up Arrow
+                1.1.2.3. Links
+
+    @ Media-Query Laptop LARGE
+    
+*/
+
+/* 1. NavHeader */
+
+nav.NavHeader {
+    display: none;
+    justify-content: center;
+
+    width: 100%;
+    position: absolute;
+}
+
+/* 1.1. NavHeader > Menu */
+
+nav.NavHeader > ul.navHeader-menu {
+    display: flex;
+    gap: 24px;
+
+    list-style: none;
+
+    margin: 0px;
+    padding: 0px;
+}
+
+/* 1.1.1. NavHeader > Menu > Links */
+
+nav.NavHeader > ul.navHeader-menu > li > a {
+    color: var(--color-font);
+
+    display: block;
+
+    text-decoration: none;
+
+    padding-block: 20px;
+
+    transition: 0.5s;
+}
+
+nav.NavHeader > ul.navHeader-menu > li > a:hover {
+    color: var(--color02);
+}
+
+nav.NavHeader > ul.navHeader-menu > li > a.active {
+    color: var(--color02);
+}
+
+/* 1.1.2. NavHeader > Menu > SubMenu */
+
+nav.NavHeader > ul.navHeader-menu > li > ul.navHeader-subMenu {
+    background-color: var(--color02);
+
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+
+    list-style: none;
+    z-index: 100;
+    border-radius: 8px;
+
+    margin: 0px;
+    padding: 16px;
+    position: absolute;
+
+    box-shadow: 0rem 0rem 0.5rem rgba(0, 0, 0, 0.25);
+}
+
+/* 1.1.2.1 NavHeader > Menu > SubMenu > Hover */
+
+nav.NavHeader > ul.navHeader-menu > li:hover > ul.navHeader-subMenu {
+    display: flex;
+}
+
+/* 1.1.2.2. NavHeader > Menu > SubMenu > Up Arrow */
+
+nav.NavHeader > ul.navHeader-menu > li > ul.navHeader-subMenu::before {
+    content: "";
+
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 17px solid var(--color02);
+
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    top: -15px;
+    left: 20px;
+}
+
+/* 1.1.2.3. NavHeader > Menu > SubMenu > Links */
+
+nav.NavHeader > ul.navHeader-menu > li > ul.navHeader-subMenu > li > a {
+    color: var(--color-header);
+
+    text-decoration: none;
+
+    border-bottom: 2px solid transparent;
+
+    transition: 0.25s;
+}
+
+nav.NavHeader > ul.navHeader-menu > li > ul.navHeader-subMenu > li > a:hover {
+    border-color: var(--color-header);
+}
+
+
+
+/* Media-Query Laptop LARGE */
+
+@media (min-width: 992px) {
+    nav.NavHeader {
+        display: flex;
+    }
+}

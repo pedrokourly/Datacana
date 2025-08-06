@@ -1,0 +1,140 @@
+/* Component: Products StyleSheet */
+
+/* 
+
+INDEX
+
+    1. Content
+        1.2. Carousel
+            1.2.1. Carousel Item
+                1.2.1.1. Carton
+                    1.2.1.1.1. Carton Image
+                    1.2.1.1.2. Carton Body
+                        1.2.1.1.2.1. Carton Title
+                        1.2.1.1.2.2. Carton Text
+            1.2.2. Carousel Indicators
+                1.2.2.1. Button            
+
+    @ Media-Query Tablet MEDIUM
+    
+*/
+
+/* 1.2. Content > Carousel */
+
+div.Products > div.content > div.container > article > div.carousel {
+    margin-bottom: 48px;
+}
+
+/* 1.2.1. Content > Carousel > Carousel Item */
+
+div.Products > div.content > div.container > article > div.carousel > div.carousel-inner > div.carousel-item {
+    padding: 0px 8px;
+}
+
+/* 1.2.1.1. Content > Carousel > Carousel Item > Carton */
+
+div.Products > div.content > div.container > article > div.carousel > div.carousel-inner > div.carousel-item > div.carton {
+    position: relative;
+    
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+
+    margin: 8px auto;
+    max-width: 450px;
+    min-height: 600px;
+
+    box-shadow: 0rem 0rem 0.50rem rgba(0, 0, 0, 0.25);
+}
+
+/* 1.2.1.1.1. Content > Carousel > Carousel Item > Carton > Carton Image */
+
+div.Products > div.content > div.container > article > div.carousel > div.carousel-inner > div.carousel-item > div.carton > div.carton-image {
+    background-color: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div.Products > div.content > div.container > article > div.carousel > div.carousel-inner > div.carousel-item > div.carton > div.carton-image > img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 350px;
+    object-fit: contain;
+}
+
+/* 1.2.1.1.2. Content > Carousel > Carousel Item > Carton > Carton Body */
+
+div.Products > div.content > div.container > article > div.carousel > div.carousel-inner > div.carousel-item > div.carton > div.carton-body {
+    padding: 24px 16px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* 1.2.1.1.2.1. Content > Carousel > Carousel Item > Carton > Carton Body > Carton Title */
+
+div.Products > div.content > div.container > article > div.carousel > div.carousel-inner > div.carousel-item > div.carton > div.carton-body > h3 {
+    font-size: 20px;
+    margin-bottom: 16px;
+}
+
+/* 1.2.1.1.2.2. Content > Carousel > Carousel Item > Carton > Carton Body > Carton Text */
+
+div.Products > div.content > div.container > article > div.carousel > div.carousel-inner > div.carousel-item > div.carton > div.carton-body > p.carton-text {
+    font-size: 16px;
+    text-align: justify;
+}
+
+/* 1.2.2. Content > Carousel > Carousel Indicators */
+
+div.Products > div.content > div.container > article > div.carousel > div.carousel-indicators {
+    position: absolute;
+
+    bottom: -40px;
+}
+
+/* 1.2.2.1. Content > Carousel > Carousel Indicators > Button */
+
+div.Products > div.content > div.container > article > div.carousel > div.carousel-indicators > button {
+    height: 3px;
+}
+
+
+
+/* Media-Query Tablet MEDIUM */
+
+@media (min-width: 768px) { 
+    div.Products > div.content > div.container > article > div.carousel > div.carousel-inner > div.carousel-item > div.carton {
+        flex-direction: row;
+
+        max-width: 900px;
+        min-height: unset;
+    }
+
+    div.Products > div.content > div.container > article > div.carousel > div.carousel-inner > div.carousel-item > div.carton > div.carton-image {
+        flex: 0 0 55%;
+        background-color: #f8f9fa;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    div.Products > div.content > div.container > article > div.carousel > div.carousel-inner > div.carousel-item > div.carton > div.carton-image > img {
+        height: auto;
+        max-height: 350px;
+        width: auto;
+        max-width: 100%;
+        object-fit: contain;
+    }
+
+    div.Products > div.content > div.container > article > div.carousel > div.carousel-inner > div.carousel-item > div.carton > div.carton-body {
+        flex: 0 0 45%;
+    }
+}
