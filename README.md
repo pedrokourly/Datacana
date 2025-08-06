@@ -264,7 +264,7 @@ Este projeto está licenciado sob a **GNU General Public License v3.0** - veja o
 - Campus Pontal - Instituto de Geografia
 - Ituiutaba, Minas Gerais, Brasil
 
-Para mais informações sobre o projeto, visite nossa [plataforma web](https://datacana.com) ou entre em contato através dos canais oficiais da UFU.
+Para mais informações sobre o projeto, visite nossa [plataforma web](https://datacana.org) ou entre em contato através dos canais oficiais da UFU.
 
 ---
 
