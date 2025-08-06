@@ -1,0 +1,14 @@
+/* Page: Contact StyleSheet */
+
+/*
+
+INDEX
+
+    1. Contact Card
+
+*/
+
+/* 1. Contact Card */
+div.Contact > div.content > div.container > article > p {
+    text-align: center;
+}

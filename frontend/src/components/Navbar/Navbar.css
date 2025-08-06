@@ -1,0 +1,39 @@
+/* Component: Navbar StyleSheet */
+
+/* 
+
+INDEX 
+
+    1. NavBar
+        1.1. Logo
+
+*/
+
+/* 1. NavBar */
+
+div.Navbar {
+    background-color: var(--color-header);
+
+    display: flex;
+    align-items: center;
+
+    padding: 8px 0px;
+}
+
+div.Navbar > div.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: relative;
+}
+
+/* 1.1. NavBar > Logo */
+
+div.Navbar > div.container > a.logo {
+    z-index: 1;
+}
+
+div.Navbar > div.container > a.logo > img {
+    width: 112px;
+}

@@ -1,0 +1,78 @@
+/* App Definitions */
+@import url('https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap');
+
+:root {
+    --default-font: 'Rethink Sans', sans-serif;
+
+    --color-font: #000000;
+
+    --color01: #03A65A;
+    --color02: #0ABF6A;
+    --color03: #86D95F;
+    --color04: #C2F279;
+    --color05: #D8F2A0;
+
+    --color-header: #FFFFFF;
+    --color-background: #E0E0E0;
+}
+
+::-webkit-scrollbar {
+    background-color: var(--color-header);
+
+    width: 10px;
+    box-shadow: inset 0rem 0rem 0.25rem rgba(0, 0, 0, 0.25);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--color01);
+
+}
+
+::selection {
+    background-color: var(--color-background);
+}
+
+body {
+    background-color: var(--color-background);
+
+    font-family: var(--default-font);
+    font-size: 16px;
+}
+
+div.content {
+    background-color: var(--color-header);
+
+    padding: 64px 24px;
+}
+
+article > h2 {
+    font-size: 28px;
+    font-weight: bold;
+
+    margin-bottom: 32px;
+}
+
+article > h3 {
+    font-size: 24px;
+    margin-bottom: 32px;
+}
+
+article > p {
+    font-size: 18px;
+
+    text-align: justify;
+    text-indent: 32px;
+}
+
+article > p > a {
+    color: var(--color02);
+
+    font-weight: bold;
+
+    text-decoration: dotted underline;
+}
+
+article > p > a > svg {
+    margin-left: 4px;
+    margin-bottom: 3px;
+}

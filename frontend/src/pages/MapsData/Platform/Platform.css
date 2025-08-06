@@ -1,0 +1,100 @@
+/* Page: Platform StyleSheet */
+
+/* 
+
+INDEX
+
+    1. Platform
+        1.1. NavBar
+            1.1.1. Logo
+        1.2. Map Container
+            1.2.1. Map
+        1.3. Map UI Container
+            1.3.1. Bottom Left
+            1.3.2. Bottom Right
+        1.4. Map Control (Scale)
+
+*/
+
+/* 1. Platform */
+
+div.Platform {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    height: 100dvh;
+}
+
+/* 1.1. Platform > NavBar */
+
+div.Platform > div.navBar {
+    background-color: var(--color-header);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 8px 0px;
+}
+
+/* 1.1.1. Platform > NavBar > Logo */
+
+div.Platform > div.navBar > a.logo > img {
+    width: 112px;
+}
+
+/* 1.2. Platform > Map Container */
+
+div.Platform > div.mapContainer {
+    flex: 1;
+}
+
+/* 1.2.1. Platform > Map Container > Map */
+
+div.Platform > div.mapContainer > div#map {
+    width: 100%;
+    height: 100%;
+}
+
+/* 1.3. Platform > Map UI Container */
+
+div.mapUI-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+    z-index: 1000;
+}
+
+/* 1.3.1. Platform > Map UI Container > Bottom Left */
+
+div.mapUI-bottom-left {
+    position: absolute;
+    pointer-events: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    bottom: 26px;
+    left: 8px;
+    align-items: flex-start;
+}
+
+/* 1.3.2. Platform > Map UI Container > Bottom Right */
+
+div.mapUI-bottom-right {
+    position: absolute;
+    pointer-events: auto;
+    display: flex;
+    flex-direction: column;
+    
+    bottom: 26px;
+    right: 8px;
+    align-items: flex-end;
+}
