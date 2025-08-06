@@ -57,6 +57,60 @@ O **DataCana** é um banco de dados digital inovador desenvolvido para disponibi
 
 ---
 
+## 📷 Interface da Plataforma
+
+### 🏠 Página Principal
+<div align="center">
+  <img src="frontend/public/assets/images/products/PlataformaGeral.png" alt="Plataforma DataCana - Visão Geral" width="800"/>
+  <p><em>Interface principal da plataforma DataCana</em></p>
+</div>
+
+### 🗺️ Plataforma de Mapas Interativos
+<div align="center">
+  <img src="frontend/public/assets/images/products/PlataformaCultura.png" alt="Mapa Interativo - Minas Gerais" width="800"/>
+  <p><em>Visualização dos dados de cultivo de cana-de-açúcar em Minas Gerais</em></p>
+</div>
+
+<div align="center">
+  <img src="frontend/public/assets/images/products/PlataformaCultura_MG.png" alt="Mapa Detalhado - Minas Gerais" width="800"/>
+  <p><em>Dados detalhados por município com controles interativos</em></p>
+</div>
+
+### 🏛️ Visualização Municipal
+<div align="center">
+  <img src="frontend/public/assets/images/products/PlataformaMunicipal.png" alt="Plataforma Municipal" width="800"/>
+  <p><em>Interface de dados municipais específicos</em></p>
+</div>
+
+<div align="center">
+  <img src="frontend/public/assets/images/products/PlataformaMunicipal_Itba.png" alt="Dados de Ituiutaba" width="800"/>
+  <p><em>Exemplo de dados municipais - Ituiutaba/MG</em></p>
+</div>
+
+### 📊 Gráficos e Análises
+<div align="center">
+  <img src="frontend/public/assets/images/products/GraficoMeso.png" alt="Gráfico Mesorregião" width="600"/>
+  <p><em>Análise gráfica por mesorregião</em></p>
+</div>
+
+<div align="center">
+  <img src="frontend/public/assets/images/products/GraficoMicro.png" alt="Gráfico Microrregião" width="600"/>
+  <p><em>Análise gráfica por microrregião</em></p>
+</div>
+
+<div align="center">
+  <img src="frontend/public/assets/images/products/GraficoMunicipio.png" alt="Gráfico Municipal" width="600"/>
+  <p><em>Dados gráficos específicos por município</em></p>
+</div>
+
+### 📋 Tabelas de Dados
+<div align="center">
+  <img src="frontend/public/assets/images/products/Tabelas.png" alt="Tabelas de Dados" width="800"/>
+  <p><em>Tabelas detalhadas com dados estatísticos organizados</em></p>
+</div>
+
+---
+
 ## 🛠️ Tecnologias Utilizadas
 
 ### Frontend
