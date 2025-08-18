@@ -101,7 +101,7 @@ const Team = () => {
                                         <div className="carton-body">
                                             <h3>Leandro Guimarães Medeiros</h3>
                                             <p className="carton-text">
-                                                Técnico em Tecnologia da Informação pela Universidade Federal de Uberlândia (UFU), campus Pontal, e Graduando em Engenharia Agronômica pela Universidade do Estado de Minas Gerais (UEMG), campus Ituiutaba.
+                                                Técnico em Tecnologia da Informação na Universidade Federal de Uberlândia (UFU), Mestrando em Geografia pela Universidade Federal de Uberlândia  (PPGEP) e Graduando em Agronomia pela Universidade de Uberaba (UNIUBE).
                                             </p>
                                         </div>
                                     </div>
