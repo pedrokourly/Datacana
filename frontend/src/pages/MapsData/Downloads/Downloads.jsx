@@ -61,6 +61,27 @@ const Downloads = () => {
                                 <td>GeoJSON</td>
                                 <td>2018</td>
                             </tr>
+                            
+                            <tr>
+                                <td><a href="/assets/datacana/Data_2020.csv" download="DataCana Tabela 2020">DC_Table_2020</a></td>
+                                <td>Tabela</td>
+                                <td>2020</td>
+                            </tr>
+                            <tr>
+                                <td><a href="/assets/datacana/Data_2020_Resume.csv" download="DataCana Resume 2020">DC_Resume_2020</a></td>
+                                <td>Tabela</td>
+                                <td>2020</td>
+                            </tr>
+                            <tr>
+                                <td><a href="/assets/datacana/Cana_2020_Datacana.rar" download="DataCana ShapeFile 2020">DC_ShapeFile_2020</a></td>
+                                <td>Compactado</td>
+                                <td>2020</td>
+                            </tr>
+                            <tr>
+                                <td><a href="/assets/datacana/Cana_2020.geojson" download="DataCana GeoJSON 2020">DC_GeoJSON_2020</a></td>
+                                <td>GeoJSON</td>
+                                <td>2020</td>
+                            </tr>
 
                             <tr>
                                 <td><a href="/assets/datacana/Data_2022.csv" download="DataCana Tabela 2022">DC_Table_2022</a></td>

@@ -31,7 +31,7 @@ const Platform = () => {
     // State Management
     const [mapData, setMapData] = useState(null);
     const [mapInstance, setMapInstance] = useState(null);
-    const [availableYears] = useState([2017, 2018, 2022]);
+    const [availableYears] = useState([2017, 2018, 2020, 2022]);
     const [currentYear, setCurrentYear] = useState(2022);
     const [activeOverlays, setActiveOverlays] = useState(['Estadual']);
     const [hoverInfo, setHoverInfo] = useState({ name: 'Minas Gerais (MG)', area: null });
