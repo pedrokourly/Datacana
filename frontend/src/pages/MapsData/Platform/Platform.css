@@ -25,6 +25,8 @@ div.Platform {
     flex-direction: column;
 
     height: 100dvh;
+
+    overflow-x: hidden;
 }
 
 /* 1.1. Platform > NavBar */
@@ -77,6 +79,7 @@ div.mapUI-container {
 div.mapUI-bottom-left {
     position: absolute;
     pointer-events: auto;
+
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -91,10 +94,11 @@ div.mapUI-bottom-left {
 div.mapUI-bottom-right {
     position: absolute;
     pointer-events: auto;
+
     display: flex;
     flex-direction: column;
-    
-    bottom: 26px;
-    right: 8px;
     align-items: flex-end;
+
+    bottom: 26px;
+    right: 0px;
 }

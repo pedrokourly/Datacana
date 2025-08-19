@@ -26,6 +26,8 @@ div.MapControlPanel {
     background-color: var(--color-header);
     color: var(--color-font);
 
+    position: relative;
+
     display: flex;
     flex-direction: column;
     gap: 24px;
@@ -35,11 +37,49 @@ div.MapControlPanel {
 
     padding: 16px;
     width: 272px;
+
+    transition: transform 0.25s ease-in-out;
+}
+
+div.MapControlPanel.open {
+    margin-right: 8px;
+}
+
+div.MapControlPanel > button.panelToggleButton {
+    background-color: var(--color-header);
+    color: var(--color-font);
+
+    position: absolute;
+    top: 50%;
+    left: -42px;
+    transform: translateY(-50%);
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1;
+
+    border-radius: 8px 0px 0px 8px;
+    border-right: none;
+    border: 2px solid rgba(0, 0, 0, 0.25);
+
+    width: 32px;
+    height: 48px;
+    padding: 0px;
+}
+
+div.MapControlPanel > div.panelContent {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 
 /* 1.1. Control Panel > Panel Section */
 
-div.MapControlPanel > div.panelSection {
+div.MapControlPanel > div.panelContent > div.panelSection {
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -47,7 +87,7 @@ div.MapControlPanel > div.panelSection {
 
 /* 1.1.1. Control Panel > Panel Section > Section Title */
 
-div.MapControlPanel > div.panelSection  > h2.sectionTitle {
+div.MapControlPanel > div.panelContent > div.panelSection  > h2.sectionTitle {
     font-size: 16px;
     font-weight: bold;
     text-align: center;
@@ -55,7 +95,7 @@ div.MapControlPanel > div.panelSection  > h2.sectionTitle {
 
 /* 1.1.2. Control Panel > Panel Section > Timeline Options */
 
-div.MapControlPanel > div.panelSection > div.timelineOptions {
+div.MapControlPanel > div.panelContent > div.panelSection > div.timelineOptions {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -65,11 +105,11 @@ div.MapControlPanel > div.panelSection > div.timelineOptions {
 
 /* 1.1.2.1. Control Panel > Panel Section > Timeline Options > Radio Buttons */
 
-div.MapControlPanel > div.panelSection > div.timelineOptions > label.radioYear-label > input[type="radio"] {
+div.MapControlPanel > div.panelContent > div.panelSection > div.timelineOptions > label.radioYear-label > input[type="radio"] {
     display: none;
 }
 
-div.MapControlPanel > div.panelSection > div.timelineOptions > label.radioYear-label > input[type="radio"]:checked + span.radioYear-text {
+div.MapControlPanel > div.panelContent > div.panelSection > div.timelineOptions > label.radioYear-label > input[type="radio"]:checked + span.radioYear-text {
     background-color: var(--color01);
     color: var(--color-header);
 
@@ -79,14 +119,14 @@ div.MapControlPanel > div.panelSection > div.timelineOptions > label.radioYear-l
     transform: scale(1.10);
 }
 
-div.MapControlPanel > div.panelSection > div.timelineOptions > label.radioYear-label > input[type="radio"]:disabled + span.radioYear-text {
+div.MapControlPanel > div.panelContent > div.panelSection > div.timelineOptions > label.radioYear-label > input[type="radio"]:disabled + span.radioYear-text {
     background-color: var(--color-background);
     color: var(--color-header);
 
     cursor: not-allowed;
 }
 
-div.MapControlPanel > div.panelSection > div.timelineOptions > label.radioYear-label > span.radioYear-text {
+div.MapControlPanel > div.panelContent > div.panelSection > div.timelineOptions > label.radioYear-label > span.radioYear-text {
     background-color: var(--color-background);
 
     display: inline-block;
@@ -104,7 +144,7 @@ div.MapControlPanel > div.panelSection > div.timelineOptions > label.radioYear-l
 
 /* 1.1.3. Control Panel > Panel Section > Layer Options */
 
-div.MapControlPanel > div.panelSection > div.layerOptions {
+div.MapControlPanel > div.panelContent > div.panelSection > div.layerOptions {
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -116,7 +156,7 @@ div.MapControlPanel > div.panelSection > div.layerOptions {
 
 /* 1.1.3.1. Control Panel > Panel Section > Layer Options > Checkbox Buttons */
 
-div.MapControlPanel > div.panelSection > div.layerOptions > label.checkboxLayerLabel {
+div.MapControlPanel > div.panelContent > div.panelSection > div.layerOptions > label.checkboxLayerLabel {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -124,24 +164,24 @@ div.MapControlPanel > div.panelSection > div.layerOptions > label.checkboxLayerL
     cursor: pointer;
 }
 
-div.MapControlPanel > div.panelSection > div.layerOptions > label.checkboxLayerLabel.disabled {
+div.MapControlPanel > div.panelContent > div.panelSection > div.layerOptions > label.checkboxLayerLabel.disabled {
     cursor: not-allowed;
 }
 
-div.MapControlPanel > div.panelSection > div.layerOptions > label.checkboxLayerLabel > input[type="checkbox"] {
+div.MapControlPanel > div.panelContent > div.panelSection > div.layerOptions > label.checkboxLayerLabel > input[type="checkbox"] {
     display: none;
 }
 
-div.MapControlPanel > div.panelSection > div.layerOptions > label.checkboxLayerLabel > input[type="checkbox"]:checked + .checkmark {
+div.MapControlPanel > div.panelContent > div.panelSection > div.layerOptions > label.checkboxLayerLabel > input[type="checkbox"]:checked + .checkmark {
     background-color: var(--color01);
     border-color: var(--color01);
 }
 
-div.MapControlPanel > div.panelSection > div.layerOptions > label.checkboxLayerLabel > input[type="checkbox"]:checked + .checkmark:after {
+div.MapControlPanel > div.panelContent > div.panelSection > div.layerOptions > label.checkboxLayerLabel > input[type="checkbox"]:checked + .checkmark:after {
     display: block;
 }
 
-div.MapControlPanel > div.panelSection > div.layerOptions > label.checkboxLayerLabel > .checkmark {
+div.MapControlPanel > div.panelContent > div.panelSection > div.layerOptions > label.checkboxLayerLabel > .checkmark {
     position: relative;
     background-color: var(--color-background);
 
@@ -152,7 +192,7 @@ div.MapControlPanel > div.panelSection > div.layerOptions > label.checkboxLayerL
     height: 16px;
 }
 
-div.MapControlPanel > div.panelSection > div.layerOptions > label.checkboxLayerLabel > .checkmark:after {
+div.MapControlPanel > div.panelContent > div.panelSection > div.layerOptions > label.checkboxLayerLabel > .checkmark:after {
     content: "";
 
     position: absolute;
@@ -172,7 +212,7 @@ div.MapControlPanel > div.panelSection > div.layerOptions > label.checkboxLayerL
 
 /* 1.2. Control Panel > Panel Info */
 
-div.MapControlPanel > div.panelInfo {
+div.MapControlPanel > div.panelContent > div.panelInfo {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -183,7 +223,7 @@ div.MapControlPanel > div.panelInfo {
 
 /* 1.2.1. Control Panel > Panel Info > Loading Content */
 
-div.MapControlPanel > div.panelInfo > div.loadingContent {
+div.MapControlPanel > div.panelContent > div.panelInfo > div.loadingContent {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -192,7 +232,7 @@ div.MapControlPanel > div.panelInfo > div.loadingContent {
 
 /* 1.2.1. Control Panel > Panel Info > Loading Content > Loading Spinner */
 
-div.MapControlPanel > div.panelInfo > div.loadingContent > div.loadingSpinner {
+div.MapControlPanel > div.panelContent > div.panelInfo > div.loadingContent > div.loadingSpinner {
     border: 4px solid var(--color-background);
     border-top: 4px solid var(--color01);
     border-radius: 50%;
@@ -203,8 +243,39 @@ div.MapControlPanel > div.panelInfo > div.loadingContent > div.loadingSpinner {
     animation: spin 1s linear infinite;
 }
 
-div.MapControlPanel > div.panelInfo > div.loadingContent > span, div.MapControlPanel > div.panelInfo > span {
+div.MapControlPanel > div.panelContent > div.panelInfo > div.loadingContent > span, div.MapControlPanel > div.panelContent > div.panelInfo > span {
     color: #666666;
+}
+
+
+
+@media (max-width: 768px) {
+    div.MapControlPanel {
+        position: absolute;
+        right: 0;
+        bottom: 0px;
+
+        border-radius: 8px;
+        border: 2px solid rgba(0, 0, 0, 0.25);
+
+        transform: translateX(100%);
+    }
+
+    div.MapControlPanel.open {
+        transform: translateX(0);
+
+        margin-right: 8px;
+    }
+
+    div.MapControlPanel > button.panelToggleButton {
+        display: flex;
+        
+        top: 50%;
+        left: -32px;
+        transform: translateY(-50%);
+
+        box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+    }
 }
 
 

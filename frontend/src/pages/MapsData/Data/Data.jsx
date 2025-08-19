@@ -13,7 +13,9 @@ import { NavLink } from 'react-router-dom';
 // Import DataTable
 import $ from 'jquery';
 import 'datatables.net-dt/css/dataTables.dataTables.min.css';
+import 'datatables.net-responsive-dt/css/responsive.dataTables.min.css';
 import 'datatables.net-dt';
+import 'datatables.net-responsive-dt';
 import Papa from 'papaparse';
 
 // Import DataGraphs
@@ -306,7 +308,7 @@ const Data = () => {
 
                 <div className="dataTable">
                     <article>
-                        <h2>Área(ha) ocupada com cana-de-açúcar em Minas Gerais <span style={{ color: 'var(--color01)' }}>({selectedYear})</span></h2>
+                        <h2 style={{ padding: "0px 8px" }}>Área(ha) ocupada com cana-de-açúcar em Minas Gerais <span style={{ color: 'var(--color01)' }}>({selectedYear})</span></h2>
                     </article>
 
                     <table id="dataCane" className="display" style={{ width: "100%" }}></table>
@@ -321,7 +323,7 @@ const Data = () => {
 
                 <div className="dataGraph">
                     <article>
-                        <h2>Área (ha) ocupada com cana-de-açúcar nos Municípios de MG <span style={{ color: 'var(--color01)' }}>({selectedYear})</span></h2>
+                        <h2 style={{ padding: "0px 8px" }}>Área (ha) ocupada com cana-de-açúcar nos Municípios de MG <span style={{ color: 'var(--color01)' }}>({selectedYear})</span></h2>
                     </article>
 
                     <GraphBar data={dataGraph} year={selectedYear} />
@@ -336,7 +338,7 @@ const Data = () => {
 
                 <div className="dataGraph">
                     <article>
-                        <h2>Área (ha) ocupada com cana-de-açúcar por Mesorregião de MG <span style={{ color: 'var(--color01)' }}>({selectedYear})</span></h2>
+                        <h2 style={{ padding: "0px 8px" }}>Área (ha) ocupada com cana-de-açúcar por Mesorregião de MG <span style={{ color: 'var(--color01)' }}>({selectedYear})</span></h2>
                     </article>
 
                     <GraphBar data={dataGraphMeso} year={selectedYear} />
@@ -351,7 +353,7 @@ const Data = () => {
 
                 <div className="dataGraph">
                     <article>
-                        <h2>Área(ha) ocupada com cana-de-açúcar nas Microrregiões de MG <span style={{ color: 'var(--color01)' }}>({selectedYear})</span></h2>
+                        <h2 style={{ padding: "0px 8px" }}>Área(ha) ocupada com cana-de-açúcar nas Microrregiões de MG <span style={{ color: 'var(--color01)' }}>({selectedYear})</span></h2>
                     </article>
 
                     <GraphBar data={dataGraphMicro} year={selectedYear} />
