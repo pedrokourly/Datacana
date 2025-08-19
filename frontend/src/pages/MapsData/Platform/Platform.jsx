@@ -31,6 +31,7 @@ const Platform = () => {
     // State Management
     const [mapData, setMapData] = useState(null);
     const [mapInstance, setMapInstance] = useState(null);
+    const [isPanelOpen, setIsPanelOpen] = useState(false);
     const [availableYears] = useState([2017, 2018, 2020, 2022]);
     const [currentYear, setCurrentYear] = useState(2022);
     const [activeOverlays, setActiveOverlays] = useState(['Estadual']);
@@ -290,6 +291,11 @@ const Platform = () => {
         }
     }, [mapInstance, activeOverlays]);
 
+    // Handling Panel Toggle
+    const handleTogglePanel = () => {
+        setIsPanelOpen(!isPanelOpen);
+    };
+
     // Handling Year Change
     const handleYearChange = (year) => {
         if (year !== currentYear && !isLoading) {
@@ -326,7 +332,7 @@ const Platform = () => {
                         <MapLegend scale={mapData ? mapData.info.escala : null} colors={colorScaleColors} noDataColor={noDataColor} isLoading={isLoading} />
                     </div>
                     <div className="mapUI-bottom-right">
-                        <MapControlPanel availableYears={availableYears} currentYear={currentYear} onYearChange={handleYearChange} layers={layerDefinitions} activeOverlays={activeOverlays} onLayerChange={handleLayerChange} isLoading={isLoading} />
+                        <MapControlPanel availableYears={availableYears} currentYear={currentYear} onYearChange={handleYearChange} layers={layerDefinitions} activeOverlays={activeOverlays} onLayerChange={handleLayerChange} isLoading={isLoading} isOpen={isPanelOpen} onToggle={handleTogglePanel} />
                     </div>
                 </div>
             </div>
