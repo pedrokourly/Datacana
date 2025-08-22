@@ -102,3 +102,11 @@ div.mapUI-bottom-right {
     bottom: 26px;
     right: 0px;
 }
+
+
+
+@media (min-width: 768px) {
+    div.mapUI-bottom-right {
+        right: 8px;
+    }
+}
