@@ -60,7 +60,7 @@ div.Cover > div.title > div.container {
 @media (min-width: 768px) {
     div.Cover {
         background-position: center;
-        height: 65vh;
+        height: 56vh;
     }
 
     div.Cover > div.title > h1 {
