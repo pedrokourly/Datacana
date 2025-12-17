@@ -95,6 +95,22 @@ const Home = () => {
         <div className="Home">
             <Cover pageName="DataCana" />
 
+            <div className="video-section">
+                <div className="container">
+                    <div className="video-wrapper">
+                        <iframe
+                            width="100%"
+                            height="500"
+                            src="https://www.youtube.com/embed/7GR__I2e0js?si=DBBaQfLwUoXJo8LR" 
+                            title="Apresentação DataCana"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowFullScreen
+                        ></iframe>
+                    </div>
+                </div>
+            </div>
+
             <div className="content">
                 <div className="container">
                     <div className="line">
