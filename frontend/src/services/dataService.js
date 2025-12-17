@@ -1,4 +1,4 @@
-import { fetchGeoJsonFromGitHub, fetchCSVFromGitHub } from './githubLfsService.js';
+import { fetchGeoJsonFromGitHub } from './githubLfsService.js';
 
 class DataProcessor {
     constructor() {
@@ -9,8 +9,8 @@ class DataProcessor {
     async getData(year) {
         try {
             const [detailedData, resumeData, geoJsonData] = await Promise.all([
-                this.loadCSV(`Data_${year}.csv`),
-                this.loadCSV(`Data_${year}_Resume.csv`),
+                this.loadCSV(`/assets/datacana/Data_${year}.csv`),
+                this.loadCSV(`/assets/datacana/Data_${year}_Resume.csv`),
                 this.loadGeoJSON(`Cana_${year}.geojson`)
             ]);
 
@@ -35,14 +35,17 @@ class DataProcessor {
         }
     }
 
-    async loadCSV(filename) {
-        if (this.csvCache.has(filename)) {
-            return this.csvCache.get(filename);
+    async loadCSV(filePath) {
+        if (this.csvCache.has(filePath)) {
+            return this.csvCache.get(filePath);
         }
 
-        const csvText = await fetchCSVFromGitHub(filename);
+        const response = await fetch(filePath);
+        if (!response.ok) throw new Error(`Erro ao carregar CSV: ${response.statusText}`);
+
+        const csvText = await response.text();
         const data = this.parseCSV(csvText);
-        this.csvCache.set(filename, data);
+        this.csvCache.set(filePath, data);
 
         return data;
     }

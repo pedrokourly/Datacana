@@ -16,11 +16,6 @@ export const fetchGeoJsonFromGitHub = async (filename) => {
     return response.json();
 };
 
-export const fetchCSVFromGitHub = async (filename) => {
-    const response = await fetchFromGitHub(`/assets/datacana/${filename}`);
-    return response.text();
-};
-
 export const getDownloadUrl = (filename) => {
     return `${GITHUB_MEDIA_URL}/assets/datacana/${filename}`;
 };
