@@ -1,8 +1,16 @@
 /* Page: Downloads StyleSheet */
 
-/* 
+button.download-link {
+    background: none;
+    border: none;
+    color: #0A4A1A;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: inherit;
+    font-family: inherit;
+    padding: 0;
+}
 
-INDEX
-
-    
-*/
+button.download-link:hover {
+    color: #2A9A3A;
+}

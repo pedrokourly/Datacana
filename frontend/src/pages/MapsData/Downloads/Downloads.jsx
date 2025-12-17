@@ -3,6 +3,18 @@ import Cover from '../../../components/Cover/Cover';
 import { getDownloadUrl } from '../../../services/githubLfsService';
 
 const Downloads = () => {
+    const handleDownload = async (filename, displayName) => {
+        const url = getDownloadUrl(filename);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = displayName;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+
     return (
         <div className="Downloads">
             <Cover pageName="Downloads"/>
@@ -19,127 +31,127 @@ const Downloads = () => {
                         </thead>
                         <tbody className="align-middle">
                             <tr>
-                                <td><a href={getDownloadUrl('Data_2017.csv')} download="DataCana Tabela 2017">DC_Table_2017</a></td>
+                                <td><button onClick={() => handleDownload('Data_2017.csv', 'DataCana_Tabela_2017.csv')} className="download-link">DC_Table_2017</button></td>
                                 <td>Tabela</td>
                                 <td>2017</td>
                             </tr>
                             <tr>
-                                <td><a href={getDownloadUrl('Data_2017_Resume.csv')} download="DataCana Resume 2017">DC_Resume_2017</a></td>
+                                <td><button onClick={() => handleDownload('Data_2017_Resume.csv', 'DataCana_Resume_2017.csv')} className="download-link">DC_Resume_2017</button></td>
                                 <td>Tabela</td>
                                 <td>2017</td>
                             </tr>
                             <tr>
-                                <td><a href={getDownloadUrl('Cana_2017_Datacana.rar')} download="DataCana ShapeFile 2017">DC_ShapeFile_2017</a></td>
+                                <td><button onClick={() => handleDownload('Cana_2017_Datacana.rar', 'DataCana_ShapeFile_2017.rar')} className="download-link">DC_ShapeFile_2017</button></td>
                                 <td>Compactado</td>
                                 <td>2017</td>
                             </tr>
                             <tr>
-                                <td><a href={getDownloadUrl('Cana_2017.geojson')} download="DataCana GeoJSON 2017">DC_GeoJSON_2017</a></td>
+                                <td><button onClick={() => handleDownload('Cana_2017.geojson', 'DataCana_GeoJSON_2017.geojson')} className="download-link">DC_GeoJSON_2017</button></td>
                                 <td>GeoJSON</td>
                                 <td>2017</td>
                             </tr>
 
                             <tr>
-                                <td><a href={getDownloadUrl('Data_2018.csv')} download="DataCana Tabela 2018">DC_Table_2018</a></td>
+                                <td><button onClick={() => handleDownload('Data_2018.csv', 'DataCana_Tabela_2018.csv')} className="download-link">DC_Table_2018</button></td>
                                 <td>Tabela</td>
                                 <td>2018</td>
                             </tr>
                             <tr>
-                                <td><a href={getDownloadUrl('Data_2018_Resume.csv')} download="DataCana Resume 2018">DC_Resume_2018</a></td>
+                                <td><button onClick={() => handleDownload('Data_2018_Resume.csv', 'DataCana_Resume_2018.csv')} className="download-link">DC_Resume_2018</button></td>
                                 <td>Tabela</td>
                                 <td>2018</td>
                             </tr>
                             <tr>
-                                <td><a href={getDownloadUrl('Cana_2018_Datacana.rar')} download="DataCana ShapeFile 2018">DC_ShapeFile_2018</a></td>
+                                <td><button onClick={() => handleDownload('Cana_2018_Datacana.rar', 'DataCana_ShapeFile_2018.rar')} className="download-link">DC_ShapeFile_2018</button></td>
                                 <td>Compactado</td>
                                 <td>2018</td>
                             </tr>
                             <tr>
-                                <td><a href={getDownloadUrl('Cana_2018.geojson')} download="DataCana GeoJSON 2018">DC_GeoJSON_2018</a></td>
+                                <td><button onClick={() => handleDownload('Cana_2018.geojson', 'DataCana_GeoJSON_2018.geojson')} className="download-link">DC_GeoJSON_2018</button></td>
                                 <td>GeoJSON</td>
                                 <td>2018</td>
                             </tr>
 
                             <tr>
-                                <td><a href={getDownloadUrl('Data_2019.csv')} download="DataCana Tabela 2019">DC_Table_2019</a></td>
+                                <td><button onClick={() => handleDownload('Data_2019.csv', 'DataCana_Tabela_2019.csv')} className="download-link">DC_Table_2019</button></td>
                                 <td>Tabela</td>
                                 <td>2019</td>
                             </tr>
                             <tr>
-                                <td><a href={getDownloadUrl('Data_2019_Resume.csv')} download="DataCana Resume 2019">DC_Resume_2019</a></td>
+                                <td><button onClick={() => handleDownload('Data_2019_Resume.csv', 'DataCana_Resume_2019.csv')} className="download-link">DC_Resume_2019</button></td>
                                 <td>Tabela</td>
                                 <td>2019</td>
                             </tr>
                             <tr>
-                                <td><a href={getDownloadUrl('Cana_2019_Datacana.rar')} download="DataCana ShapeFile 2019">DC_ShapeFile_2019</a></td>
+                                <td><button onClick={() => handleDownload('Cana_2019_Datacana.rar', 'DataCana_ShapeFile_2019.rar')} className="download-link">DC_ShapeFile_2019</button></td>
                                 <td>Compactado</td>
                                 <td>2019</td>
                             </tr>
                             <tr>
-                                <td><a href={getDownloadUrl('Cana_2019.geojson')} download="DataCana GeoJSON 2019">DC_GeoJSON_2019</a></td>
+                                <td><button onClick={() => handleDownload('Cana_2019.geojson', 'DataCana_GeoJSON_2019.geojson')} className="download-link">DC_GeoJSON_2019</button></td>
                                 <td>GeoJSON</td>
                                 <td>2019</td>
                             </tr>
                             
                             <tr>
-                                <td><a href={getDownloadUrl('Data_2020.csv')} download="DataCana Tabela 2020">DC_Table_2020</a></td>
+                                <td><button onClick={() => handleDownload('Data_2020.csv', 'DataCana_Tabela_2020.csv')} className="download-link">DC_Table_2020</button></td>
                                 <td>Tabela</td>
                                 <td>2020</td>
                             </tr>
                             <tr>
-                                <td><a href={getDownloadUrl('Data_2020_Resume.csv')} download="DataCana Resume 2020">DC_Resume_2020</a></td>
+                                <td><button onClick={() => handleDownload('Data_2020_Resume.csv', 'DataCana_Resume_2020.csv')} className="download-link">DC_Resume_2020</button></td>
                                 <td>Tabela</td>
                                 <td>2020</td>
                             </tr>
                             <tr>
-                                <td><a href={getDownloadUrl('Cana_2020_Datacana.rar')} download="DataCana ShapeFile 2020">DC_ShapeFile_2020</a></td>
+                                <td><button onClick={() => handleDownload('Cana_2020_Datacana.rar', 'DataCana_ShapeFile_2020.rar')} className="download-link">DC_ShapeFile_2020</button></td>
                                 <td>Compactado</td>
                                 <td>2020</td>
                             </tr>
                             <tr>
-                                <td><a href={getDownloadUrl('Cana_2020.geojson')} download="DataCana GeoJSON 2020">DC_GeoJSON_2020</a></td>
+                                <td><button onClick={() => handleDownload('Cana_2020.geojson', 'DataCana_GeoJSON_2020.geojson')} className="download-link">DC_GeoJSON_2020</button></td>
                                 <td>GeoJSON</td>
                                 <td>2020</td>
                             </tr>
 
                             <tr>
-                                <td><a href={getDownloadUrl('Data_2021.csv')} download="DataCana Tabela 2021">DC_Table_2021</a></td>
+                                <td><button onClick={() => handleDownload('Data_2021.csv', 'DataCana_Tabela_2021.csv')} className="download-link">DC_Table_2021</button></td>
                                 <td>Tabela</td>
                                 <td>2021</td>
                             </tr>
                             <tr>
-                                <td><a href={getDownloadUrl('Data_2021_Resume.csv')} download="DataCana Resume 2021">DC_Resume_2021</a></td>
+                                <td><button onClick={() => handleDownload('Data_2021_Resume.csv', 'DataCana_Resume_2021.csv')} className="download-link">DC_Resume_2021</button></td>
                                 <td>Tabela</td>
                                 <td>2021</td>
                             </tr>
                             <tr>
-                                <td><a href={getDownloadUrl('Cana_2021_Datacana.rar')} download="DataCana ShapeFile 2021">DC_ShapeFile_2021</a></td>
+                                <td><button onClick={() => handleDownload('Cana_2021_Datacana.rar', 'DataCana_ShapeFile_2021.rar')} className="download-link">DC_ShapeFile_2021</button></td>
                                 <td>Compactado</td>
                                 <td>2021</td>
                             </tr>
                             <tr>
-                                <td><a href={getDownloadUrl('Cana_2021.geojson')} download="DataCana GeoJSON 2021">DC_GeoJSON_2021</a></td>
+                                <td><button onClick={() => handleDownload('Cana_2021.geojson', 'DataCana_GeoJSON_2021.geojson')} className="download-link">DC_GeoJSON_2021</button></td>
                                 <td>GeoJSON</td>
                                 <td>2021</td>
                             </tr>
 
                             <tr>
-                                <td><a href={getDownloadUrl('Data_2022.csv')} download="DataCana Tabela 2022">DC_Table_2022</a></td>
+                                <td><button onClick={() => handleDownload('Data_2022.csv', 'DataCana_Tabela_2022.csv')} className="download-link">DC_Table_2022</button></td>
                                 <td>Tabela</td>
                                 <td>2022</td>
                             </tr>
                             <tr>
-                                <td><a href={getDownloadUrl('Data_2022_Resume.csv')} download="DataCana Resume 2022">DC_Resume_2022</a></td>
+                                <td><button onClick={() => handleDownload('Data_2022_Resume.csv', 'DataCana_Resume_2022.csv')} className="download-link">DC_Resume_2022</button></td>
                                 <td>Tabela</td>
                                 <td>2022</td>
                             </tr>
                             <tr>
-                                <td><a href={getDownloadUrl('Cana_2022_Datacana.rar')} download="DataCana ShapeFile 2022">DC_ShapeFile_2022</a></td>
+                                <td><button onClick={() => handleDownload('Cana_2022_Datacana.rar', 'DataCana_ShapeFile_2022.rar')} className="download-link">DC_ShapeFile_2022</button></td>
                                 <td>Compactado</td>
                                 <td>2022</td>
                             </tr>
                             <tr>
-                                <td><a href={getDownloadUrl('Cana_2022.geojson')} download="DataCana GeoJSON 2022">DC_GeoJSON_2022</a></td>
+                                <td><button onClick={() => handleDownload('Cana_2022.geojson', 'DataCana_GeoJSON_2022.geojson')} className="download-link">DC_GeoJSON_2022</button></td>
                                 <td>GeoJSON</td>
                                 <td>2022</td>
                             </tr>
