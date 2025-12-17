@@ -1,4 +1,5 @@
 const GITHUB_MEDIA_URL = 'https://media.githubusercontent.com/media/pedrokourly/Datacana/main/frontend/public';
+const GITHUB_RAW_URL = 'https://raw.githubusercontent.com/pedrokourly/Datacana/main/frontend/public';
 
 export const fetchFromGitHub = async (path) => {
     const url = `${GITHUB_MEDIA_URL}${path}`;
@@ -17,5 +18,8 @@ export const fetchGeoJsonFromGitHub = async (filename) => {
 };
 
 export const getDownloadUrl = (filename) => {
+    if (filename.endsWith('.csv')) {
+        return `${GITHUB_RAW_URL}/assets/datacana/${filename}`;
+    }
     return `${GITHUB_MEDIA_URL}/assets/datacana/${filename}`;
 };
