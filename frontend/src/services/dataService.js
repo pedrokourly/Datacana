@@ -1,3 +1,5 @@
+import { fetchGeoJsonFromGitHub, fetchCSVFromGitHub } from './githubLfsService.js';
+
 class DataProcessor {
     constructor() {
         this.csvCache = new Map();
@@ -6,11 +8,10 @@ class DataProcessor {
 
     async getData(year) {
         try {
-            // Carrega os dados necessários
             const [detailedData, resumeData, geoJsonData] = await Promise.all([
-                this.loadCSV(`/assets/datacana/Data_${year}.csv`),
-                this.loadCSV(`/assets/datacana/Data_${year}_Resume.csv`),
-                this.loadGeoJSON(`/assets/datacana/Cana_${year}.geojson`)
+                this.loadCSV(`Data_${year}.csv`),
+                this.loadCSV(`Data_${year}_Resume.csv`),
+                this.loadGeoJSON(`Cana_${year}.geojson`)
             ]);
 
             // Processa os dados
@@ -34,32 +35,25 @@ class DataProcessor {
         }
     }
 
-    async loadCSV(filePath) {
-        if (this.csvCache.has(filePath)) {
-            return this.csvCache.get(filePath);
+    async loadCSV(filename) {
+        if (this.csvCache.has(filename)) {
+            return this.csvCache.get(filename);
         }
 
-        const response = await fetch(filePath);
-        if (!response.ok) throw new Error(`Erro ao carregar CSV: ${response.statusText}`);
-
-        const csvText = await response.text();
-
+        const csvText = await fetchCSVFromGitHub(filename);
         const data = this.parseCSV(csvText);
-        this.csvCache.set(filePath, data);
+        this.csvCache.set(filename, data);
 
         return data;
     }
 
-    async loadGeoJSON(filePath) {
-        if (this.geoJsonCache.has(filePath)) {
-            return this.geoJsonCache.get(filePath);
+    async loadGeoJSON(filename) {
+        if (this.geoJsonCache.has(filename)) {
+            return this.geoJsonCache.get(filename);
         }
 
-        const response = await fetch(filePath);
-        if (!response.ok) throw new Error(`Erro ao carregar GeoJSON: ${response.statusText}`);
-
-        const geoJsonData = await response.json();
-        this.geoJsonCache.set(filePath, geoJsonData);
+        const geoJsonData = await fetchGeoJsonFromGitHub(filename);
+        this.geoJsonCache.set(filename, geoJsonData);
 
         return geoJsonData;
     }

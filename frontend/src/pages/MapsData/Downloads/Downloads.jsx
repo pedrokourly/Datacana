@@ -1,8 +1,6 @@
-// Import Style Page Module
 import './Downloads.css';
-
-// Import Components
 import Cover from '../../../components/Cover/Cover';
+import { getDownloadUrl } from '../../../services/githubLfsService';
 
 const Downloads = () => {
     return (
@@ -21,127 +19,127 @@ const Downloads = () => {
                         </thead>
                         <tbody className="align-middle">
                             <tr>
-                                <td><a href="/assets/datacana/Data_2017.csv" download="DataCana Tabela 2017">DC_Table_2017</a></td>
+                                <td><a href={getDownloadUrl('Data_2017.csv')} download="DataCana Tabela 2017">DC_Table_2017</a></td>
                                 <td>Tabela</td>
                                 <td>2017</td>
                             </tr>
                             <tr>
-                                <td><a href="/assets/datacana/Data_2017_Resume.csv" download="DataCana Resume 2017">DC_Resume_2017</a></td>
+                                <td><a href={getDownloadUrl('Data_2017_Resume.csv')} download="DataCana Resume 2017">DC_Resume_2017</a></td>
                                 <td>Tabela</td>
                                 <td>2017</td>
                             </tr>
                             <tr>
-                                <td><a href="/assets/datacana/Cana_2017_Datacana.rar" download="DataCana ShapeFile 2017">DC_ShapeFile_2017</a></td>
+                                <td><a href={getDownloadUrl('Cana_2017_Datacana.rar')} download="DataCana ShapeFile 2017">DC_ShapeFile_2017</a></td>
                                 <td>Compactado</td>
                                 <td>2017</td>
                             </tr>
                             <tr>
-                                <td><a href="/assets/datacana/Cana_2017.geojson" download="DataCana GeoJSON 2017">DC_GeoJSON_2017</a></td>
+                                <td><a href={getDownloadUrl('Cana_2017.geojson')} download="DataCana GeoJSON 2017">DC_GeoJSON_2017</a></td>
                                 <td>GeoJSON</td>
                                 <td>2017</td>
                             </tr>
 
                             <tr>
-                                <td><a href="/assets/datacana/Data_2018.csv" download="DataCana Tabela 2018">DC_Table_2018</a></td>
+                                <td><a href={getDownloadUrl('Data_2018.csv')} download="DataCana Tabela 2018">DC_Table_2018</a></td>
                                 <td>Tabela</td>
                                 <td>2018</td>
                             </tr>
                             <tr>
-                                <td><a href="/assets/datacana/Data_2018_Resume.csv" download="DataCana Resume 2018">DC_Resume_2018</a></td>
+                                <td><a href={getDownloadUrl('Data_2018_Resume.csv')} download="DataCana Resume 2018">DC_Resume_2018</a></td>
                                 <td>Tabela</td>
                                 <td>2018</td>
                             </tr>
                             <tr>
-                                <td><a href="/assets/datacana/Cana_2018_Datacana.rar" download="DataCana ShapeFile 2018">DC_ShapeFile_2018</a></td>
+                                <td><a href={getDownloadUrl('Cana_2018_Datacana.rar')} download="DataCana ShapeFile 2018">DC_ShapeFile_2018</a></td>
                                 <td>Compactado</td>
                                 <td>2018</td>
                             </tr>
                             <tr>
-                                <td><a href="/assets/datacana/Cana_2018.geojson" download="DataCana GeoJSON 2018">DC_GeoJSON_2018</a></td>
+                                <td><a href={getDownloadUrl('Cana_2018.geojson')} download="DataCana GeoJSON 2018">DC_GeoJSON_2018</a></td>
                                 <td>GeoJSON</td>
                                 <td>2018</td>
                             </tr>
 
                             <tr>
-                                <td><a href="/assets/datacana/Data_2019.csv" download="DataCana Tabela 2019">DC_Table_2019</a></td>
+                                <td><a href={getDownloadUrl('Data_2019.csv')} download="DataCana Tabela 2019">DC_Table_2019</a></td>
                                 <td>Tabela</td>
                                 <td>2019</td>
                             </tr>
                             <tr>
-                                <td><a href="/assets/datacana/Data_2019_Resume.csv" download="DataCana Resume 2019">DC_Resume_2019</a></td>
+                                <td><a href={getDownloadUrl('Data_2019_Resume.csv')} download="DataCana Resume 2019">DC_Resume_2019</a></td>
                                 <td>Tabela</td>
                                 <td>2019</td>
                             </tr>
                             <tr>
-                                <td><a href="/assets/datacana/Cana_2019_Datacana.rar" download="DataCana ShapeFile 2019">DC_ShapeFile_2019</a></td>
+                                <td><a href={getDownloadUrl('Cana_2019_Datacana.rar')} download="DataCana ShapeFile 2019">DC_ShapeFile_2019</a></td>
                                 <td>Compactado</td>
                                 <td>2019</td>
                             </tr>
                             <tr>
-                                <td><a href="/assets/datacana/Cana_2019.geojson" download="DataCana GeoJSON 2019">DC_GeoJSON_2019</a></td>
+                                <td><a href={getDownloadUrl('Cana_2019.geojson')} download="DataCana GeoJSON 2019">DC_GeoJSON_2019</a></td>
                                 <td>GeoJSON</td>
                                 <td>2019</td>
                             </tr>
                             
                             <tr>
-                                <td><a href="/assets/datacana/Data_2020.csv" download="DataCana Tabela 2020">DC_Table_2020</a></td>
+                                <td><a href={getDownloadUrl('Data_2020.csv')} download="DataCana Tabela 2020">DC_Table_2020</a></td>
                                 <td>Tabela</td>
                                 <td>2020</td>
                             </tr>
                             <tr>
-                                <td><a href="/assets/datacana/Data_2020_Resume.csv" download="DataCana Resume 2020">DC_Resume_2020</a></td>
+                                <td><a href={getDownloadUrl('Data_2020_Resume.csv')} download="DataCana Resume 2020">DC_Resume_2020</a></td>
                                 <td>Tabela</td>
                                 <td>2020</td>
                             </tr>
                             <tr>
-                                <td><a href="/assets/datacana/Cana_2020_Datacana.rar" download="DataCana ShapeFile 2020">DC_ShapeFile_2020</a></td>
+                                <td><a href={getDownloadUrl('Cana_2020_Datacana.rar')} download="DataCana ShapeFile 2020">DC_ShapeFile_2020</a></td>
                                 <td>Compactado</td>
                                 <td>2020</td>
                             </tr>
                             <tr>
-                                <td><a href="/assets/datacana/Cana_2020.geojson" download="DataCana GeoJSON 2020">DC_GeoJSON_2020</a></td>
+                                <td><a href={getDownloadUrl('Cana_2020.geojson')} download="DataCana GeoJSON 2020">DC_GeoJSON_2020</a></td>
                                 <td>GeoJSON</td>
                                 <td>2020</td>
                             </tr>
 
                             <tr>
-                                <td><a href="/assets/datacana/Data_2021.csv" download="DataCana Tabela 2021">DC_Table_2021</a></td>
+                                <td><a href={getDownloadUrl('Data_2021.csv')} download="DataCana Tabela 2021">DC_Table_2021</a></td>
                                 <td>Tabela</td>
                                 <td>2021</td>
                             </tr>
                             <tr>
-                                <td><a href="/assets/datacana/Data_2021_Resume.csv" download="DataCana Resume 2021">DC_Resume_2021</a></td>
+                                <td><a href={getDownloadUrl('Data_2021_Resume.csv')} download="DataCana Resume 2021">DC_Resume_2021</a></td>
                                 <td>Tabela</td>
                                 <td>2021</td>
                             </tr>
                             <tr>
-                                <td><a href="/assets/datacana/Cana_2021_Datacana.rar" download="DataCana ShapeFile 2021">DC_ShapeFile_2021</a></td>
+                                <td><a href={getDownloadUrl('Cana_2021_Datacana.rar')} download="DataCana ShapeFile 2021">DC_ShapeFile_2021</a></td>
                                 <td>Compactado</td>
                                 <td>2021</td>
                             </tr>
                             <tr>
-                                <td><a href="/assets/datacana/Cana_2021.geojson" download="DataCana GeoJSON 2021">DC_GeoJSON_2021</a></td>
+                                <td><a href={getDownloadUrl('Cana_2021.geojson')} download="DataCana GeoJSON 2021">DC_GeoJSON_2021</a></td>
                                 <td>GeoJSON</td>
                                 <td>2021</td>
                             </tr>
 
                             <tr>
-                                <td><a href="/assets/datacana/Data_2022.csv" download="DataCana Tabela 2022">DC_Table_2022</a></td>
+                                <td><a href={getDownloadUrl('Data_2022.csv')} download="DataCana Tabela 2022">DC_Table_2022</a></td>
                                 <td>Tabela</td>
                                 <td>2022</td>
                             </tr>
                             <tr>
-                                <td><a href="/assets/datacana/Data_2022_Resume.csv" download="DataCana Resume 2022">DC_Resume_2022</a></td>
+                                <td><a href={getDownloadUrl('Data_2022_Resume.csv')} download="DataCana Resume 2022">DC_Resume_2022</a></td>
                                 <td>Tabela</td>
                                 <td>2022</td>
                             </tr>
                             <tr>
-                                <td><a href="/assets/datacana/Cana_2022_Datacana.rar" download="DataCana ShapeFile 2022">DC_ShapeFile_2022</a></td>
+                                <td><a href={getDownloadUrl('Cana_2022_Datacana.rar')} download="DataCana ShapeFile 2022">DC_ShapeFile_2022</a></td>
                                 <td>Compactado</td>
                                 <td>2022</td>
                             </tr>
                             <tr>
-                                <td><a href="/assets/datacana/Cana_2022.geojson" download="DataCana GeoJSON 2022">DC_GeoJSON_2022</a></td>
+                                <td><a href={getDownloadUrl('Cana_2022.geojson')} download="DataCana GeoJSON 2022">DC_GeoJSON_2022</a></td>
                                 <td>GeoJSON</td>
                                 <td>2022</td>
                             </tr>
