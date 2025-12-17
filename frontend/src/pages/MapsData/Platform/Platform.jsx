@@ -32,7 +32,7 @@ const Platform = () => {
     const [mapData, setMapData] = useState(null);
     const [mapInstance, setMapInstance] = useState(null);
     const [isPanelOpen, setIsPanelOpen] = useState(false);
-    const [availableYears] = useState([2017, 2018, 2020, 2022]);
+    const [availableYears] = useState([2017, 2018, 2019, 2020, 2021, 2022]);
     const [currentYear, setCurrentYear] = useState(2022);
     const [activeOverlays, setActiveOverlays] = useState(['Estadual']);
     const [hoverInfo, setHoverInfo] = useState({ name: 'Minas Gerais (MG)', area: null });

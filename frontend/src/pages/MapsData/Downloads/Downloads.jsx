@@ -61,6 +61,27 @@ const Downloads = () => {
                                 <td>GeoJSON</td>
                                 <td>2018</td>
                             </tr>
+
+                            <tr>
+                                <td><a href="/assets/datacana/Data_2019.csv" download="DataCana Tabela 2019">DC_Table_2019</a></td>
+                                <td>Tabela</td>
+                                <td>2019</td>
+                            </tr>
+                            <tr>
+                                <td><a href="/assets/datacana/Data_2019_Resume.csv" download="DataCana Resume 2019">DC_Resume_2019</a></td>
+                                <td>Tabela</td>
+                                <td>2019</td>
+                            </tr>
+                            <tr>
+                                <td><a href="/assets/datacana/Cana_2019_Datacana.rar" download="DataCana ShapeFile 2019">DC_ShapeFile_2019</a></td>
+                                <td>Compactado</td>
+                                <td>2019</td>
+                            </tr>
+                            <tr>
+                                <td><a href="/assets/datacana/Cana_2019.geojson" download="DataCana GeoJSON 2019">DC_GeoJSON_2019</a></td>
+                                <td>GeoJSON</td>
+                                <td>2019</td>
+                            </tr>
                             
                             <tr>
                                 <td><a href="/assets/datacana/Data_2020.csv" download="DataCana Tabela 2020">DC_Table_2020</a></td>
@@ -81,6 +102,27 @@ const Downloads = () => {
                                 <td><a href="/assets/datacana/Cana_2020.geojson" download="DataCana GeoJSON 2020">DC_GeoJSON_2020</a></td>
                                 <td>GeoJSON</td>
                                 <td>2020</td>
+                            </tr>
+
+                            <tr>
+                                <td><a href="/assets/datacana/Data_2021.csv" download="DataCana Tabela 2021">DC_Table_2021</a></td>
+                                <td>Tabela</td>
+                                <td>2021</td>
+                            </tr>
+                            <tr>
+                                <td><a href="/assets/datacana/Data_2021_Resume.csv" download="DataCana Resume 2021">DC_Resume_2021</a></td>
+                                <td>Tabela</td>
+                                <td>2021</td>
+                            </tr>
+                            <tr>
+                                <td><a href="/assets/datacana/Cana_2021_Datacana.rar" download="DataCana ShapeFile 2021">DC_ShapeFile_2021</a></td>
+                                <td>Compactado</td>
+                                <td>2021</td>
+                            </tr>
+                            <tr>
+                                <td><a href="/assets/datacana/Cana_2021.geojson" download="DataCana GeoJSON 2021">DC_GeoJSON_2021</a></td>
+                                <td>GeoJSON</td>
+                                <td>2021</td>
                             </tr>
 
                             <tr>

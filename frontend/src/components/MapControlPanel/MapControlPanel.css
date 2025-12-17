@@ -97,8 +97,10 @@ div.MapControlPanel > div.panelContent > div.panelSection  > h2.sectionTitle {
 
 div.MapControlPanel > div.panelContent > div.panelSection > div.timelineOptions {
     display: flex;
-    justify-content: space-evenly;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
+    gap: 8px;
 
     font-size: 14px;
 }

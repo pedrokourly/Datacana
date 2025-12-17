@@ -1,0 +1,322 @@
+INDEX, AREA       , X          , Y          , COD_MUNICIPIO, MUNICIPIO               , MESO                              , MICRO
+   14, 12838841.16, 6094719.995, 8309308.942,       3140852, Matias Cardoso          , Norte                             , JANUÁRIA
+   14, 12838841.16, 6079007.663, 8293295.659,       3135050, Jaíba                   , Norte                             , JANAÚBA
+   14, 12838841.16, 6079644.441, 8292316.596,       3135050, Jaíba                   , Norte                             , JANAÚBA
+   16,  6241148.83, 5810639.435, 8108455.962,       3147006, Paracatu                , Noroeste                          , PARACATU
+   16,  6241148.83, 5823836.375, 8105195.788,       3147006, Paracatu                , Noroeste                          , PARACATU
+   16,  6241148.83, 5834136.933, 8099443.227,       3136306, João Pinheiro           , Noroeste                          , PARACATU
+   16,  6241148.83, 5834463.409, 8099157.646,       3136306, João Pinheiro           , Noroeste                          , PARACATU
+   16,  6241148.83, 5813317.927, 8097068.171,       3147006, Paracatu                , Noroeste                          , PARACATU
+   16,  6241148.83, 5812874.189, 8096076.644,       3147006, Paracatu                , Noroeste                          , PARACATU
+   16,  6241148.83, 5829313.147, 8094548.475,       3136306, João Pinheiro           , Noroeste                          , PARACATU
+   16,  6241148.83, 5840850.09 , 8093815.721,       3108552, Brasilândia de Minas    , Noroeste                          , PARACATU
+   16,  6241148.83, 5840313.741, 8093199.006,       3108552, Brasilândia de Minas    , Noroeste                          , PARACATU
+   16,  6241148.83, 5781770.585, 8094207.343,       3147006, Paracatu                , Noroeste                          , PARACATU
+   16,  6241148.83, 5825517.184, 8084170.669,       3136306, João Pinheiro           , Noroeste                          , PARACATU
+   16,  6241148.83, 5826462.514, 8081253.272,       3136306, João Pinheiro           , Noroeste                          , PARACATU
+   16,  6241148.83, 5874224.946, 8016321.259,       3136306, João Pinheiro           , Noroeste                          , PARACATU
+   16,  6241148.83, 5833856.66 , 8012501.886,       3136306, João Pinheiro           , Noroeste                          , PARACATU
+    4,  9054090.08, 5522894.704, 7946936.749,       3103751, Araporã                 , Triângulo Mineiro e Alto Paranaíba, UBERLÂNDIA
+    4,  9054090.08, 5524681.754, 7940606.66 ,       3142809, Monte Alegre de Minas   , Triângulo Mineiro e Alto Paranaíba, UBERLÂNDIA
+    4,  9054090.08, 5524822.781, 7939846.46 ,       3142809, Monte Alegre de Minas   , Triângulo Mineiro e Alto Paranaíba, UBERLÂNDIA
+    4,  9054090.08, 5524564.588, 7939573.745,       3142809, Monte Alegre de Minas   , Triângulo Mineiro e Alto Paranaíba, UBERLÂNDIA
+    4,  9054090.08, 5544241.859, 7930034.727,       3142809, Monte Alegre de Minas   , Triângulo Mineiro e Alto Paranaíba, UBERLÂNDIA
+    4,  9054090.08, 5539252.141, 7929638.634,       3142809, Monte Alegre de Minas   , Triângulo Mineiro e Alto Paranaíba, UBERLÂNDIA
+    4,  9054090.08, 5463049.183, 7929490.181,       3112604, Capinópolis             , Triângulo Mineiro e Alto Paranaíba, ITUIUTABA
+    4,  9054090.08, 5489309.404, 7925999.626,       3111804, Canápolis               , Triângulo Mineiro e Alto Paranaíba, UBERLÂNDIA
+    4,  9054090.08, 5489170.668, 7925584.231,       3111804, Canápolis               , Triângulo Mineiro e Alto Paranaíba, UBERLÂNDIA
+    4,  9054090.08, 5552550.772, 7922320.733,       3169604, Tupaciguara             , Triângulo Mineiro e Alto Paranaíba, UBERLÂNDIA
+    4,  9054090.08, 5558890.547, 7919262.119,       3169604, Tupaciguara             , Triângulo Mineiro e Alto Paranaíba, UBERLÂNDIA
+    4,  9054090.08, 5411579.283, 7922152.821,       3159803, Santa Vitória           , Triângulo Mineiro e Alto Paranaíba, ITUIUTABA
+    4,  9054090.08, 5412000.569, 7921874.78 ,       3159803, Santa Vitória           , Triângulo Mineiro e Alto Paranaíba, ITUIUTABA
+    4,  9054090.08, 5395858.669, 7920448.528,       3159803, Santa Vitória           , Triângulo Mineiro e Alto Paranaíba, ITUIUTABA
+    4,  9054090.08, 5394717.294, 7919606.261,       3159803, Santa Vitória           , Triângulo Mineiro e Alto Paranaíba, ITUIUTABA
+    4,  9054090.08, 5421682.398, 7918572.938,       3159803, Santa Vitória           , Triângulo Mineiro e Alto Paranaíba, ITUIUTABA
+    4,  9054090.08, 5423102.105, 7917673.147,       3159803, Santa Vitória           , Triângulo Mineiro e Alto Paranaíba, ITUIUTABA
+    4,  9054090.08, 5499264.524, 7911484.315,       3111804, Canápolis               , Triângulo Mineiro e Alto Paranaíba, UBERLÂNDIA
+    4,  9054090.08, 5424931.113, 7913018.426,       3129103, Gurinhatã               , Triângulo Mineiro e Alto Paranaíba, ITUIUTABA
+    4,  9054090.08, 5424361.956, 7912708.681,       3129103, Gurinhatã               , Triângulo Mineiro e Alto Paranaíba, ITUIUTABA
+    4,  9054090.08, 5424560.81 , 7911946.654,       3129103, Gurinhatã               , Triângulo Mineiro e Alto Paranaíba, ITUIUTABA
+    4,  9054090.08, 5494645.251, 7910216.574,       3111804, Canápolis               , Triângulo Mineiro e Alto Paranaíba, UBERLÂNDIA
+    4,  9054090.08, 5569458.062, 7906189.766,       3170206, Uberlândia              , Triângulo Mineiro e Alto Paranaíba, UBERLÂNDIA
+    4,  9054090.08, 5569283.706, 7906089.806,       3142809, Monte Alegre de Minas   , Triângulo Mineiro e Alto Paranaíba, UBERLÂNDIA
+    4,  9054090.08, 5461032.653, 7908212.785,       3134202, Ituiutaba               , Triângulo Mineiro e Alto Paranaíba, ITUIUTABA
+    4,  9054090.08, 5476422.459, 7905083.979,       3134202, Ituiutaba               , Triângulo Mineiro e Alto Paranaíba, ITUIUTABA
+    4,  9054090.08, 5405984.03 , 7906184.537,       3159803, Santa Vitória           , Triângulo Mineiro e Alto Paranaíba, ITUIUTABA
+    4,  9054090.08, 5402603.926, 7905107.936,       3159803, Santa Vitória           , Triângulo Mineiro e Alto Paranaíba, ITUIUTABA
+    4,  9054090.08, 5500836.935, 7902438.619,       3142809, Monte Alegre de Minas   , Triângulo Mineiro e Alto Paranaíba, UBERLÂNDIA
+    4,  9054090.08, 5476014.795, 7902952.964,       3134202, Ituiutaba               , Triângulo Mineiro e Alto Paranaíba, ITUIUTABA
+    4,  9054090.08, 5475152.878, 7903735.456,       3134202, Ituiutaba               , Triângulo Mineiro e Alto Paranaíba, ITUIUTABA
+    4,  9054090.08, 5401335.531, 7904100.694,       3159803, Santa Vitória           , Triângulo Mineiro e Alto Paranaíba, ITUIUTABA
+    4,  9054090.08, 5501093.565, 7901924.077,       3142809, Monte Alegre de Minas   , Triângulo Mineiro e Alto Paranaíba, UBERLÂNDIA
+    4,  9054090.08, 5474963.176, 7901835.984,       3134202, Ituiutaba               , Triângulo Mineiro e Alto Paranaíba, ITUIUTABA
+    4,  9054090.08, 5386750.096, 7899534.626,       3159803, Santa Vitória           , Triângulo Mineiro e Alto Paranaíba, ITUIUTABA
+    4,  9054090.08, 5385875.383, 7899113.885,       3159803, Santa Vitória           , Triângulo Mineiro e Alto Paranaíba, ITUIUTABA
+    4,  9054090.08, 5385693.88 , 7898871.322,       3159803, Santa Vitória           , Triângulo Mineiro e Alto Paranaíba, ITUIUTABA
+    4,  9054090.08, 5387412.601, 7898931.06 ,       3159803, Santa Vitória           , Triângulo Mineiro e Alto Paranaíba, ITUIUTABA
+    4,  9054090.08, 5454163.558, 7896819.031,       3134202, Ituiutaba               , Triângulo Mineiro e Alto Paranaíba, ITUIUTABA
+    4,  9054090.08, 5387991.41 , 7897418.496,       3159803, Santa Vitória           , Triângulo Mineiro e Alto Paranaíba, ITUIUTABA
+    4,  9054090.08, 5441626.838, 7894554.69 ,       3129103, Gurinhatã               , Triângulo Mineiro e Alto Paranaíba, ITUIUTABA
+    4,  9054090.08, 5442314.47 , 7893332.463,       3129103, Gurinhatã               , Triângulo Mineiro e Alto Paranaíba, ITUIUTABA
+   25,  3174630.2 , 5950443.238, 7870858.846,       3152006, Pompéu                  , Central Mineira                   , TRÊS MARIAS
+   25,  3174630.2 , 5950653.845, 7869700.128,       3152006, Pompéu                  , Central Mineira                   , TRÊS MARIAS
+    4,  9054090.08, 5469738.119, 7878952.229,       3134202, Ituiutaba               , Triângulo Mineiro e Alto Paranaíba, ITUIUTABA
+    4,  9054090.08, 5468559.21 , 7878160.901,       3134202, Ituiutaba               , Triângulo Mineiro e Alto Paranaíba, ITUIUTABA
+    4,  9054090.08, 5449529.479, 7876800.332,       3129103, Gurinhatã               , Triângulo Mineiro e Alto Paranaíba, ITUIUTABA
+    4,  9054090.08, 5449532.955, 7876101.12 ,       3129103, Gurinhatã               , Triângulo Mineiro e Alto Paranaíba, ITUIUTABA
+   25,  3174630.2 , 5953574.088, 7856073.831,       3152006, Pompéu                  , Central Mineira                   , TRÊS MARIAS
+    4,  9054090.08, 5358192.334, 7873655.014,       3159803, Santa Vitória           , Triângulo Mineiro e Alto Paranaíba, ITUIUTABA
+    4,  9054090.08, 5357907.354, 7873399.664,       3159803, Santa Vitória           , Triângulo Mineiro e Alto Paranaíba, ITUIUTABA
+    4,  9054090.08, 5616552.215, 7865652.225,       3170107, Uberaba                 , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5617149.975, 7865360.844,       3170107, Uberaba                 , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5354208.358, 7872095.935,       3159803, Santa Vitória           , Triângulo Mineiro e Alto Paranaíba, ITUIUTABA
+    4,  9054090.08, 5644962.853, 7862751.928,       3170107, Uberaba                 , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5479607.338, 7867577.414,       3134202, Ituiutaba               , Triângulo Mineiro e Alto Paranaíba, ITUIUTABA
+    4,  9054090.08, 5622249.039, 7856141.952,       3170107, Uberaba                 , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5344575.162, 7862553.528,       3138625, Limeira do Oeste        , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5622359.008, 7855107.217,       3170107, Uberaba                 , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5344034.813, 7862256.214,       3138625, Limeira do Oeste        , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5622907.373, 7854994.481,       3170107, Uberaba                 , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5345691.396, 7861879.843,       3138625, Limeira do Oeste        , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5344910.09 , 7861991.108,       3138625, Limeira do Oeste        , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5344374.909, 7861584.523,       3138625, Limeira do Oeste        , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5622249.528, 7854332.993,       3170107, Uberaba                 , Triângulo Mineiro e Alto Paranaíba, UBERABA
+   25,  3174630.2 , 5946225.784, 7840052.627,       3152006, Pompéu                  , Central Mineira                   , TRÊS MARIAS
+    4,  9054090.08, 5346561.389, 7861297.766,       3138625, Limeira do Oeste        , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5344898.017, 7860966.836,       3138625, Limeira do Oeste        , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5340705.57 , 7860400.233,       3138625, Limeira do Oeste        , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5601103.973, 7852870.137,       3170107, Uberaba                 , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5596643.403, 7852031.871,       3170107, Uberaba                 , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5600574.864, 7851242.429,       3170107, Uberaba                 , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5602480.25 , 7848738.282,       3170107, Uberaba                 , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5347960.775, 7853895.851,       3138625, Limeira do Oeste        , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5633129.735, 7844536.693,       3170107, Uberaba                 , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5338221.544, 7851430.727,       3138625, Limeira do Oeste        , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5338539.685, 7851088.358,       3138625, Limeira do Oeste        , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5337038.073, 7850759.584,       3138625, Limeira do Oeste        , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5609961.08 , 7843379.639,       3170107, Uberaba                 , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5389166.586, 7846543.99 ,       3170438, União de Minas          , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5335595.853, 7846541.773,       3138625, Limeira do Oeste        , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5616063.311, 7837825.786,       3170107, Uberaba                 , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5381813.482, 7843899.414,       3170438, União de Minas          , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5362453.898, 7844169.518,       3138625, Limeira do Oeste        , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5380916.384, 7843645.473,       3170438, União de Minas          , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5381755.933, 7843376.344,       3170438, União de Minas          , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5684950.064, 7832937.729,       3157708, Santa Juliana           , Triângulo Mineiro e Alto Paranaíba, ARAXÁ
+    4,  9054090.08, 5390512.012, 7841530.201,       3170438, União de Minas          , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5392985.921, 7840586.716,       3170438, União de Minas          , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5343367.812, 7841567.486,       3138625, Limeira do Oeste        , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5719759.281, 7830226.075,       3149804, Perdizes                , Triângulo Mineiro e Alto Paranaíba, ARAXÁ
+    4,  9054090.08, 5392779.135, 7840187.619,       3170438, União de Minas          , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5354582.721, 7840838.442,       3138625, Limeira do Oeste        , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5713835.396, 7830100.017,       3149804, Perdizes                , Triângulo Mineiro e Alto Paranaíba, ARAXÁ
+    4,  9054090.08, 5392767.422, 7839649.738,       3170438, União de Minas          , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5390840.375, 7839212.883,       3170438, União de Minas          , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5390255.495, 7839046.907,       3170438, União de Minas          , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5389485.809, 7838884.725,       3170438, União de Minas          , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5392843.764, 7837958.92 ,       3170438, União de Minas          , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5393083.956, 7837295.952,       3170438, União de Minas          , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5392526.944, 7837053.986,       3170438, União de Minas          , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5390124.975, 7835207.581,       3170438, União de Minas          , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5390429.08 , 7834230.055,       3170438, União de Minas          , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5366658.571, 7833906.325,       3138625, Limeira do Oeste        , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5686236.596, 7824466.528,       3157708, Santa Juliana           , Triângulo Mineiro e Alto Paranaíba, ARAXÁ
+    4,  9054090.08, 5697984.184, 7824238.616,       3149804, Perdizes                , Triângulo Mineiro e Alto Paranaíba, ARAXÁ
+    4,  9054090.08, 5576552.948, 7827693.535,       3171105, Veríssimo               , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5366410.626, 7833287.214,       3138625, Limeira do Oeste        , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5577025.846, 7827547.562,       3171105, Veríssimo               , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5649477.219, 7825031.318,       3170107, Uberaba                 , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5368115.22 , 7832545.612,       3138625, Limeira do Oeste        , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5376151.648, 7831494.981,       3170438, União de Minas          , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5397878.187, 7830426.344,       3111101, Campina Verde           , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5380459.281, 7830348.104,       3170438, União de Minas          , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5574162.736, 7825075.638,       3171105, Veríssimo               , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5351547.835, 7830706.559,       3138625, Limeira do Oeste        , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5573728.41 , 7824747.328,       3111408, Campo Florido           , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5369044.461, 7829961.269,       3138625, Limeira do Oeste        , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5369235.663, 7829245.662,       3134400, Iturama                 , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5673789.109, 7820449.728,       3156908, Sacramento              , Triângulo Mineiro e Alto Paranaíba, ARAXÁ
+    4,  9054090.08, 5365105.681, 7828440.531,       3138625, Limeira do Oeste        , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5380001.89 , 7828115.842,       3134400, Iturama                 , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5693267.822, 7818550.34 ,       3149804, Perdizes                , Triângulo Mineiro e Alto Paranaíba, ARAXÁ
+    4,  9054090.08, 5365304.116, 7828246.608,       3138625, Limeira do Oeste        , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5384414.181, 7827899.233,       3134400, Iturama                 , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5362120.877, 7828055.827,       3138625, Limeira do Oeste        , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5697901.841, 7817664.491,       3149804, Perdizes                , Triângulo Mineiro e Alto Paranaíba, ARAXÁ
+    4,  9054090.08, 5345820.546, 7827732.418,       3114550, Carneirinho             , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5678204.915, 7817505.9  ,       3156908, Sacramento              , Triângulo Mineiro e Alto Paranaíba, ARAXÁ
+    4,  9054090.08, 5345893.257, 7827050.182,       3114550, Carneirinho             , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5391236.647, 7824765.483,       3134400, Iturama                 , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5388519.727, 7824658.626,       3134400, Iturama                 , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5388928.439, 7824411.542,       3134400, Iturama                 , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5565445.393, 7818714.017,       3111408, Campo Florido           , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5603198.794, 7817358.14 ,       3171105, Veríssimo               , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5373210.951, 7822698.654,       3134400, Iturama                 , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5378825.622, 7821310.299,       3134400, Iturama                 , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5677349.574, 7812809.068,       3156908, Sacramento              , Triângulo Mineiro e Alto Paranaíba, ARAXÁ
+    4,  9054090.08, 5325645.573, 7821507.826,       3114550, Carneirinho             , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5457186.693, 7818136.834,       3111101, Campina Verde           , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5383754.1  , 7819102.012,       3134400, Iturama                 , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5326479.201, 7820334.137,       3114550, Carneirinho             , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5468811.04 , 7816803.969,       3133402, Itapagipe               , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5383380.412, 7818729.806,       3134400, Iturama                 , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5584497.251, 7813183.616,       3171105, Veríssimo               , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5553019.987, 7814343.136,       3111408, Campo Florido           , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5383570.964, 7818503.563,       3134400, Iturama                 , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5559011.429, 7814138.015,       3111408, Campo Florido           , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5619393.209, 7811690.401,       3170107, Uberaba                 , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5688771.44 , 7809054.128,       3149804, Perdizes                , Triângulo Mineiro e Alto Paranaíba, ARAXÁ
+    4,  9054090.08, 5447241.563, 7817077.076,       3161304, São Francisco de Sales  , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5619766.133, 7811437.494,       3170107, Uberaba                 , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5382968.095, 7817652.947,       3134400, Iturama                 , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5623016.201, 7810760.811,       3170107, Uberaba                 , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5383838.844, 7817009.402,       3134400, Iturama                 , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5382892.383, 7816405.508,       3134400, Iturama                 , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5383986.624, 7816419.979,       3134400, Iturama                 , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5364709.1  , 7815940.349,       3134400, Iturama                 , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5550146.238, 7811196.105,       3111408, Campo Florido           , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5391917.83 , 7814889.034,       3134400, Iturama                 , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5549113.189, 7810811.636,       3111408, Campo Florido           , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5376335.059, 7814472.849,       3134400, Iturama                 , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5376394.981, 7814651.208,       3134400, Iturama                 , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5381493.914, 7814241.564,       3134400, Iturama                 , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5556631.75 , 7809123.501,       3111408, Campo Florido           , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5376946.876, 7813962.825,       3134400, Iturama                 , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+   25,  3174630.2 , 5877750.005, 7796169.45 ,       3138807, Luz                     , Central Mineira                   , BOM DESPACHO
+    4,  9054090.08, 5439489.248, 7811817.558,       3161304, São Francisco de Sales  , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5440306.881, 7811652.88 ,       3161304, São Francisco de Sales  , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5683908.975, 7804074.934,       3156908, Sacramento              , Triângulo Mineiro e Alto Paranaíba, ARAXÁ
+    4,  9054090.08, 5548148.567, 7808977.069,       3111408, Campo Florido           , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5453505.961, 7810848.349,       3161304, São Francisco de Sales  , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5489117.613, 7809947.235,       3133402, Itapagipe               , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5423931.362, 7811392.493,       3161304, São Francisco de Sales  , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5453512.97 , 7810476.677,       3161304, São Francisco de Sales  , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5626811.412, 7805146.756,       3170107, Uberaba                 , Triângulo Mineiro e Alto Paranaíba, UBERABA
+   25,  3174630.2 , 5898167.134, 7793486.436,       3107406, Bom Despacho            , Central Mineira                   , BOM DESPACHO
+   25,  3174630.2 , 5882135.507, 7794045.511,       3138807, Luz                     , Central Mineira                   , BOM DESPACHO
+    4,  9054090.08, 5553103.234, 7807119.805,       3111408, Campo Florido           , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5438456.747, 7809817.144,       3161304, São Francisco de Sales  , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5439241.161, 7809797.673,       3161304, São Francisco de Sales  , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5548822.446, 7805975.029,       3111408, Campo Florido           , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5549068.632, 7805696.821,       3111408, Campo Florido           , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5522880.311, 7806174.174,       3116902, Comendador Gomes        , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5346964.748, 7810171.439,       3114550, Carneirinho             , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5537883.641, 7805282.369,       3116902, Comendador Gomes        , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5433061.161, 7807802.07 ,       3161304, São Francisco de Sales  , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+   25,  3174630.2 , 5875321.623, 7791386.404,       3138807, Luz                     , Central Mineira                   , BOM DESPACHO
+    4,  9054090.08, 5347084.437, 7809235.574,       3114550, Carneirinho             , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5346435.596, 7808460.891,       3114550, Carneirinho             , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5622431.034, 7800726.554,       3170107, Uberaba                 , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5600857.081, 7801569.907,       3170107, Uberaba                 , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5347076.903, 7808426.041,       3114550, Carneirinho             , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5564257.603, 7802583.544,       3111408, Campo Florido           , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5624916.557, 7800438.175,       3170107, Uberaba                 , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5452775.189, 7805174.35 ,       3161304, São Francisco de Sales  , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5335985.325, 7807676.472,       3114550, Carneirinho             , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5335237.328, 7807533.201,       3114550, Carneirinho             , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5556422.068, 7800403.515,       3111408, Campo Florido           , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5337386.27 , 7806371.054,       3114550, Carneirinho             , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5510537.888, 7802977.894,       3127107, Frutal                  , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5573584.842, 7798936.53 ,       3111408, Campo Florido           , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5546608.446, 7799545.779,       3111408, Campo Florido           , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5546076.321, 7799334.065,       3111408, Campo Florido           , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5656082.103, 7795689.266,       3170107, Uberaba                 , Triângulo Mineiro e Alto Paranaíba, UBERABA
+   25,  3174630.2 , 5880891.326, 7784562.778,       3138807, Luz                     , Central Mineira                   , BOM DESPACHO
+    4,  9054090.08, 5330735.334, 7802635.37 ,       3114550, Carneirinho             , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5544764.972, 7797141.845,       3127107, Frutal                  , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+   25,  3174630.2 , 5884702.307, 7783120.606,       3138807, Luz                     , Central Mineira                   , BOM DESPACHO
+    4,  9054090.08, 5456673.208, 7798655.432,       3133402, Itapagipe               , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5457331.084, 7798695.044,       3133402, Itapagipe               , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5566763.09 , 7795437.749,       3111408, Campo Florido           , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5607266.417, 7793018.077,       3170107, Uberaba                 , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5520350.407, 7796219.732,       3127107, Frutal                  , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+   25,  3174630.2 , 5881979.402, 7781736.6  ,       3138807, Luz                     , Central Mineira                   , BOM DESPACHO
+    4,  9054090.08, 5452731.71 , 7796785.647,       3133402, Itapagipe               , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5551415.79 , 7794030.97 ,       3111408, Campo Florido           , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5551356.384, 7793984.81 ,       3150703, Pirajuba                , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5346061.056, 7798220.884,       3114550, Carneirinho             , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+   25,  3174630.2 , 5867560.781, 7779961.294,       3138807, Luz                     , Central Mineira                   , BOM DESPACHO
+    4,  9054090.08, 5346274.791, 7797692.609,       3114550, Carneirinho             , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5534809.976, 7792967.865,       3127107, Frutal                  , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5616173.394, 7790127.412,       3100708, Água Comprida           , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5433817.051, 7795551.834,       3161304, São Francisco de Sales  , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5616411.022, 7788609.398,       3100708, Água Comprida           , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5507331.643, 7790955.621,       3127107, Frutal                  , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5452852.271, 7791533.054,       3133402, Itapagipe               , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5551025.33 , 7788679.24 ,       3150703, Pirajuba                , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5511086.912, 7789840.33 ,       3127107, Frutal                  , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5585310.234, 7787531.105,       3117306, Conceição das Alagoas   , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5317981.39 , 7793649.952,       3114550, Carneirinho             , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5577314.86 , 7785515.143,       3117306, Conceição das Alagoas   , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5646531.425, 7782830.011,       3121258, Delta                   , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5672735.821, 7781039.438,       3118205, Conquista               , Triângulo Mineiro e Alto Paranaíba, UBERABA
+   25,  3174630.2 , 5885764.535, 7772023.012,       3137205, Lagoa da Prata          , Central Mineira                   , BOM DESPACHO
+   25,  3174630.2 , 5879496.972, 7771412.151,       3138807, Luz                     , Central Mineira                   , BOM DESPACHO
+   25,  3174630.2 , 5877962.755, 7770851.67 ,       3138807, Luz                     , Central Mineira                   , BOM DESPACHO
+    4,  9054090.08, 5666473.35 , 7779925.357,       3118205, Conquista               , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5650518.011, 7779551.305,       3121258, Delta                   , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5523868.336, 7783800.176,       3127107, Frutal                  , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5649985.992, 7779285.915,       3121258, Delta                   , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5484944.758, 7784015.046,       3133402, Itapagipe               , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+   25,  3174630.2 , 5887614.977, 7767181.721,       3137205, Lagoa da Prata          , Central Mineira                   , BOM DESPACHO
+    4,  9054090.08, 5623803.838, 7778417.489,       3100708, Água Comprida           , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5623215.371, 7777332.3  ,       3100708, Água Comprida           , Triângulo Mineiro e Alto Paranaíba, UBERABA
+   25,  3174630.2 , 5880609.731, 7765693.667,       3137205, Lagoa da Prata          , Central Mineira                   , BOM DESPACHO
+   25,  3174630.2 , 5880039.833, 7765590.916,       3137205, Lagoa da Prata          , Central Mineira                   , BOM DESPACHO
+   25,  3174630.2 , 5895721.067, 7764840.533,       3137205, Lagoa da Prata          , Central Mineira                   , BOM DESPACHO
+   25,  3174630.2 , 5869951.578, 7765746.801,       3138807, Luz                     , Central Mineira                   , BOM DESPACHO
+    4,  9054090.08, 5627641.269, 7775550.992,       3100708, Água Comprida           , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5627064.084, 7775508.937,       3100708, Água Comprida           , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5548726.53 , 7777491.123,       3127107, Frutal                  , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5620462.05 , 7774833.379,       3100708, Água Comprida           , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5634726.187, 7774113.973,       3170107, Uberaba                 , Triângulo Mineiro e Alto Paranaíba, UBERABA
+   25,  3174630.2 , 5875185.351, 7763717.843,       3138807, Luz                     , Central Mineira                   , BOM DESPACHO
+    4,  9054090.08, 5668942.065, 7772403.118,       3118205, Conquista               , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5668340.755, 7772385.021,       3118205, Conquista               , Triângulo Mineiro e Alto Paranaíba, UBERABA
+   25,  3174630.2 , 5882468.791, 7762850.374,       3137205, Lagoa da Prata          , Central Mineira                   , BOM DESPACHO
+   11,  2403787.33, 5864679.974, 7763132.468,       3130309, Iguatama                , Oeste                             , PIUÍ
+    4,  9054090.08, 5541091.237, 7775868.83 ,       3127107, Frutal                  , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5620261.944, 7772890.431,       3100708, Água Comprida           , Triângulo Mineiro e Alto Paranaíba, UBERABA
+   25,  3174630.2 , 5875913.596, 7760699.88 ,       3138807, Luz                     , Central Mineira                   , BOM DESPACHO
+   11,  2403787.33, 5851908.141, 7761822.421,       3105103, Bambuí                  , Oeste                             , PIUÍ
+    4,  9054090.08, 5528315.956, 7774088.947,       3127107, Frutal                  , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5540007.782, 7773293.319,       3127107, Frutal                  , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+   25,  3174630.2 , 5880884.479, 7758879.82 ,       3137205, Lagoa da Prata          , Central Mineira                   , BOM DESPACHO
+   25,  3174630.2 , 5881254.439, 7759129.102,       3137205, Lagoa da Prata          , Central Mineira                   , BOM DESPACHO
+    4,  9054090.08, 5625139.993, 7769693.668,       3100708, Água Comprida           , Triângulo Mineiro e Alto Paranaíba, UBERABA
+    4,  9054090.08, 5546464.812, 7772322.561,       3127107, Frutal                  , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+   25,  3174630.2 , 5880048.644, 7758048.597,       3137205, Lagoa da Prata          , Central Mineira                   , BOM DESPACHO
+   25,  3174630.2 , 5882377.791, 7757851.937,       3137205, Lagoa da Prata          , Central Mineira                   , BOM DESPACHO
+   25,  3174630.2 , 5880523.676, 7757229.312,       3137205, Lagoa da Prata          , Central Mineira                   , BOM DESPACHO
+   25,  3174630.2 , 5881181.261, 7757561.039,       3137205, Lagoa da Prata          , Central Mineira                   , BOM DESPACHO
+   25,  3174630.2 , 5877409.024, 7756412.68 ,       3135308, Japaraíba               , Central Mineira                   , BOM DESPACHO
+    4,  9054090.08, 5543156.06 , 7769595.864,       3127107, Frutal                  , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5544644.959, 7769361.135,       3127107, Frutal                  , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5544524.918, 7768827.63 ,       3127107, Frutal                  , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+   25,  3174630.2 , 5886019.139, 7754607.841,       3135308, Japaraíba               , Central Mineira                   , BOM DESPACHO
+    4,  9054090.08, 5578950.702, 7767551.648,       3117306, Conceição das Alagoas   , Triângulo Mineiro e Alto Paranaíba, UBERABA
+   25,  3174630.2 , 5877941.174, 7754146.255,       3135308, Japaraíba               , Central Mineira                   , BOM DESPACHO
+   25,  3174630.2 , 5886277.478, 7753677.717,       3135308, Japaraíba               , Central Mineira                   , BOM DESPACHO
+    4,  9054090.08, 5529653.199, 7767140.729,       3127107, Frutal                  , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5534262.765, 7766670.442,       3127107, Frutal                  , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5534948.565, 7766114.918,       3127107, Frutal                  , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5514631.481, 7766868.191,       3127107, Frutal                  , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5513560.741, 7767265.534,       3127107, Frutal                  , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5514326.243, 7766339.401,       3127107, Frutal                  , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+   25,  3174630.2 , 5884627.025, 7749202.865,       3135308, Japaraíba               , Central Mineira                   , BOM DESPACHO
+    4,  9054090.08, 5540242.796, 7762649.611,       3127107, Frutal                  , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5508708.229, 7759530.784,       3127008, Fronteira               , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5530669.922, 7752432.994,       3127107, Frutal                  , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+   11,  2403787.33, 5832411.939, 7737093.409,       3105103, Bambuí                  , Oeste                             , PIUÍ
+    4,  9054090.08, 5531555.478, 7744751.055,       3127107, Frutal                  , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5531896.617, 7742870.028,       3127107, Frutal                  , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5531667.956, 7742241.115,       3127107, Frutal                  , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5533365.08 , 7741776.179,       3127107, Frutal                  , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    4,  9054090.08, 5532525.838, 7742123.031,       3127107, Frutal                  , Triângulo Mineiro e Alto Paranaíba, FRUTAL
+    5,  4957537.89, 5766706.848, 7717652.513,       3121209, Delfinópolis            , Sul/Sudoeste                      , PASSOS
+    5,  4957537.89, 5762535.154, 7709650.615,       3147907, Passos                  , Sul/Sudoeste                      , PASSOS
+    5,  4957537.89, 5765026.012, 7708962.868,       3147907, Passos                  , Sul/Sudoeste                      , PASSOS
+    5,  4957537.89, 5763495.139, 7690868.313,       3147907, Passos                  , Sul/Sudoeste                      , PASSOS
+    5,  4957537.89, 5727837.621, 7678616.349,       3164704, São Sebastião do Paraíso, Sul/Sudoeste                      , SÃO SEBASTIÃO DO PARAÍSO
+    5,  4957537.89, 5806224.897, 7617056.762,       3143005, Monte Belo              , Sul/Sudoeste                      , SÃO SEBASTIÃO DO PARAÍSO
+    5,  4957537.89, 5823681.833, 7599224.754,       3166907, Serrania                , Sul/Sudoeste                      , ALFENAS
